@@ -1,0 +1,811 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="计算机网络," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="《计算机网络-自顶向下方法》第一章学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络-自顶向下方法【一】">
+<meta property="og:url" content="http://yoursite.com/2017/02/04/计算机网络-自顶向下方法【一】/index.html">
+<meta property="og:site_name" content="梅庄">
+<meta property="og:description" content="《计算机网络-自顶向下方法》第一章学习笔记">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/1.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/2.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/3.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/4.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/5.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/6.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/7.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/8.png?imageView2/2/w/600">
+<meta property="og:updated_time" content="2017-02-04T14:15:54.519Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络-自顶向下方法【一】">
+<meta name="twitter:description" content="《计算机网络-自顶向下方法》第一章学习笔记">
+<meta name="twitter:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/1.png?imageView2/2/w/600">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/04/计算机网络-自顶向下方法【一】/"/>
+
+
+
+
+
+  <title> 计算机网络-自顶向下方法【一】 | 梅庄 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">梅庄</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">华山派小虾米的修行场所</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/04/计算机网络-自顶向下方法【一】/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="R11happy">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="http://ok6lt61wr.bkt.clouddn.com/R11happy.JPG">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="梅庄">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="梅庄" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                计算机网络-自顶向下方法【一】
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-04T22:06:07+08:00">
+                2017-02-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2017寒假充电/" itemprop="url" rel="index">
+                    <span itemprop="name">2017寒假充电</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+              <div class="post-description">
+                  《计算机网络-自顶向下方法》第一章学习笔记
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Ch1-Introduction"><a href="#Ch1-Introduction" class="headerlink" title="Ch1-Introduction"></a>Ch1-Introduction</h1><p>2017-02-04 15:23:25 星期六</p>
+<h2 id="What-is-the-Internet"><a href="#What-is-the-Internet" class="headerlink" title="What is the Internet"></a>What is the Internet</h2><h3 id="hosts"><a href="#hosts" class="headerlink" title="hosts"></a>hosts</h3><p>hosts = end-systems,上面会running network apps<br>hosts大到服务器，小到PDA</p>
+<h3 id="communication-links"><a href="#communication-links" class="headerlink" title="communication links"></a>communication links</h3><p>fiber, copper, radio, satellite<br>transmission rate = <strong>bandwidth</strong></p>
+<h3 id="routers"><a href="#routers" class="headerlink" title="routers"></a>routers</h3><p>forward packets(数据块)</p>
+<h3 id="protocols"><a href="#protocols" class="headerlink" title="protocols"></a>protocols</h3><p>control sending, receiving of msgs<br>eg. TCP, IP,HTTP(浏览器),FTP(point-to-point),PPP</p>
+<h3 id="Intenet"><a href="#Intenet" class="headerlink" title="Intenet"></a>Intenet</h3><p>network of networks<br>loosely hierarchical<br>public Internet versus<br>private intranet(使得建在不同地区的网络，看起来像建在同一个地区。)</p>
+<h3 id="Internet-standards"><a href="#Internet-standards" class="headerlink" title="Internet standards"></a>Internet standards</h3><p>RFC: Request for comments<br>IETF: Internet Engineering Task Force<br>IEEE</p>
+<h3 id="communication-infrastructure"><a href="#communication-infrastructure" class="headerlink" title="communication infrastructure"></a>communication infrastructure</h3><p>enable distributed applications: eg. web, email, sharing……</p>
+<h3 id="communication-services-provided-to-applications"><a href="#communication-services-provided-to-applications" class="headerlink" title="communication services provided to applications"></a>communication services provided to applications</h3><p>connectionless（通信前不用建连线） eg. UDP,适合query, domain name server<br>connection-oriented（通信前要先建连线，就像打电话一样） eg. TCP</p>
+<h2 id="What-is-a-protocol"><a href="#What-is-a-protocol" class="headerlink" title="What is a protocol"></a>What is a protocol</h2><p>all communication activity in Internet governed by protocols<br><strong>protocols define</strong></p>
+<ul>
+<li>format</li>
+<li>order<br>order of messages sent and received among network entities</li>
+<li>action<br>action taken on the ttransmisssion/receipt of a message<img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/1.png?imageView2/2/w/600">
+<h2 id="Network-edge"><a href="#Network-edge" class="headerlink" title="Network edge"></a>Network edge</h2>applications and hosts 比如PC，PDA, 手机<h3 id="end-systems-hosts"><a href="#end-systems-hosts" class="headerlink" title="end systems(hosts)"></a>end systems(hosts)</h3></li>
+<li>run application programs</li>
+<li>eg. Web, email</li>
+<li>at “edge of network”<h3 id="client-server-model"><a href="#client-server-model" class="headerlink" title="client/server model"></a>client/server model</h3>client提出需求，server回应</li>
+<li>client host requests, receives service from <strong>alsways-on</strong> server</li>
+<li>eg. Web browser/server; email client/server<h3 id="peer-peer-model"><a href="#peer-peer-model" class="headerlink" title="peer-peer model"></a>peer-peer model</h3></li>
+<li>mminimal (or no) use of dedicated servers  eg.Gnutella KaZaA<br>没有server了，避免</li>
+</ul>
+<ol>
+<li>server 负担过重</li>
+<li>被track，不容易被跟踪，抓到<h3 id="connection-oriented-service"><a href="#connection-oriented-service" class="headerlink" title="connection-oriented service"></a>connection-oriented service</h3>data transfer between end systems<h4 id="handshaking"><a href="#handshaking" class="headerlink" title="handshaking"></a>handshaking</h4>数据传输前，先建立连线<br>setup(prepare for)data transfer ahead of time</li>
+</ol>
+<ul>
+<li>Hello, Hello back human protocol</li>
+<li>set up “state” in two communicating hosts<h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3>Transmission Control Protocol</li>
+<li>Internet’s connection-oriented service<h4 id="reliable-in-order-byte-stream-data-transfer"><a href="#reliable-in-order-byte-stream-data-transfer" class="headerlink" title="reliable, in-order byte-stream data transfer"></a>reliable, in-order byte-stream data transfer</h4>Internet是一个不可靠的环境，可能发生丢包<br>file transfer要求可靠，使命必达<br>TCP内容要对，顺序也要对</li>
+<li>loss:acknowledgements and retransmissions<br>接收方要确认，否则要重发<h4 id="flow-control"><a href="#flow-control" class="headerlink" title="flow control"></a>flow control</h4></li>
+<li>sender won’t overwhelm recevier<br>recevier 要告诉sender可以送多快<h4 id="congestion-control"><a href="#congestion-control" class="headerlink" title="congestion control"></a>congestion control</h4>拥挤，堵塞<br>如果网络拥挤，就放慢传送速度<br>如何判断网络有多快？每次double越来越快地送packet，直到packet掉了。然后减半，再冲</li>
+<li>senders “slow down sending rate” when network congested<br>eg. 每一个link都有一个频宽，当要嵩的信息量大于频宽的时候会queue在router里面，慢慢送<h3 id="connectionless-service"><a href="#connectionless-service" class="headerlink" title="connectionless service"></a>connectionless service</h3>data transfer between end systems</li>
+<li>same as connection-oriented service<h4 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h4>User Datagram Protocol</li>
+<li>unreliable data transfer 不可靠，不管对方有没有收到</li>
+<li>no flow control</li>
+<li>no congestion control<h3 id="App’s-using-TCP"><a href="#App’s-using-TCP" class="headerlink" title="App’s using TCP"></a>App’s using TCP</h3></li>
+<li>HTTP (Web), FTP (file transfer), Telnet (remote login)BBS, SMTP (email)<h3 id="App’s-using-UDP"><a href="#App’s-using-UDP" class="headerlink" title="App’s using UDP"></a>App’s using UDP</h3>允许掉一点packet 影音啥的</li>
+<li>streaming media网络音乐, teleconferencing,<strong> DNS</strong>, Internet telephony<h2 id="Network-core"><a href="#Network-core" class="headerlink" title="Network core"></a>Network core</h2>mesh(网状) of interconnected routers</li>
+<li>router</li>
+<li>network of networks<h3 id="circuit-switching（电路交换）预分配-no-sharing"><a href="#circuit-switching（电路交换）预分配-no-sharing" class="headerlink" title="circuit switching（电路交换）预分配 no sharing"></a>circuit switching（电路交换）<strong><code>预分配</code></strong> <strong><code>no sharing</code></strong></h3><img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/2.png?imageView2/2/w/600">
+在每一段link上都预留一段频宽<br>End-end resources reserved for “call”</li>
+<li>link bandwidth, switch capacity</li>
+<li>dedicated resources(专属的资源)：no sharing</li>
+<li>circuit-like(guaranteed) performance</li>
+<li>call setup required<h4 id="pieces"><a href="#pieces" class="headerlink" title="pieces"></a>pieces</h4>network resources(e.g. bandwidth) divided into “pieces”</li>
+<li>pieces allocated to calls</li>
+<li>resource piece <strong>idle</strong> if not used by owning call(no sharing)<h4 id="dividing-link-bandwidth-into-“pieces”time-division"><a href="#dividing-link-bandwidth-into-“pieces”time-division" class="headerlink" title="dividing link bandwidth into “pieces”time division"></a>dividing link bandwidth into “pieces”time division</h4></li>
+<li>frequency division</li>
+<li>time division<h5 id="FDMA"><a href="#FDMA" class="headerlink" title="FDMA"></a>FDMA</h5><img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/3.png?imageView2/2/w/600">
+<h5 id="TDMA"><a href="#TDMA" class="headerlink" title="TDMA"></a>TDMA</h5><img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/4.png?imageView2/2/w/600">
+<h3 id="packet-switching-分组交换-按需-sharing"><a href="#packet-switching-分组交换-按需-sharing" class="headerlink" title="packet switching(分组交换)按需 sharing"></a>packet switching(分组交换)<strong><code>按需</code></strong> <strong><code>sharing</code></strong></h3><h4 id="packets"><a href="#packets" class="headerlink" title="packets"></a>packets</h4>each end-end data stream divided into packets</li>
+<li>user A,Bpackets share network resources</li>
+<li>each packet uses full link bandwidth</li>
+<li>resources uses as needed (not reservation)<h4 id="contention"><a href="#contention" class="headerlink" title="contention"></a>contention</h4>resource contention:</li>
+<li>aggregate resource demand can exceed amount available</li>
+<li>congestion（拥挤）: packets queue, wait for link use</li>
+<li>store and forward（先存起来，再转送）: packets move one hop at a time<blockquote>
+<p>transmit over link<br>wait turn at next link</p>
+</blockquote>
+</li>
+</ul>
+<img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/5.png?imageView2/2/w/600">
+<p>比如，如果A不用，B就全部把它用完</p>
+<h3 id="Packet-Switching-vs-Circuit-Switching"><a href="#Packet-Switching-vs-Circuit-Switching" class="headerlink" title="Packet Switching vs Circuit Switching"></a>Packet Switching vs Circuit Switching</h3><img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/6.png?imageView2/2/w/600">
+<p>Packet switching </p>
+<ul>
+<li>allows more users ti use network</li>
+<li><p>Great for <strong>bursty</strong>(短暂而大量的) data</p>
+<blockquote>
+<p>resource sharing<br>simpler, no call setup</p>
+</blockquote>
+</li>
+<li><p><strong>Excessive congestion</strong>: packet delay and loss</p>
+</li>
+<li>protocols needed for reliable data transfer, congestion control</li>
+</ul>
+<p><strong><em>How to provide circuit-like behavior</em></strong><br>(Internet 不保证bandwidth)</p>
+<ul>
+<li>bandwidth guarantees needed for audio/video apps</li>
+</ul>
+<h3 id="Packet-Switching-Message-Segmenting"><a href="#Packet-Switching-Message-Segmenting" class="headerlink" title="Packet Switching:Message Segmenting"></a>Packet Switching:Message Segmenting</h3><img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/7.png?imageView2/2/w/600">
+<ul>
+<li>L = 7.5 Mbits</li>
+<li>R = 1.5 Mbps</li>
+<li>dealy = 15 sec</li>
+</ul>
+<h2 id="Now-Break-the-msgs-into-5000-packets"><a href="#Now-Break-the-msgs-into-5000-packets" class="headerlink" title="Now,Break the msgs into 5000 packets"></a><strong>Now,Break the msgs into 5000 packets</strong></h2><ul>
+<li>Each packet 1500 bits</li>
+<li>1 msec to transmit packet on one link</li>
+<li><strong><em>pipelinling</em></strong> each kink works in parallel (比如第二个packet开始送第一个L的时候，第一个packet可以开始送第二个L)</li>
+<li>Delay reduced from 15 sec to 5.002 sec</li>
+</ul>
+<h3 id="Packet-switched-networks-forwarding"><a href="#Packet-switched-networks-forwarding" class="headerlink" title="Packet-switched networks:forwarding"></a>Packet-switched networks:forwarding</h3><h4 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h4><p>move packets through routers from source to destination</p>
+<ul>
+<li>we’ll study several path selection (i.e. routing) algorithms (chapter 4)</li>
+<li>router之间平时会交换资料，了解周边网络长什么样，决定packet走哪一条路<h4 id="datagram-network（类比于信）"><a href="#datagram-network（类比于信）" class="headerlink" title="datagram network（类比于信）"></a>datagram network（类比于信）</h4></li>
+<li>destination address  in packet determines next hop</li>
+<li>routes may change during session（中间交流的过程）</li>
+<li>analogy: driving, asking directions<h4 id="virtual-circuit-network-人工的方式走固定的路线"><a href="#virtual-circuit-network-人工的方式走固定的路线" class="headerlink" title="virtual circuit network(人工的方式走固定的路线)"></a>virtual circuit network(人工的方式走固定的路线)</h4></li>
+<li>each packet carries tag  (virtual circuit ID)（贴标签）, tag determines next hop</li>
+<li>fixed path determined at call setup time, remains fixed thru call</li>
+<li>routers maintain  per-call state<blockquote>
+<p>怎样通过分组交换网形成通路：<br>因特网中，每个通过该网络传输的<code>packet</code>在它的首部包含了其目的地址。就像邮政地址一样，该地址是一种层次结构。当<code>packet</code>到达网络中的一台路由器时，该路由器检查<code>packet</code>的目的地址的一部分，并向相邻路由器转发该<code>packet</code>。<br>更特别的是，每台路由器具有一个<code>转发表</code>（forwarding table)用于将目的地址（或目的地址的一部分）映射到输出链路。当<code>packet</code>到达一台路由器时，该路由器检查目的地址，并用这个目的地址搜索转发表，以找到合适的输出链路。然后路由器将该<code>packet</code>导向输出链路。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="Network-Taxonomy"><a href="#Network-Taxonomy" class="headerlink" title="Network Taxonomy"></a>Network Taxonomy</h3><img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/8.png?imageView2/2/w/600">
+<ul>
+<li>Datagram network is <u style="text-underline:single">not</u> either connection-oriented or connectionless.</li>
+<li>Internet provides both connection-oriented (TCP) and<br>connectionless services (UDP) to apps.<h2 id="Network-access-and-physical-media"><a href="#Network-access-and-physical-media" class="headerlink" title="Network access and physical media"></a>Network access and physical media</h2>communication links<h2 id="Internet-structure-and-ISPs"><a href="#Internet-structure-and-ISPs" class="headerlink" title="Internet structure and ISPs"></a>Internet structure and ISPs</h2><h2 id="Dealy-amp-loss-in-packet-switched-networks"><a href="#Dealy-amp-loss-in-packet-switched-networks" class="headerlink" title="Dealy&amp;loss in packet-switched networks"></a>Dealy&amp;loss in packet-switched networks</h2><h2 id="Protocol-layers-service-models"><a href="#Protocol-layers-service-models" class="headerlink" title="Protocol layers, service models"></a>Protocol layers, service models</h2><h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><h2 id="3-电路交换和分组交换"><a href="#3-电路交换和分组交换" class="headerlink" title="3.电路交换和分组交换"></a>3.电路交换和分组交换</h2></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算机网络/" rel="tag"># 计算机网络</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/26/Python魔力手册读书笔记/" rel="next" title="Python魔力手册读书笔记">
+                <i class="fa fa-chevron-left"></i> Python魔力手册读书笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ok6lt61wr.bkt.clouddn.com/R11happy.JPG"
+               alt="R11happy" />
+          <p class="site-author-name" itemprop="name">R11happy</p>
+          <p class="site-description motion-element" itemprop="description">华山派小虾米的修行场所</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/R11happy" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch1-Introduction"><span class="nav-number">1.</span> <span class="nav-text">Ch1-Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-the-Internet"><span class="nav-number">1.1.</span> <span class="nav-text">What is the Internet</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hosts"><span class="nav-number">1.1.1.</span> <span class="nav-text">hosts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#communication-links"><span class="nav-number">1.1.2.</span> <span class="nav-text">communication links</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#routers"><span class="nav-number">1.1.3.</span> <span class="nav-text">routers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#protocols"><span class="nav-number">1.1.4.</span> <span class="nav-text">protocols</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Intenet"><span class="nav-number">1.1.5.</span> <span class="nav-text">Intenet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-standards"><span class="nav-number">1.1.6.</span> <span class="nav-text">Internet standards</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#communication-infrastructure"><span class="nav-number">1.1.7.</span> <span class="nav-text">communication infrastructure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#communication-services-provided-to-applications"><span class="nav-number">1.1.8.</span> <span class="nav-text">communication services provided to applications</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-a-protocol"><span class="nav-number">1.2.</span> <span class="nav-text">What is a protocol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-edge"><span class="nav-number">1.3.</span> <span class="nav-text">Network edge</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#end-systems-hosts"><span class="nav-number">1.3.1.</span> <span class="nav-text">end systems(hosts)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#client-server-model"><span class="nav-number">1.3.2.</span> <span class="nav-text">client/server model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#peer-peer-model"><span class="nav-number">1.3.3.</span> <span class="nav-text">peer-peer model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#connection-oriented-service"><span class="nav-number">1.3.4.</span> <span class="nav-text">connection-oriented service</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#handshaking"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">handshaking</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP"><span class="nav-number">1.3.5.</span> <span class="nav-text">TCP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#reliable-in-order-byte-stream-data-transfer"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">reliable, in-order byte-stream data transfer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flow-control"><span class="nav-number">1.3.5.2.</span> <span class="nav-text">flow control</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#congestion-control"><span class="nav-number">1.3.5.3.</span> <span class="nav-text">congestion control</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#connectionless-service"><span class="nav-number">1.3.6.</span> <span class="nav-text">connectionless service</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UDP"><span class="nav-number">1.3.6.1.</span> <span class="nav-text">UDP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#App’s-using-TCP"><span class="nav-number">1.3.7.</span> <span class="nav-text">App’s using TCP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#App’s-using-UDP"><span class="nav-number">1.3.8.</span> <span class="nav-text">App’s using UDP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-core"><span class="nav-number">1.4.</span> <span class="nav-text">Network core</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#circuit-switching（电路交换）预分配-no-sharing"><span class="nav-number">1.4.1.</span> <span class="nav-text">circuit switching（电路交换）预分配 no sharing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pieces"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">pieces</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dividing-link-bandwidth-into-“pieces”time-division"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">dividing link bandwidth into “pieces”time division</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#FDMA"><span class="nav-number">1.4.1.2.1.</span> <span class="nav-text">FDMA</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TDMA"><span class="nav-number">1.4.1.2.2.</span> <span class="nav-text">TDMA</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#packet-switching-分组交换-按需-sharing"><span class="nav-number">1.4.2.</span> <span class="nav-text">packet switching(分组交换)按需 sharing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#packets"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">packets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#contention"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">contention</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Packet-Switching-vs-Circuit-Switching"><span class="nav-number">1.4.3.</span> <span class="nav-text">Packet Switching vs Circuit Switching</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Packet-Switching-Message-Segmenting"><span class="nav-number">1.4.4.</span> <span class="nav-text">Packet Switching:Message Segmenting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Now-Break-the-msgs-into-5000-packets"><span class="nav-number">1.5.</span> <span class="nav-text">Now,Break the msgs into 5000 packets</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Packet-switched-networks-forwarding"><span class="nav-number">1.5.1.</span> <span class="nav-text">Packet-switched networks:forwarding</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Goal"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">Goal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#datagram-network（类比于信）"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">datagram network（类比于信）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#virtual-circuit-network-人工的方式走固定的路线"><span class="nav-number">1.5.1.3.</span> <span class="nav-text">virtual circuit network(人工的方式走固定的路线)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-Taxonomy"><span class="nav-number">1.5.2.</span> <span class="nav-text">Network Taxonomy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-access-and-physical-media"><span class="nav-number">1.6.</span> <span class="nav-text">Network access and physical media</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Internet-structure-and-ISPs"><span class="nav-number">1.7.</span> <span class="nav-text">Internet structure and ISPs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dealy-amp-loss-in-packet-switched-networks"><span class="nav-number">1.8.</span> <span class="nav-text">Dealy&loss in packet-switched networks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Protocol-layers-service-models"><span class="nav-number">1.9.</span> <span class="nav-text">Protocol layers, service models</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">1.10.</span> <span class="nav-text">History</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-电路交换和分组交换"><span class="nav-number">1.11.</span> <span class="nav-text">3.电路交换和分组交换</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">R11happy</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid="></script>
+      <!-- UY END -->
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
