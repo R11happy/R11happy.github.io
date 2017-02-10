@@ -98,7 +98,16 @@
 <meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/6.png?imageView2/2/w/600">
 <meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/7.png?imageView2/2/w/600">
 <meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/8.png?imageView2/2/w/600">
-<meta property="og:updated_time" content="2017-02-04T14:15:54.519Z">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/9.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/10.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/11.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/12.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/13.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/14.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/15.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/16.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/17.png?imageView2/2/w/600">
+<meta property="og:updated_time" content="2017-02-10T14:13:52.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络-自顶向下方法【一】">
 <meta name="twitter:description" content="《计算机网络-自顶向下方法》第一章学习笔记">
@@ -470,7 +479,258 @@
 <h3 id="Network-Taxonomy"><a href="#Network-Taxonomy" class="headerlink" title="Network Taxonomy"></a>Network Taxonomy</h3><img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/8.png?imageView2/2/w/600">
 <ul>
 <li>Datagram network is <u style="text-underline:single">not</u> either connection-oriented or connectionless.</li>
-<li>Internet provides both connection-oriented (TCP) and<br>connectionless services (UDP) to apps.<h2 id="Network-access-and-physical-media"><a href="#Network-access-and-physical-media" class="headerlink" title="Network access and physical media"></a>Network access and physical media</h2>communication links<h2 id="Internet-structure-and-ISPs"><a href="#Internet-structure-and-ISPs" class="headerlink" title="Internet structure and ISPs"></a>Internet structure and ISPs</h2><h2 id="Dealy-amp-loss-in-packet-switched-networks"><a href="#Dealy-amp-loss-in-packet-switched-networks" class="headerlink" title="Dealy&amp;loss in packet-switched networks"></a>Dealy&amp;loss in packet-switched networks</h2><h2 id="Protocol-layers-service-models"><a href="#Protocol-layers-service-models" class="headerlink" title="Protocol layers, service models"></a>Protocol layers, service models</h2><h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><h2 id="3-电路交换和分组交换"><a href="#3-电路交换和分组交换" class="headerlink" title="3.电路交换和分组交换"></a>3.电路交换和分组交换</h2></li>
+<li>Internet provides both connection-oriented (TCP) and<br>connectionless services (UDP) to apps.<h2 id="Network-access-and-physical-media"><a href="#Network-access-and-physical-media" class="headerlink" title="Network access and physical media"></a>Network access and physical media</h2>communication links<h3 id="Access-networks-and-physical-media"><a href="#Access-networks-and-physical-media" class="headerlink" title="Access networks and physical media"></a>Access networks and physical media</h3><blockquote>
+<p>keep in mind</p>
+</blockquote>
+</li>
+<li>bandwidth (bits per second) of access network?</li>
+<li>shared or dedicated? (共享的还是专属的)</li>
+</ul>
+<h3 id="Residential-access-point-to-point-access"><a href="#Residential-access-point-to-point-access" class="headerlink" title="Residential access: point to point access"></a>Residential access: point to point access</h3><h4 id="Dialup-via-modem"><a href="#Dialup-via-modem" class="headerlink" title="Dialup via modem"></a>Dialup via modem</h4><ul>
+<li>up to 54Kbps(often less)</li>
+<li>Can’t surf and phone at same time: can’t be “always on”<h4 id="ADSL-asymmetric-digital-subscriber-line-对Frequency做分割"><a href="#ADSL-asymmetric-digital-subscriber-line-对Frequency做分割" class="headerlink" title="ADSL(asymmetric digital subscriber line)  对Frequency做分割"></a>ADSL(asymmetric digital subscriber line)  对Frequency做分割</h4></li>
+<li><p>up to 1 Mbps upstream (today typically &lt; 256 kbps)</p>
+</li>
+<li><p>up to 8 Mbps downstream (today typically &lt; 1 Mbps)</p>
+</li>
+<li><p>FDM: 50 kHz - 1 MHz for downstream</p>
+</li>
+</ul>
+<blockquote>
+<pre><code>4 kHz - 50 kHz for upstream
+  0 kHz - 4 kHz for ordinary telephone
+</code></pre></blockquote>
+<h3 id="Residential-access-cable-modems"><a href="#Residential-access-cable-modems" class="headerlink" title="Residential access: cable modems"></a>Residential access: cable modems</h3><h4 id="HFC-hybrid-fiber-coaxial-cable（混合式）"><a href="#HFC-hybrid-fiber-coaxial-cable（混合式）" class="headerlink" title="HFC: hybrid fiber coaxial cable（混合式）"></a>HFC: hybrid fiber coaxial cable（混合式）</h4><ul>
+<li>asymmetric: up to 30Mbps downstream, 2 Mbps upstream</li>
+<li>network of cable and fiber attaches homes to ISP router</li>
+<li>shared access to router among home</li>
+<li>issues: congestion（拥挤）, dimensioning（规模）</li>
+<li>deployment（部件）: available via cable companies, e.g., MediaOne<h3 id="Company-access-local-area-networks-（区域网络，快很多）"><a href="#Company-access-local-area-networks-（区域网络，快很多）" class="headerlink" title="Company access: local area networks （区域网络，快很多）"></a>Company access: local area networks （区域网络，快很多）</h3><blockquote>
+<p>company/university local area network (LAN) connects end system to edge router<br><strong>Ethernet</strong>(有线网络里面普及率最高的)</p>
+</blockquote>
+</li>
+<li>mshared or dedicated link connects end system and router</li>
+<li>10 Mbs, 100Mbps, Gigabit Ethernet<br>deployment: institutions, home LANs happening now</li>
+</ul>
+<h3 id="Wireless-access-networks"><a href="#Wireless-access-networks" class="headerlink" title="Wireless access networks"></a>Wireless access networks</h3><blockquote>
+<p>shared wireless access network connects end system to router<br>via base station also known as “access point”</p>
+<ul>
+<li>wireless LANs:</li>
+<li><ul>
+<li>802.11b (WiFi): 11 Mbps</li>
+</ul>
+</li>
+<li><ul>
+<li>802.11g: 54 Mbps</li>
+</ul>
+</li>
+<li><ul>
+<li>802.11n: 108 Mbps</li>
+</ul>
+</li>
+<li>wider-area wireless access（远距离无线通信）</li>
+<li><ul>
+<li>provided by telcom operator</li>
+</ul>
+</li>
+<li><ul>
+<li>3G ~ 384 kbps</li>
+</ul>
+</li>
+<li><ul>
+<li>4G ~ 2 Mbps以上</li>
+</ul>
+</li>
+<li><ul>
+<li>WAP/GPRS in Europe</li>
+</ul>
+</li>
+<li><ul>
+<li>802.16a/e (WiMax):</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="Home-networks"><a href="#Home-networks" class="headerlink" title="Home networks"></a>Home networks</h3><blockquote>
+<p>Typical home network components:</p>
+<ul>
+<li>ADSL or cable modem</li>
+<li>router/firewall/NAT</li>
+<li>Ethernet</li>
+<li>wireless access<img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/9.png?imageView2/2/w/600">
+<h3 id="Physical-Media"><a href="#Physical-Media" class="headerlink" title="Physical Media"></a>Physical Media</h3>-<strong>Bit</strong>: propagates between<br>transmitter/receiver pairs</li>
+<li><strong>physical link</strong>: what lies between transmitter &amp; receiver</li>
+<li><ul>
+<li><strong>guided media</strong>:有实体的材料，送电流<br>signals propagate in solid media: copper, fiber, coax</li>
+</ul>
+</li>
+<li><ul>
+<li><strong>unguided media</strong>:无线通信，送电磁波<br>signals propagate freely, e.g., radio<h4 id="Twisted-Pair-TP-双绞线"><a href="#Twisted-Pair-TP-双绞线" class="headerlink" title="Twisted Pair (TP)  双绞线"></a>Twisted Pair (TP)  双绞线</h4><h4 id="Coaxial-cable-同轴电缆"><a href="#Coaxial-cable-同轴电缆" class="headerlink" title="Coaxial cable:同轴电缆"></a>Coaxial cable:同轴电缆</h4></li>
+</ul>
+</li>
+<li>two concentric copper conductors</li>
+<li>bidirectional双向传输，送进去，电流往两边跑</li>
+<li>baseband:一个channel,大家抢，办公室里面用（送data)</li>
+<li><ul>
+<li>single channel on cable</li>
+</ul>
+</li>
+<li><ul>
+<li>legacy Ethernet</li>
+</ul>
+</li>
+<li>broadband:有线电视</li>
+<li><ul>
+<li><strong>multiple channels</strong>  on cable</li>
+</ul>
+</li>
+<li><ul>
+<li>HFC<h4 id="Fiber-optic-cable-光纤（高速，不受电磁波干扰）"><a href="#Fiber-optic-cable-光纤（高速，不受电磁波干扰）" class="headerlink" title="Fiber optic cable:光纤（高速，不受电磁波干扰）"></a>Fiber optic cable:光纤（高速，不受电磁波干扰）</h4></li>
+</ul>
+</li>
+<li>glass fiber carrying light pulses, each pulse a bit</li>
+<li>high-speed operation:</li>
+<li><ul>
+<li>high-speed point-to-point transmission (e.g., 5 Gps)</li>
+</ul>
+</li>
+<li>low error rate: repeaters（用来放大信号） spaced far apart ; immune to electromagnetic noise<h4 id="Physical-media-radio"><a href="#Physical-media-radio" class="headerlink" title="Physical media: radio"></a>Physical media: radio</h4></li>
+<li>signal carried in electromagnetic spectrum</li>
+<li>no physical “wire”</li>
+<li>bidirectional</li>
+<li>propagation environment effects:</li>
+<li><ul>
+<li>reflection</li>
+</ul>
+</li>
+<li><ul>
+<li>obstruction by objects</li>
+</ul>
+</li>
+<li><ul>
+<li>interference<br>Radio link types:</li>
+</ul>
+</li>
+<li>terrestrial  microwave</li>
+<li>LAN (e.g., Wifi)</li>
+<li>wide-area (e.g., cellular)  3G,4G</li>
+<li>satellite</li>
+<li><ul>
+<li>delay 不方便互动（实时视频互动啥的）</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="Internet-structure-and-ISPs"><a href="#Internet-structure-and-ISPs" class="headerlink" title="Internet structure and ISPs"></a>Internet structure and ISPs</h2><blockquote>
+<p>Internet structure: network of networks<br>两台电脑相连，经过很多ISP转接</p>
+</blockquote>
+<h2 id="Dealy-amp-loss-in-packet-switched-networks"><a href="#Dealy-amp-loss-in-packet-switched-networks" class="headerlink" title="Dealy&amp;loss in packet-switched networks"></a>Dealy&amp;loss in packet-switched networks</h2><p><em>How do loss and delay occur</em></p>
+<blockquote>
+<p>packets queue in router buffers</p>
+<ul>
+<li>packet arrival rate to link exceeds output link capacity</li>
+<li>packets queue, wait for turn<img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/10.png?imageView2/2/w/600">
+</li>
+</ul>
+</blockquote>
+<p><em>4 sources of packet delay</em><br><img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/11.png?imageView2/2/w/600"></p>
+<blockquote>
+<ol>
+<li>nodal processing（收到packet先检查是否正确）</li>
+</ol>
+<ul>
+<li>check bit errors</li>
+<li>determine output link<br>2.queueing</li>
+<li>time waiting at output link for transmission</li>
+<li>depends on congestion level of router</li>
+</ul>
+<ol>
+<li>Transmission delay:</li>
+</ol>
+<ul>
+<li>R = link bandwidth(bps)（把资料送上link的速度）</li>
+<li>L = packet length(bits)</li>
+<li>time to sen bits into link = L/R</li>
+</ul>
+<ol>
+<li>Propagation delay</li>
+</ol>
+<ul>
+<li>d = length of physical link</li>
+<li>s = propagation speed in medium(~2x10的8次方 m/sec) （传递在link上的速度）</li>
+<li>propagation delay = d/s</li>
+</ul>
+</blockquote>
+<p>1st bit of packet can arrive at 2nd router before packet is fully transmitted at 1st router!</p>
+<img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/12.png?imageView2/2/w/600">
+<blockquote>
+<p>dproc = processing delay</p>
+<ul>
+<li>typically a few microsecs or less<br>dqueue = queuing delay</li>
+<li>depends on congestion<br>dtrans = transmission delay</li>
+<li>m= L/R, significant for low-speed links<br>dprop = propagation delay</li>
+<li>a few microsecs to hundreds of msecs</li>
+</ul>
+</blockquote>
+<h3 id="Queueing-delay-revisited"><a href="#Queueing-delay-revisited" class="headerlink" title="Queueing delay(revisited)"></a>Queueing delay(revisited)</h3><img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/13.png?imageView2/2/w/600">
+<blockquote>
+<ul>
+<li>(L · a)/R ~ 0: average queueing delay small</li>
+<li>(L · a)/R -&gt; 1: delays become large</li>
+<li>(L · a)/R &gt; 1: more “work” arriving than can be serviced, average delay infinite! (infinite queue length) –- or packet loss! (finite queue length)</li>
+</ul>
+</blockquote>
+<h3 id="“Real”Internet-delays-and-routes"><a href="#“Real”Internet-delays-and-routes" class="headerlink" title="“Real”Internet delays and routes"></a>“Real”Internet delays and routes</h3><ul>
+<li><strong>Traceroute program</strong>: provides delay measurement from source to router along end-end Internet path towards destination.</li>
+</ul>
+<h3 id="Packet-loss"><a href="#Packet-loss" class="headerlink" title="Packet loss"></a>Packet loss</h3><ul>
+<li>queue (also known as buffer) preceding link in buffer has finite capacity</li>
+<li>when packet arrives to full queue, packet is dropped (also known as lost)</li>
+<li>lost packet may be retransmitted by previous node, by source end system, or not retransmitted at all</li>
+</ul>
+<h2 id="Protocol-layers-service-models"><a href="#Protocol-layers-service-models" class="headerlink" title="Protocol layers, service models"></a>Protocol layers, service models</h2><h3 id="layers-each-layer-implements-a-service"><a href="#layers-each-layer-implements-a-service" class="headerlink" title="layers:each layer implements a service"></a><strong>layers</strong>:each layer implements a service</h3><p>每一个layer都是利用下层的service来实现某些功能，提供给上一层</p>
+<ul>
+<li>via its own internal-layer actions</li>
+<li>relying on services provided by layer <strong>below</strong><h3 id="Internet-protocol-stack"><a href="#Internet-protocol-stack" class="headerlink" title="Internet  protocol stack"></a>Internet  protocol stack</h3><img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/14.png?imageView2/2/w/600">
+<blockquote>
+<ul>
+<li><strong>application</strong>:supporting network applications</li>
+</ul>
+</blockquote>
+</li>
+<li><ul>
+<li>FTP, SMTP(mail), HTTP</li>
+</ul>
+</li>
+<li><strong>transport</strong>:host-host data transfer</li>
+<li><ul>
+<li>TCP（虽然网络不可靠，但要求提供给上层的服务是可靠的）, UDP</li>
+</ul>
+</li>
+<li><strong>network</strong>:routing of datagrams from source to destination（路径可能会经过很多点）（路径选择，将datagram送到destination, 可能会loss）</li>
+<li><ul>
+<li>IP, routing protocols</li>
+</ul>
+</li>
+<li><strong>link</strong>:data transfer between neighboring network elements（直接相连的两点，送两个连接的node，一边送到一边）</li>
+<li><ul>
+<li>PPP,Ethernet</li>
+</ul>
+</li>
+<li><strong>physical</strong>:bits “on the wire”</li>
+</ul>
+<p>router：3层（physical, link, network) 看IP<br>switch:2层(physical link) 看MAC<br><img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/15.png?imageView2/2/w/600"></p>
+<p>each layer:</p>
+<ul>
+<li>distributed “entities” implement layer functions at each node</li>
+<li>entities perform actions, exchange messages with peers<h3 id="layering-physical-communication"><a href="#layering-physical-communication" class="headerlink" title="layering:physical communication"></a>layering:physical communication</h3><img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/16.png?imageView2/2/w/600">
+<h4 id="Encapsulation"><a href="#Encapsulation" class="headerlink" title="Encapsulation"></a>Encapsulation</h4><img src="http://ok6lt61wr.bkt.clouddn.com/images/CN/CH1/17.png?imageView2/2/w/600">
+上一层交给你的东西，对下一层来说，都是data,下一层加上自己的header或（头和尾）<blockquote>
+<blockquote>
+<p>Hl:加MAC address（从哪来，到哪去）每经过一个link,更新一次<br>Hn:加IP address（从哪来，到哪去）source IP 和 destination IP都不能换</p>
+</blockquote>
+</blockquote>
+</li>
 </ul>
 
       
@@ -650,7 +910,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch1-Introduction"><span class="nav-number">1.</span> <span class="nav-text">Ch1-Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-the-Internet"><span class="nav-number">1.1.</span> <span class="nav-text">What is the Internet</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hosts"><span class="nav-number">1.1.1.</span> <span class="nav-text">hosts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#communication-links"><span class="nav-number">1.1.2.</span> <span class="nav-text">communication links</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#routers"><span class="nav-number">1.1.3.</span> <span class="nav-text">routers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#protocols"><span class="nav-number">1.1.4.</span> <span class="nav-text">protocols</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Intenet"><span class="nav-number">1.1.5.</span> <span class="nav-text">Intenet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-standards"><span class="nav-number">1.1.6.</span> <span class="nav-text">Internet standards</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#communication-infrastructure"><span class="nav-number">1.1.7.</span> <span class="nav-text">communication infrastructure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#communication-services-provided-to-applications"><span class="nav-number">1.1.8.</span> <span class="nav-text">communication services provided to applications</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-a-protocol"><span class="nav-number">1.2.</span> <span class="nav-text">What is a protocol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-edge"><span class="nav-number">1.3.</span> <span class="nav-text">Network edge</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#end-systems-hosts"><span class="nav-number">1.3.1.</span> <span class="nav-text">end systems(hosts)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#client-server-model"><span class="nav-number">1.3.2.</span> <span class="nav-text">client/server model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#peer-peer-model"><span class="nav-number">1.3.3.</span> <span class="nav-text">peer-peer model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#connection-oriented-service"><span class="nav-number">1.3.4.</span> <span class="nav-text">connection-oriented service</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#handshaking"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">handshaking</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP"><span class="nav-number">1.3.5.</span> <span class="nav-text">TCP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#reliable-in-order-byte-stream-data-transfer"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">reliable, in-order byte-stream data transfer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flow-control"><span class="nav-number">1.3.5.2.</span> <span class="nav-text">flow control</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#congestion-control"><span class="nav-number">1.3.5.3.</span> <span class="nav-text">congestion control</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#connectionless-service"><span class="nav-number">1.3.6.</span> <span class="nav-text">connectionless service</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UDP"><span class="nav-number">1.3.6.1.</span> <span class="nav-text">UDP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#App’s-using-TCP"><span class="nav-number">1.3.7.</span> <span class="nav-text">App’s using TCP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#App’s-using-UDP"><span class="nav-number">1.3.8.</span> <span class="nav-text">App’s using UDP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-core"><span class="nav-number">1.4.</span> <span class="nav-text">Network core</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#circuit-switching（电路交换）预分配-no-sharing"><span class="nav-number">1.4.1.</span> <span class="nav-text">circuit switching（电路交换）预分配 no sharing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pieces"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">pieces</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dividing-link-bandwidth-into-“pieces”time-division"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">dividing link bandwidth into “pieces”time division</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#FDMA"><span class="nav-number">1.4.1.2.1.</span> <span class="nav-text">FDMA</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TDMA"><span class="nav-number">1.4.1.2.2.</span> <span class="nav-text">TDMA</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#packet-switching-分组交换-按需-sharing"><span class="nav-number">1.4.2.</span> <span class="nav-text">packet switching(分组交换)按需 sharing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#packets"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">packets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#contention"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">contention</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Packet-Switching-vs-Circuit-Switching"><span class="nav-number">1.4.3.</span> <span class="nav-text">Packet Switching vs Circuit Switching</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Packet-Switching-Message-Segmenting"><span class="nav-number">1.4.4.</span> <span class="nav-text">Packet Switching:Message Segmenting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Now-Break-the-msgs-into-5000-packets"><span class="nav-number">1.5.</span> <span class="nav-text">Now,Break the msgs into 5000 packets</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Packet-switched-networks-forwarding"><span class="nav-number">1.5.1.</span> <span class="nav-text">Packet-switched networks:forwarding</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Goal"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">Goal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#datagram-network（类比于信）"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">datagram network（类比于信）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#virtual-circuit-network-人工的方式走固定的路线"><span class="nav-number">1.5.1.3.</span> <span class="nav-text">virtual circuit network(人工的方式走固定的路线)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-Taxonomy"><span class="nav-number">1.5.2.</span> <span class="nav-text">Network Taxonomy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-access-and-physical-media"><span class="nav-number">1.6.</span> <span class="nav-text">Network access and physical media</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Internet-structure-and-ISPs"><span class="nav-number">1.7.</span> <span class="nav-text">Internet structure and ISPs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dealy-amp-loss-in-packet-switched-networks"><span class="nav-number">1.8.</span> <span class="nav-text">Dealy&loss in packet-switched networks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Protocol-layers-service-models"><span class="nav-number">1.9.</span> <span class="nav-text">Protocol layers, service models</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">1.10.</span> <span class="nav-text">History</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-电路交换和分组交换"><span class="nav-number">1.11.</span> <span class="nav-text">3.电路交换和分组交换</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch1-Introduction"><span class="nav-number">1.</span> <span class="nav-text">Ch1-Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-the-Internet"><span class="nav-number">1.1.</span> <span class="nav-text">What is the Internet</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hosts"><span class="nav-number">1.1.1.</span> <span class="nav-text">hosts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#communication-links"><span class="nav-number">1.1.2.</span> <span class="nav-text">communication links</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#routers"><span class="nav-number">1.1.3.</span> <span class="nav-text">routers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#protocols"><span class="nav-number">1.1.4.</span> <span class="nav-text">protocols</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Intenet"><span class="nav-number">1.1.5.</span> <span class="nav-text">Intenet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-standards"><span class="nav-number">1.1.6.</span> <span class="nav-text">Internet standards</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#communication-infrastructure"><span class="nav-number">1.1.7.</span> <span class="nav-text">communication infrastructure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#communication-services-provided-to-applications"><span class="nav-number">1.1.8.</span> <span class="nav-text">communication services provided to applications</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-a-protocol"><span class="nav-number">1.2.</span> <span class="nav-text">What is a protocol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-edge"><span class="nav-number">1.3.</span> <span class="nav-text">Network edge</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#end-systems-hosts"><span class="nav-number">1.3.1.</span> <span class="nav-text">end systems(hosts)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#client-server-model"><span class="nav-number">1.3.2.</span> <span class="nav-text">client/server model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#peer-peer-model"><span class="nav-number">1.3.3.</span> <span class="nav-text">peer-peer model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#connection-oriented-service"><span class="nav-number">1.3.4.</span> <span class="nav-text">connection-oriented service</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#handshaking"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">handshaking</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP"><span class="nav-number">1.3.5.</span> <span class="nav-text">TCP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#reliable-in-order-byte-stream-data-transfer"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">reliable, in-order byte-stream data transfer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flow-control"><span class="nav-number">1.3.5.2.</span> <span class="nav-text">flow control</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#congestion-control"><span class="nav-number">1.3.5.3.</span> <span class="nav-text">congestion control</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#connectionless-service"><span class="nav-number">1.3.6.</span> <span class="nav-text">connectionless service</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UDP"><span class="nav-number">1.3.6.1.</span> <span class="nav-text">UDP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#App’s-using-TCP"><span class="nav-number">1.3.7.</span> <span class="nav-text">App’s using TCP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#App’s-using-UDP"><span class="nav-number">1.3.8.</span> <span class="nav-text">App’s using UDP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-core"><span class="nav-number">1.4.</span> <span class="nav-text">Network core</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#circuit-switching（电路交换）预分配-no-sharing"><span class="nav-number">1.4.1.</span> <span class="nav-text">circuit switching（电路交换）预分配 no sharing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pieces"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">pieces</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dividing-link-bandwidth-into-“pieces”time-division"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">dividing link bandwidth into “pieces”time division</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#FDMA"><span class="nav-number">1.4.1.2.1.</span> <span class="nav-text">FDMA</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TDMA"><span class="nav-number">1.4.1.2.2.</span> <span class="nav-text">TDMA</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#packet-switching-分组交换-按需-sharing"><span class="nav-number">1.4.2.</span> <span class="nav-text">packet switching(分组交换)按需 sharing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#packets"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">packets</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#contention"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">contention</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Packet-Switching-vs-Circuit-Switching"><span class="nav-number">1.4.3.</span> <span class="nav-text">Packet Switching vs Circuit Switching</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Packet-Switching-Message-Segmenting"><span class="nav-number">1.4.4.</span> <span class="nav-text">Packet Switching:Message Segmenting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Now-Break-the-msgs-into-5000-packets"><span class="nav-number">1.5.</span> <span class="nav-text">Now,Break the msgs into 5000 packets</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Packet-switched-networks-forwarding"><span class="nav-number">1.5.1.</span> <span class="nav-text">Packet-switched networks:forwarding</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Goal"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">Goal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#datagram-network（类比于信）"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">datagram network（类比于信）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#virtual-circuit-network-人工的方式走固定的路线"><span class="nav-number">1.5.1.3.</span> <span class="nav-text">virtual circuit network(人工的方式走固定的路线)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-Taxonomy"><span class="nav-number">1.5.2.</span> <span class="nav-text">Network Taxonomy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-access-and-physical-media"><span class="nav-number">1.6.</span> <span class="nav-text">Network access and physical media</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Access-networks-and-physical-media"><span class="nav-number">1.6.1.</span> <span class="nav-text">Access networks and physical media</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Residential-access-point-to-point-access"><span class="nav-number">1.6.2.</span> <span class="nav-text">Residential access: point to point access</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Dialup-via-modem"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">Dialup via modem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ADSL-asymmetric-digital-subscriber-line-对Frequency做分割"><span class="nav-number">1.6.2.2.</span> <span class="nav-text">ADSL(asymmetric digital subscriber line)  对Frequency做分割</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Residential-access-cable-modems"><span class="nav-number">1.6.3.</span> <span class="nav-text">Residential access: cable modems</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HFC-hybrid-fiber-coaxial-cable（混合式）"><span class="nav-number">1.6.3.1.</span> <span class="nav-text">HFC: hybrid fiber coaxial cable（混合式）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Company-access-local-area-networks-（区域网络，快很多）"><span class="nav-number">1.6.4.</span> <span class="nav-text">Company access: local area networks （区域网络，快很多）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wireless-access-networks"><span class="nav-number">1.6.5.</span> <span class="nav-text">Wireless access networks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Home-networks"><span class="nav-number">1.6.6.</span> <span class="nav-text">Home networks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Physical-Media"><span class="nav-number">1.6.7.</span> <span class="nav-text">Physical Media</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Twisted-Pair-TP-双绞线"><span class="nav-number">1.6.7.1.</span> <span class="nav-text">Twisted Pair (TP)  双绞线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Coaxial-cable-同轴电缆"><span class="nav-number">1.6.7.2.</span> <span class="nav-text">Coaxial cable:同轴电缆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fiber-optic-cable-光纤（高速，不受电磁波干扰）"><span class="nav-number">1.6.7.3.</span> <span class="nav-text">Fiber optic cable:光纤（高速，不受电磁波干扰）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Physical-media-radio"><span class="nav-number">1.6.7.4.</span> <span class="nav-text">Physical media: radio</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Internet-structure-and-ISPs"><span class="nav-number">1.7.</span> <span class="nav-text">Internet structure and ISPs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dealy-amp-loss-in-packet-switched-networks"><span class="nav-number">1.8.</span> <span class="nav-text">Dealy&loss in packet-switched networks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Queueing-delay-revisited"><span class="nav-number">1.8.1.</span> <span class="nav-text">Queueing delay(revisited)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“Real”Internet-delays-and-routes"><span class="nav-number">1.8.2.</span> <span class="nav-text">“Real”Internet delays and routes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Packet-loss"><span class="nav-number">1.8.3.</span> <span class="nav-text">Packet loss</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Protocol-layers-service-models"><span class="nav-number">1.9.</span> <span class="nav-text">Protocol layers, service models</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#layers-each-layer-implements-a-service"><span class="nav-number">1.9.1.</span> <span class="nav-text">layers:each layer implements a service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet-protocol-stack"><span class="nav-number">1.9.2.</span> <span class="nav-text">Internet  protocol stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#layering-physical-communication"><span class="nav-number">1.9.3.</span> <span class="nav-text">layering:physical communication</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Encapsulation"><span class="nav-number">1.9.3.1.</span> <span class="nav-text">Encapsulation</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
