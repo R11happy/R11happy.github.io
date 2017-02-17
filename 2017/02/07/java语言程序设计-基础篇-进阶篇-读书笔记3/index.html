@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="梅庄">
 <meta property="og:description" content="第8章和第9章读书小结">
 <meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/java/jnotes3/1.png?imageView2/2/w/600">
-<meta property="og:updated_time" content="2017-02-07T14:02:31.933Z">
+<meta property="og:updated_time" content="2017-02-17T16:52:12.831Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java语言程序设计-基础篇-进阶篇-读书笔记3">
 <meta name="twitter:description" content="第8章和第9章读书小结">
@@ -361,26 +361,26 @@
 <p>大多数基本类型的包装类的名称与对应的基本數据类型名称一样，第一个字母要大 写。Integer 和 Character 例外。 </p>
 </blockquote>
 <p>包装类都包含了doubleValue（）、floatValue（）, intValue()、longValue()、shortValue（） 和 byteValue()方法。这些方法将对象 “转换” 为基本类型值。 </p>
-<p>既可以用基本数据类型值也可以用表示数值的字符串来构造包装类。<br>例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">new Double(5.0)</div><div class="line">new Double(&apos;5.0&apos;)</div></pre></td></tr></table></figure></p>
+<p>既可以用基本数据类型值也可以用表示数值的字符串来构造包装类。<br>例如<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Double(<span class="number">5.0</span>)</div><div class="line"><span class="keyword">new</span> Double(<span class="string">'5.0'</span>)</div></pre></td></tr></table></figure></p>
 <p>包装类没有无参构造方法。所有包装类的实例都是不可变的，这意味着一旦创建对象后，它们 的内部值就不能再改变。</p>
 <ul>
 <li><strong>包装类都有常量MAX_VALUE和MIN_VALUE</strong></li>
 <li><p><strong>包装类都会包含方法<code>doubleValue()</code>、<code>floatValue()</code>、<code>intValue()</code>、<code>longValue()</code>和<code>shortValue()</code>。这些方法返回包装对象的<code>double</code>、<code>float</code>、<code>int</code>、<code>long</code>或<code>short</code>值</strong></p>
 <blockquote>
 <p>例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">new Doub1e(12.4).intValue() returns 12; </div><div class="line">new Integer(12).doubleValueC) returns 12.0;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Doub1e(<span class="number">12.4</span>).intValue() returns <span class="number">12</span>; </div><div class="line"><span class="keyword">new</span> Integer(<span class="number">12</span>).doubleValueC) returns <span class="number">12.0</span>;</div></pre></td></tr></table></figure>
 </blockquote>
 </li>
 <li><p><strong>包装类包含方法<code>compareTo</code>用于比较两个数值，<code>大于</code>、<code>等于</code>、<code>小于</code>分别返回1,0，-1</strong></p>
 <blockquote>
 <p>例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">new Doub1e(12.4).compareTo(new Doub1e(12.3)) returns 1; </div><div class="line">new Double(12.3).compareTo(new Doub1e(12.3)) returns 0; </div><div class="line">new Doub1e(12.3).compareToCnew 0ouble(12.51)) returns -1;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> Doub1e(<span class="number">12.4</span>).compareTo(<span class="keyword">new</span> Doub1e(<span class="number">12.3</span>)) returns <span class="number">1</span>; </div><div class="line"><span class="keyword">new</span> Double(<span class="number">12.3</span>).compareTo(<span class="keyword">new</span> Doub1e(<span class="number">12.3</span>)) returns <span class="number">0</span>; </div><div class="line"><span class="keyword">new</span> Doub1e(<span class="number">12.3</span>).compareToCnew <span class="number">0</span>ouble(<span class="number">12.51</span>)) returns -<span class="number">1</span>;</div></pre></td></tr></table></figure>
 </blockquote>
 </li>
 <li><p><strong>包装类有一个静态方法<code>valueOf(String s)</code> 该方法创建一个新对象，并将它初始化为指定字符串表示的值</strong></p>
 <blockquote>
 <p>比如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Double doubleObject-Double.valueOf(&quot;12.4&quot;) ; </div><div class="line">Integer integerObject = Integer.valueOf( &quot;12&quot;)</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Double doubleObject-Double.valueOf(<span class="string">"12.4"</span>) ; </div><div class="line">Integer integerObject = Integer.valueOf( <span class="string">"12"</span>)</div></pre></td></tr></table></figure>
 </blockquote>
 </li>
 <li><p><strong>包装类都有两个重载的方法，将数值字符换转换为正确的以10（十进制）或<code>指定值</code>为<code>基数</code>的数值</strong></p>
@@ -390,7 +390,7 @@
 <blockquote>
 <p>例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Integer.parselnt（&quot;ll&quot;, 2)returns 3; </div><div class="line">Integer.parselnt( &quot;12&quot;, 8)returns 10; </div><div class="line">Integer.parselnt(&quot;13&quot;，10)returns 13; </div><div class="line">Integer.parselnt( &quot;1A&quot;，16)returns 26;</div></pre></td></tr></table></figure></p>
 </blockquote>
-<p>注意，可以用<code>format</code>方法将一个十进制数转换为十六进制数<br>例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String.format(&quot;\x&quot;, 26)returns 1A;</div></pre></td></tr></table></figure></p>
+<p>注意，可以用<code>format</code>方法将一个十进制数转换为十六进制数<br>例如<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String.format(<span class="string">"\x"</span>, <span class="number">26</span>)returns <span class="number">1</span>A;</div></pre></td></tr></table></figure></p>
 <h2 id="BigInteger和BigDecimal类"><a href="#BigInteger和BigDecimal类" class="headerlink" title="BigInteger和BigDecimal类"></a>BigInteger和BigDecimal类</h2><blockquote>
 <p>BigInteger类和BigDecimal类可以用于表示任意大小和精度的整数或者十进制数</p>
 </blockquote>
@@ -399,58 +399,54 @@
 <li><strong>不可变</strong></li>
 <li><p><strong>构造方法</strong></p>
 <blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">new BigInteger(String)</div><div class="line">new BigDecimal(String)</div></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li><p><strong>使用<code>add</code>,<code>substract</code>,<code>multiple</code>,<code>divide</code>和<code>remainder</code>方法完成算数运算</strong></p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">BigInteger a = new BigInteger(&quot;9223372036854775807&quot;);</div><div class="line">BigInteger b = new BigInteger(&quot;2&quot;);</div><div class="line">BigInteger c = a.multiply(b); // 9223372036854775807 * 2</div><div class="line">System.out.println(c);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">new BigInteger(String)</div><div class="line">new BigDecimal(String)</div><div class="line"></div><div class="line">- **使用`add`,`substract`,`multiple`,`divide`和`remainder`方法完成算数运算**</div><div class="line">&gt;</div><div class="line">```java</div><div class="line">BigInteger a = new BigInteger(&quot;9223372036854775807&quot;);</div><div class="line">BigInteger b = new BigInteger(&quot;2&quot;);</div><div class="line">BigInteger c = a.multiply(b); // 9223372036854775807 * 2</div><div class="line">System.out.println(c);</div></pre></td></tr></table></figure>
 </blockquote>
 </li>
 <li><p><strong><code>BigDecimal</code>对象指定<code>尺度</code>和<code>舎入方式</code></strong></p>
 <blockquote>
 <p>对 BigDecimal 对象的精度没有限制。如果结果不能终止，那么divide 方法会抛出 ArithmeticException 异常。但是，可以使用重载的<code>divide(BigDecimal d.int scale, int roundingMode)</code>方法来指定尺度和舍入方式来避免这个异常<br>例如创建两个<code>尺度</code>为20，<code>舎入方式</code>为<code>BigDecimal.ROUND_UP</code>的BigDecimal对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">BigDecimal a = new BigDecimal(1.0); </div><div class="line">BigDecimal b = new BigDecimal(3);</div><div class="line">BigDecimal c = a.divide(b, 20, BigDecimal.ROUNDJJP); </div><div class="line">System.out.println(c);</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">BigDecimal a = <span class="keyword">new</span> BigDecimal(<span class="number">1.0</span>); </div><div class="line">BigDecimal b = <span class="keyword">new</span> BigDecimal(<span class="number">3</span>);</div><div class="line">BigDecimal c = a.divide(b, <span class="number">20</span>, BigDecimal.ROUNDJJP); </div><div class="line">System.out.println(c);</div></pre></td></tr></table></figure>
 </blockquote>
 </li>
 </ul>
 <p>输出为<code>0.33333333333333333334</code></p>
 <ul>
-<li><strong>返回任意整数阶乘的方法</strong><br>一个整数的阶乘可能会非常大，下面方法返回任意整数阶乘<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public static BigInteger factorial(long n)</div><div class="line">&#123;</div><div class="line">    BigInteger res = BigInteger.ONE; //和new Biglnteger(&quot;1&quot;) 一样</div><div class="line">    for(int i = 0; i &lt; n; i++)  </div><div class="line">    &#123;</div><div class="line">        res = res.multiply(new BigInteger(i + &quot;&quot;));</div><div class="line">    &#125;</div><div class="line">    return res;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li><strong>返回任意整数阶乘的方法</strong><br>一个整数的阶乘可能会非常大，下面方法返回任意整数阶乘<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> BigInteger <span class="title">factorial</span><span class="params">(<span class="keyword">long</span> n)</span></span></div><div class="line">&#123;</div><div class="line">    BigInteger res = BigInteger.ONE; <span class="comment">//和new Biglnteger("1") 一样</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)  </div><div class="line">    &#123;</div><div class="line">        res = res.multiply(<span class="keyword">new</span> BigInteger(i + <span class="string">""</span>));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> res;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h2><blockquote>
 <p>String对象是不可改变的。字符串一旦创建，内容不能再改变</p>
 </blockquote>
-<p>因为字符串在程序设计中是不可变的，但同时又会频繁地使用，所以Java虚拟机为了提高效率并节约内存，对具有相同字符序列的字符串直接量使用同一个实例。这样的实例成为interned字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">String s1 = &quot;Welcome to Java&quot;;</div><div class="line">String s2 = new String(&quot;Welcome to Java&quot;);</div><div class="line">String s3 = &quot;Welcome to Java&quot;;</div></pre></td></tr></table></figure></p>
+<p>因为字符串在程序设计中是不可变的，但同时又会频繁地使用，所以Java虚拟机为了提高效率并节约内存，对具有相同字符序列的字符串直接量使用同一个实例。这样的实例成为interned字符串。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">String s1 = <span class="string">"Welcome to Java"</span>;</div><div class="line">String s2 = <span class="keyword">new</span> String(<span class="string">"Welcome to Java"</span>);</div><div class="line">String s3 = <span class="string">"Welcome to Java"</span>;</div></pre></td></tr></table></figure></p>
 <p>这里s1 == s2(false), s1 == s3(true)</p>
 <h3 id="字符串的替换和分隔"><a href="#字符串的替换和分隔" class="headerlink" title="字符串的替换和分隔"></a>字符串的替换和分隔</h3><ul>
-<li><strong>替换</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//用replacement替换所有的target，两个参数都是字符串。</div><div class="line">replace(CharSequence target, CharSequence replacement)</div><div class="line">//用replacement替换所有的regex匹配项，regex很明显是个正则表达式，replacement是字符串。</div><div class="line">replaceAll(String regex, String replacement)</div><div class="line">//基本和replaceAll相同，区别是只替换第一个匹配项。</div><div class="line">replaceFirst(String regex, String replacement)</div></pre></td></tr></table></figure>
+<li><strong>替换</strong><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//用replacement替换所有的target，两个参数都是字符串。</span></div><div class="line">replace(CharSequence target, CharSequence replacement)</div><div class="line"><span class="comment">//用replacement替换所有的regex匹配项，regex很明显是个正则表达式，replacement是字符串。</span></div><div class="line">replaceAll(String regex, String replacement)</div><div class="line"><span class="comment">//基本和replaceAll相同，区别是只替换第一个匹配项。</span></div><div class="line">replaceFirst(String regex, String replacement)</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
-<p>原则，当字符串无法确定是否具有转义字符时，而且也不需要转义时，建议使用replace函数<br>否则，使用replaceAll函数<br>举例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">System.out.println(&quot;abac&quot;.replace(&quot;a&quot;, &quot;\\a&quot;)); //\ab\ac</div><div class="line">System.out.println(&quot;abac&quot;.replaceAll(&quot;a&quot;, &quot;\\a&quot;)); //abac</div><div class="line">System.out.println(&quot;abac&quot;.replaceFirst(&quot;a&quot;, &quot;\\a&quot;)); //abac</div></pre></td></tr></table></figure></p>
+<p>原则，当字符串无法确定是否具有转义字符时，而且也不需要转义时，建议使用replace函数<br>否则，使用replaceAll函数<br>举例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">System.out.println(<span class="string">"abac"</span>.replace(<span class="string">"a"</span>, <span class="string">"\\a"</span>)); <span class="comment">//\ab\ac</span></div><div class="line">System.out.println(<span class="string">"abac"</span>.replaceAll(<span class="string">"a"</span>, <span class="string">"\\a"</span>)); <span class="comment">//abac</span></div><div class="line">System.out.println(<span class="string">"abac"</span>.replaceFirst(<span class="string">"a"</span>, <span class="string">"\\a"</span>)); <span class="comment">//abac</span></div></pre></td></tr></table></figure></p>
 </blockquote>
 <ul>
-<li><strong>分隔</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">String[] tokens = &quot;Java#HTML#Perl&quot;.split(&quot;#&quot;)</div><div class="line">for(int i = 0; i&lt;tokens.length; i++)</div><div class="line">    System.out.println(tokens[i]+&quot; &quot;);</div></pre></td></tr></table></figure>
+<li><strong>分隔</strong><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">String[] tokens = <span class="string">"Java#HTML#Perl"</span>.split(<span class="string">"#"</span>)</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;tokens.length; i++)</div><div class="line">    System.out.println(tokens[i]+<span class="string">" "</span>);</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>输出：<code>Java HTML Perl</code></p>
-<h3 id="匹配matches"><a href="#匹配matches" class="headerlink" title="匹配matches"></a>匹配matches</h3><p>以<code>正则表达式</code>的形式进行字符串匹配<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;java is fun&quot;.matches(&quot;java.*)  return tue</div></pre></td></tr></table></figure></p>
-<h3 id="字符串与数组之间的转换"><a href="#字符串与数组之间的转换" class="headerlink" title="字符串与数组之间的转换"></a>字符串与数组之间的转换</h3><h4 id="字符串-gt-字符数组"><a href="#字符串-gt-字符数组" class="headerlink" title="字符串-&gt;字符数组"></a>字符串-&gt;字符数组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">char[] chars = &quot;java&quot;.toCharArray();</div></pre></td></tr></table></figure>
-<p>还可以使用<code>getChars(int srcBegin.int srcEnd,char[]dst,int dstBegin）</code>将下标从srcBegin到srcEnd-1的子串复制到字符数组dst中下标从dstBegin开始的位置。<br>例如， 下面的代码将字符串”CS3720”中下标从 2 到 6-1的子串”3720”复制到字符数组 dst 中下标 从 4 开始的位置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">char[] dst = &#123;&apos;J&apos;，&apos;A&apos;, &apos;V&apos; , &apos;A&apos;, &apos;1&apos; , &apos;3’， &apos;0&apos;, &apos;1&apos;&#125;;</div><div class="line">&quot;CS3720&quot;.getChars(2, 6, dst, 4);</div></pre></td></tr></table></figure></p>
+<h3 id="匹配matches"><a href="#匹配matches" class="headerlink" title="匹配matches"></a>匹配matches</h3><p>以<code>正则表达式</code>的形式进行字符串匹配</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"java is fun"</span>.matches(<span class="string">"java.*"</span>)  <span class="keyword">return</span> tue</div></pre></td></tr></table></figure>
+<h3 id="字符串与数组之间的转换"><a href="#字符串与数组之间的转换" class="headerlink" title="字符串与数组之间的转换"></a>字符串与数组之间的转换</h3><h4 id="字符串-gt-字符数组"><a href="#字符串-gt-字符数组" class="headerlink" title="字符串-&gt;字符数组"></a>字符串-&gt;字符数组</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span>[] chars = <span class="string">"java"</span>.toCharArray();</div></pre></td></tr></table></figure>
+<p>还可以使用<code>getChars(int srcBegin.int srcEnd,char[]dst,int dstBegin）</code>将下标从srcBegin到srcEnd-1的子串复制到字符数组dst中下标从dstBegin开始的位置。<br>例如， 下面的代码将字符串”CS3720”中下标从 2 到 6-1的子串”3720”复制到字符数组 dst 中下标 从 4 开始的位置：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">char</span>[] dst = &#123;<span class="string">'J'</span>，<span class="string">'A'</span>, <span class="string">'V'</span> , <span class="string">'A'</span>, <span class="string">'1'</span> , <span class="string">'3'</span>， <span class="string">'0'</span>, <span class="string">'1'</span>&#125;;</div><div class="line"><span class="string">"CS3720"</span>.getChars(<span class="number">2</span>, <span class="number">6</span>, dst, <span class="number">4</span>);</div></pre></td></tr></table></figure></p>
 <p>这样，dst 就变成了<code>&#39;{&#39;J&#39;,&#39;A&#39;,&#39;V&#39;,&#39;A&#39;,&#39;3&#39;,&#39;7&#39;,&#39;2&#39;,&#39;0&#39;}</code></p>
 <h4 id="字符数组-gt-字符串valueOf-char"><a href="#字符数组-gt-字符串valueOf-char" class="headerlink" title="字符数组-&gt;字符串valueOf(char[])"></a>字符数组-&gt;字符串<code>valueOf(char[])</code></h4><ul>
 <li>例如，下面的语句使用String 构造方法由一个数组构造一个字符串： <code>String str = new String(new char[]{&#39;J&#39;, &#39;a&#39; , &#39;v&#39;,&#39;a&#39;});</code></li>
 <li>下面的语句使用 valueOf方法由一个数组构造一个字符串： <code>String str = String.valueOf(new char[]{&#39;J&#39;, &#39;a&#39;, &#39;v&#39;, &#39;a&#39;});</code><h4 id="字符和数值-gt-字符串"><a href="#字符和数值-gt-字符串" class="headerlink" title="字符和数值-&gt;字符串"></a>字符和数值-&gt;字符串</h4><img src="http://ok6lt61wr.bkt.clouddn.com/images/java/jnotes3/1.png?imageView2/2/w/600">
 <blockquote>
 <p>例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String.valueOf(5.44)</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String.valueOf(<span class="number">5.44</span>)</div></pre></td></tr></table></figure>
 </blockquote>
 </li>
 </ul>
 <p>返回值是‘5’、‘.’、‘4’和‘4’构成的字符串</p>
-<h3 id="格式化字符串format"><a href="#格式化字符串format" class="headerlink" title="格式化字符串format"></a>格式化字符串<code>format</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String.format(format, iteml, item2 itemfc)</div></pre></td></tr></table></figure>
+<h3 id="格式化字符串format"><a href="#格式化字符串format" class="headerlink" title="格式化字符串format"></a>格式化字符串<code>format</code></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String.format(format, iteml, item2 itemfc)</div></pre></td></tr></table></figure>
 <h2 id="StringBuilder和StringBuffer类"><a href="#StringBuilder和StringBuffer类" class="headerlink" title="StringBuilder和StringBuffer类"></a>StringBuilder和StringBuffer类</h2><blockquote>
 <p>StringBuilder 和 StringBuffer 类似于 String 类，区别在于 String 类是不可 改变的。<br>可以给一个StringBuilder 或 StringBuffer 中添加、插入或追加新的内容，但是 String 对象一旦创建，它的值就确定了</p>
 </blockquote>
@@ -458,31 +454,23 @@
 <li><code>多任务</code>并发访问——<code>StrigBuffer</code></li>
 <li><p><code>单任务</code>访问——<code>StringBuilder</code></p>
 </li>
-<li><p>添加<code>append</code></p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">stringBuilder.append(&quot;Welcome&quot;);</div></pre></td></tr></table></figure>
-</blockquote>
+<li><p>添加<code>append</code><br>&gt;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">stringBuilder.append(<span class="string">"Welcome"</span>);</div></pre></td></tr></table></figure>
 </li>
-<li><p>插入<code>insert</code></p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">StringBuilder.insert(11, &quot;HTML and &quot;);</div></pre></td></tr></table></figure>
-</blockquote>
+<li><p>插入<code>insert</code><br>&gt;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">StringBuilder.insert(<span class="number">11</span>, <span class="string">"HTML and "</span>);</div></pre></td></tr></table></figure>
 </li>
-<li><p>删除<code>delete</code>,<code>deleteAt</code></p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">StringBuilder StringBuilder = new StringBuilder(&quot;Welcome to Java&quot;);</div><div class="line">stringBui1der.delete(8,11); //将构建器变为 Welcome ]ava。 stringBuilder.deleteCharAt(8) //将构建器变为 Welcome o ]ava。</div></pre></td></tr></table></figure>
-</blockquote>
+<li><p>删除<code>delete</code>,<code>deleteAt</code><br>&gt;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">StringBuilder StringBuilder = <span class="keyword">new</span> StringBuilder(<span class="string">"Welcome to Java"</span>);</div><div class="line">stringBui1der.delete(<span class="number">8</span>,<span class="number">11</span>); <span class="comment">//将构建器变为 Welcome ]ava。 stringBuilder.deleteCharAt(8) //将构建器变为 Welcome o ]ava。</span></div></pre></td></tr></table></figure>
 </li>
-<li><p>修改<code>replace</code>,<code>setCharAt</code></p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">stringBuilder.replace(11,15,&quot;HTML&quot;);</div><div class="line">stringBuilder.setCharAt(0, &apos;w&apos;);</div></pre></td></tr></table></figure>
-</blockquote>
+<li><p>修改<code>replace</code>,<code>setCharAt</code><br>&gt;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">stringBuilder.replace(<span class="number">11</span>,<span class="number">15</span>,<span class="string">"HTML"</span>);</div><div class="line">stringBuilder.setCharAt(<span class="number">0</span>, <span class="string">'w'</span>);</div></pre></td></tr></table></figure>
 </li>
 <li><p>逆序<code>reverse</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">stringBuilder.reverse();</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">stringBuilder.reverse();</div></pre></td></tr></table></figure>
 </li>
 <li><p><code>toString</code><br>Write an expression that returns a string from a StringBuilder object sb.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sb.toString()</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sb.toString()</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
