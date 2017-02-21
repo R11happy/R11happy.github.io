@@ -1,0 +1,1245 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="计算机网络," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="《计算机网络-自顶向下方法》第二章学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络-自顶向下方法【二】">
+<meta property="og:url" content="http://yoursite.com/2017/02/21/计算机网络-自顶向下方法【二】/index.html">
+<meta property="og:site_name" content="梅庄">
+<meta property="og:description" content="《计算机网络-自顶向下方法》第二章学习笔记">
+<meta property="og:image" content="http://yoursite.com/index_files/15324109.png">
+<meta property="og:image" content="http://yoursite.com/index_files/15573328.png">
+<meta property="og:image" content="http://yoursite.com/index_files/16970171.png">
+<meta property="og:image" content="http://yoursite.com/index_files/18974718.png">
+<meta property="og:image" content="http://yoursite.com/index_files/2614796.png">
+<meta property="og:image" content="http://yoursite.com/index_files/4101359.png">
+<meta property="og:image" content="http://yoursite.com/index_files/4114734.png">
+<meta property="og:image" content="http://yoursite.com/index_files/4518078.png">
+<meta property="og:image" content="http://yoursite.com/index_files/11517609.png">
+<meta property="og:image" content="http://yoursite.com/index_files/11378765.png">
+<meta property="og:image" content="http://yoursite.com/index_files/12091468.png">
+<meta property="og:image" content="http://yoursite.com/index_files/12715046.png">
+<meta property="og:image" content="http://yoursite.com/index_files/13544328.png">
+<meta property="og:image" content="http://yoursite.com/index_files/14047359.png">
+<meta property="og:image" content="http://yoursite.com/index_files/14625687.png">
+<meta property="og:image" content="http://yoursite.com/index_files/14710281.png">
+<meta property="og:image" content="http://yoursite.com/index_files/14802625.png">
+<meta property="og:image" content="http://yoursite.com/index_files/15162906.png">
+<meta property="og:image" content="http://yoursite.com/index_files/16684234.png">
+<meta property="og:image" content="http://yoursite.com/index_files/16842187.png">
+<meta property="og:image" content="http://yoursite.com/index_files/17561593.png">
+<meta property="og:image" content="http://yoursite.com/index_files/17931250.png">
+<meta property="og:image" content="http://yoursite.com/index_files/6567812.png">
+<meta property="og:image" content="http://yoursite.com/index_files/37778531.png">
+<meta property="og:updated_time" content="2017-02-21T15:59:32.177Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络-自顶向下方法【二】">
+<meta name="twitter:description" content="《计算机网络-自顶向下方法》第二章学习笔记">
+<meta name="twitter:image" content="http://yoursite.com/index_files/15324109.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/21/计算机网络-自顶向下方法【二】/"/>
+
+
+
+
+
+  <title> 计算机网络-自顶向下方法【二】 | 梅庄 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">梅庄</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">华山派小虾米的修行场所</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/21/计算机网络-自顶向下方法【二】/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="R11happy">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="http://ok6lt61wr.bkt.clouddn.com/R11happy.JPG">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="梅庄">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="梅庄" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                计算机网络-自顶向下方法【二】
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-21T23:57:46+08:00">
+                2017-02-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2017寒假充电/" itemprop="url" rel="index">
+                    <span itemprop="name">2017寒假充电</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+              <div class="post-description">
+                  《计算机网络-自顶向下方法》第二章学习笔记
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Chapter-2-Application-layer"><a href="#Chapter-2-Application-layer" class="headerlink" title="Chapter 2:Application layer"></a>Chapter 2:Application layer</h1><h2 id="2-1-Principles-of-network-applications"><a href="#2-1-Principles-of-network-applications" class="headerlink" title="2.1 Principles of network applications"></a>2.1 Principles of network applications</h2><h3 id="Application-architecture"><a href="#Application-architecture" class="headerlink" title="Application architecture"></a>Application architecture</h3><h4 id="Client-server"><a href="#Client-server" class="headerlink" title="Client-server"></a>Client-server</h4><p><img src="index_files/15324109.png" alt=""></p>
+<blockquote>
+<ul>
+<li>server</li>
+<li><ul>
+<li>always-on host</li>
+</ul>
+</li>
+<li><ul>
+<li>permanent IP address</li>
+</ul>
+</li>
+<li>clients</li>
+<li><ul>
+<li>communicate with server</li>
+</ul>
+</li>
+<li><ul>
+<li>may be intermittently connected</li>
+</ul>
+</li>
+<li><ul>
+<li>may have dynamic IP address</li>
+</ul>
+</li>
+<li><ul>
+<li>do not communicate directly with each other</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h4 id="Pure-P2P-architecture"><a href="#Pure-P2P-architecture" class="headerlink" title="Pure P2P architecture"></a>Pure P2P architecture</h4><p><em>每一个P 既是Client又是Server</em><br><img src="index_files/15573328.png" alt=""></p>
+<blockquote>
+<ul>
+<li>no always on server</li>
+<li>arbitrary end systems directly and change IP address</li>
+<li>example: Gnutella</li>
+<li>Highly scalable（可扩展）</li>
+<li>But difficult to manage</li>
+</ul>
+</blockquote>
+<h4 id="Hybrid-of-client-server-and-P2P"><a href="#Hybrid-of-client-server-and-P2P" class="headerlink" title="Hybrid of client-server and P2P"></a>Hybrid of client-server and P2P</h4><p>有一个server matain file在谁手上，然后与对应peers通信，但传file不经过server</p>
+<blockquote>
+<ul>
+<li>Napster</li>
+<li><ul>
+<li>File transfer P2P</li>
+</ul>
+</li>
+<li><ul>
+<li>File search centralized</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>Peers register content at central server</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>Peers query same central server to locate content</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Instant messaging</li>
+<li><ul>
+<li>Chatting between two users is P2P(不经过server转送)</li>
+</ul>
+</li>
+<li><ul>
+<li>Presence detection/location centralized:</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>User registers its IP address with central server when it comes online</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>User contacts central server to find IP addresses of buddies(伙伴)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="Processes-communicating"><a href="#Processes-communicating" class="headerlink" title="Processes communicating"></a>Processes communicating</h3><ul>
+<li>within <strong>same host</strong>, two processes communicate using  inter-process communication (defined by OS).</li>
+<li>processes in <strong>different</strong> hosts communicate by <strong>exchanging messages</strong><br><strong>Client process</strong>: process that initiates communication<br><strong>Server process</strong>: process that waits to be contacted<br><em>applications with P2P architectures have client processes &amp; server processes</em><h3 id="Processes-communicating-across-network"><a href="#Processes-communicating-across-network" class="headerlink" title="Processes communicating across network"></a>Processes communicating across network</h3><img src="index_files/16970171.png" alt=""></li>
+<li>process sends/receives messages to/from its <strong>socket</strong></li>
+<li><code>socket</code>可以类比于<code>door</code></li>
+<li><ul>
+<li>sending process shoves message out door</li>
+</ul>
+</li>
+<li><ul>
+<li>sending process relies on  transport infrastructure on other side of door which brings message to socket at receiving process</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>API:<br>(1) choice of transport protocol; （TCP/UDP）<br>(2) ability to fix a few parameters (lots more on this later)</p>
+</blockquote>
+<h3 id="Addressing-processes"><a href="#Addressing-processes" class="headerlink" title="Addressing processes"></a>Addressing processes</h3><p>1.找到电脑（靠<code>IP</code>）<br>2.找到电脑对应的process(靠<code>端口号</code> port numbers)</p>
+<ul>
+<li>For a process to receive messages, it must have an identifier</li>
+<li>Every host has a unique 32-bit IP address<blockquote>
+<ul>
+<li><em>does the IP address of the host on which the  process runs suffice for identifying the process?</em><br>No, many processes can be running on same host</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>Example port numbers:</li>
+<li><ul>
+<li>HTTP server: 80</li>
+</ul>
+</li>
+<li><ul>
+<li>Mail server: 25</li>
+</ul>
+</li>
+<li><ul>
+<li>File server: 20, 21</li>
+</ul>
+</li>
+<li><ul>
+<li>DNS：53<br>端口号1000以下的已经被占用</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="App-layer-protocol-defines"><a href="#App-layer-protocol-defines" class="headerlink" title="App-layer protocol defines"></a>App-layer protocol defines</h3><ul>
+<li>Types of messages exchanged, eg, request &amp; response messages</li>
+<li>Syntax of message types: what fields in messages &amp; how fields are delineated</li>
+<li>Semantics of the fields, ie, meaning of information in fields</li>
+<li>Rules for when and how processes send &amp; respond to messages<br><strong>Public-domain protocols</strong></li>
+<li>defined in RFCs</li>
+<li>allows for interoperability</li>
+<li>eg, HTTP, SMTP<br><strong>Proprietary protpcols</strong>（不公开的）</li>
+<li>eg. KaZaA</li>
+</ul>
+<h3 id="What-transport-service-does-an-app-need"><a href="#What-transport-service-does-an-app-need" class="headerlink" title="What transport service does an app need?"></a>What transport service does an app need?</h3><h4 id="Data-loss"><a href="#Data-loss" class="headerlink" title="Data loss"></a>Data loss</h4><ul>
+<li>some apps (e.g., audio) can tolerate some loss</li>
+<li>other apps (e.g., file transfer, telnet) require 100% reliable data transfer<h4 id="Timing（时效性）"><a href="#Timing（时效性）" class="headerlink" title="Timing（时效性）"></a>Timing（时效性）</h4></li>
+<li>some apps (e.g., Internet telephony, interactive games) require low delay to be “effective”<h4 id="Bandwidth"><a href="#Bandwidth" class="headerlink" title="Bandwidth"></a>Bandwidth</h4></li>
+<li>some apps (e.g., multimedia) require minimum amount of bandwidth to be “effective”</li>
+<li>other apps (“elastic apps”) make use of whatever bandwidth they get<h3 id="Transport-service-requirements-of-common-apps"><a href="#Transport-service-requirements-of-common-apps" class="headerlink" title="Transport service requirements of common apps"></a>Transport service requirements of common apps</h3><img src="index_files/18974718.png" alt=""><h4 id="TCP-service"><a href="#TCP-service" class="headerlink" title="TCP service"></a>TCP service</h4></li>
+<li>connection-oriented: setup required between client and server processes</li>
+<li>reliable transport between sending and receiving process</li>
+<li>flow control: sender won’t overwhelm receiver</li>
+<li>congestion control: throttle sender when network overloaded</li>
+<li>does not providing: timing, minimum bandwidth guarantees<h4 id="UDP-service"><a href="#UDP-service" class="headerlink" title="UDP service"></a>UDP service</h4>比如query常用</li>
+<li>unreliable data transfer between sending and receiving process</li>
+<li>does not provide: connection setup, reliability, flow control, congestion control, timing, or bandwidth guarantee<br><img src="index_files/2614796.png" alt=""><h2 id="2-2-Web-and-HTTP"><a href="#2-2-Web-and-HTTP" class="headerlink" title="2.2 Web and HTTP"></a>2.2 Web and HTTP</h2><h3 id="First-some-jargon（专业术语）"><a href="#First-some-jargon（专业术语）" class="headerlink" title="First some jargon（专业术语）"></a>First some jargon（专业术语）</h3></li>
+<li>Web page consists of objects</li>
+<li>An object is a file such as an HTML file, a JPEG image, a Java applet, an audio file,…</li>
+<li>A Web page consists of a base HTML-file and several referenced objects</li>
+<li>The base HTML file references the other objects in the page with the object’s URLs (Uniform Resource Locators)<h3 id="HTTP-overview"><a href="#HTTP-overview" class="headerlink" title="HTTP overview"></a>HTTP overview</h3><h4 id="HTTP-hypertext-transfer-protocol"><a href="#HTTP-hypertext-transfer-protocol" class="headerlink" title="HTTP: hypertext transfer protocol"></a>HTTP: hypertext transfer protocol</h4></li>
+<li>Web’s application layer protocol</li>
+<li>client/server model</li>
+<li><ul>
+<li>client: browser that requests, receives, “displays” Web objects</li>
+</ul>
+</li>
+<li><ul>
+<li>server: Web server sends objects in response to requests</li>
+</ul>
+</li>
+<li>HTTP 1.0: RFC 1945</li>
+<li>HTTP 1.1: RFC 2616<h4 id="Uses-TCP"><a href="#Uses-TCP" class="headerlink" title="Uses TCP"></a>Uses TCP</h4></li>
+<li>client initiates TCP connection(creaates socket) to server, port 80</li>
+<li>server accepts TCP connection from client</li>
+<li>HTTP messages (application-layer protocol messages) exchanged between browser (HTTP client) and Web server (HTTP server)</li>
+<li>TCP connection closed<h4 id="HTTP-is-“stateless”-不记录之前的状态"><a href="#HTTP-is-“stateless”-不记录之前的状态" class="headerlink" title="HTTP is “stateless”(不记录之前的状态)"></a>HTTP is “stateless”(不记录之前的状态)</h4></li>
+<li>server maintains no information past client requests<h3 id="HTTP-connections"><a href="#HTTP-connections" class="headerlink" title="HTTP connections"></a>HTTP connections</h3><h4 id="Nonpersistent-HTTP"><a href="#Nonpersistent-HTTP" class="headerlink" title="Nonpersistent HTTP"></a>Nonpersistent HTTP</h4>每抓一个object都建一个连线</li>
+<li>At most one object is sent over a TCP connection.</li>
+<li>HTTP/1.0<br><img src="index_files/4101359.png" alt=""><br><img src="index_files/4114734.png" alt=""><h5 id="Response-timie-modeling"><a href="#Response-timie-modeling" class="headerlink" title="Response timie modeling"></a><strong>Response timie modeling</strong></h5><code>total = 2RTT+transmit time</code></li>
+<li>one RTT to initiate TCP connection</li>
+<li>one RTT for HTTP request and first few bytes of HTTP response to return</li>
+<li>file transmission time<blockquote>
+<p>Definition of RTT: time to send a small packet to travel from client to server and back.</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="index_files/4518078.png" alt=""></p>
+<h4 id="Persistent-HTTP"><a href="#Persistent-HTTP" class="headerlink" title="Persistent HTTP"></a>Persistent HTTP</h4><p>每建一个连线，可以抓多个object</p>
+<ul>
+<li>Multiple objects can be sent over single TCP connection between client and server.</li>
+<li>A new connection need not be set up for the transfer of each Web object</li>
+<li>HTTP/1.1</li>
+</ul>
+<blockquote>
+<p>Nonpersistent HTTP issues</p>
+<ul>
+<li><strong>requires 2 RTTs per object</strong></li>
+<li>OS must work and allocate host resources for each TCP connection</li>
+<li>but browsers often open parallel TCP connections to fetch referenced objects<br><code>Persistent HTTP</code><br>server leaves connection open after sending response<br>subsequent HTTP messages  between same client/server are sent over connection</li>
+</ul>
+</blockquote>
+<h5 id="Persistent-without-pipelining"><a href="#Persistent-without-pipelining" class="headerlink" title="Persistent without pipelining"></a>Persistent without pipelining</h5><ul>
+<li>client issues new request only when previous response has been received</li>
+<li><strong>one RTT for each referenced object</strong><h5 id="Persistent-with-pipelining（并行）"><a href="#Persistent-with-pipelining（并行）" class="headerlink" title="Persistent with pipelining（并行）"></a>Persistent with pipelining（并行）</h5></li>
+<li>default in HTTP/1.1</li>
+<li>client sends requests as soon as it encounters a referenced object</li>
+<li><strong>as little as one RTT for all the referenced objects</strong><h3 id="HTTP-message"><a href="#HTTP-message" class="headerlink" title="HTTP message"></a>HTTP message</h3>two types of HTTP messages:<em>request</em>, <em>response</em><h4 id="HTTP-request-message-general-format"><a href="#HTTP-request-message-general-format" class="headerlink" title="HTTP request message:general format"></a>HTTP request message:general format</h4><img src="index_files/11517609.png" alt=""></li>
+</ul>
+<blockquote>
+<p>GET /somedir/page.html HTTP/1.1</p>
+</blockquote>
+<pre><code>--  Request to return the object /somedir/page.html
+--  The browser implements version HTTP/1.1
+</code></pre><blockquote>
+<p>Host: www.someschool.edu</p>
+</blockquote>
+<pre><code>-- Specifies the host on which the object resides
+</code></pre><blockquote>
+<p>User-agent: Mozilla/4.0</p>
+</blockquote>
+<pre><code>-- Specifies the browser type that is making the request
+</code></pre><blockquote>
+<p>Connection: close</p>
+</blockquote>
+<pre><code>-- Indicates that the connection SHOULD NOT be considered `persistent`. It wants the server to close the connection after the current request/response is complete
+</code></pre><blockquote>
+<p>Accept-language:fr</p>
+</blockquote>
+<pre><code>-- Indicates that the user prefers to receive a French version of the object
+</code></pre><p><img src="index_files/11378765.png" alt=""></p>
+<h5 id="Method-types"><a href="#Method-types" class="headerlink" title="Method types"></a>Method types</h5><p><strong>HTTP/1.0</strong></p>
+<ul>
+<li>GET : Return the object</li>
+<li>POST : Send information to be stored on the server</li>
+<li>HEAD  :Return only information about the object, such as how old it is, but not the object itself</li>
+</ul>
+<p><strong>HTTP/1.1</strong></p>
+<ul>
+<li>GET, POST, HEAD</li>
+<li>PUT : Uploads a new copy of existing object in entity body to path specified in URL field</li>
+<li>DELETE: deletes object specified in the URL field</li>
+</ul>
+<p><strong>Uploading（上传） form input</strong></p>
+<ul>
+<li>Post method</li>
+<li><ul>
+<li>Web page often includes form input</li>
+</ul>
+</li>
+<li><ul>
+<li>Input is uploaded to server in entity body</li>
+</ul>
+</li>
+<li>URL method</li>
+<li><ul>
+<li>Uses GET method</li>
+</ul>
+</li>
+<li><ul>
+<li>Input is uploaded in URL field of request line:</li>
+</ul>
+</li>
+</ul>
+<h4 id="HTTP-response-message"><a href="#HTTP-response-message" class="headerlink" title="HTTP response message"></a>HTTP response message</h4><p>An HTTP response consists of the following:<br>1.A <strong>status line</strong>, which indicates the success or failure of the request<br>2.<strong>Header lines</strong>: A description of the information in the response. This is the metadata or meta information<br>3.The <strong>actual information</strong> requested<br><img src="index_files/12091468.png" alt=""></p>
+<h4 id="HTTP-response-status-codes"><a href="#HTTP-response-status-codes" class="headerlink" title="HTTP response status codes"></a>HTTP response status codes</h4><blockquote>
+<p>200 OK</p>
+</blockquote>
+<p>request succeeded, requested object later in this message</p>
+<blockquote>
+<p>301 Moved Permanently</p>
+</blockquote>
+<p>requested object moved, new location specified later in this message (Location:)</p>
+<blockquote>
+<p>400 Bad Request</p>
+</blockquote>
+<p>request message not understood by server</p>
+<blockquote>
+<p>404 Not Found</p>
+</blockquote>
+<p>requested document not found on this server</p>
+<blockquote>
+<p>505 HTTP Version Not Supported</p>
+</blockquote>
+<h4 id="User-server-interaction-authorization"><a href="#User-server-interaction-authorization" class="headerlink" title="User-server interaction: authorization"></a>User-server interaction: authorization</h4><p><strong>Authorization</strong>:control access to server content</p>
+<ul>
+<li>authorization credentials: typically name, password<br><img src="index_files/12715046.png" alt=""><h4 id="User-server-state-cookies"><a href="#User-server-state-cookies" class="headerlink" title="User-server state : cookies"></a>User-server state : cookies</h4><blockquote>
+<p><strong>Cookies</strong>是数据包，可以让网页具有记忆功能，在某台电脑上记忆一定的信息。<br><strong>Cookies</strong>的工作原理是，第一次由服务器端写入到客户端的系统中。 以后每次访问这个网页，都是先由客户端将<strong>Cookies</strong>发送到服务器端，再由服务器端进行判断，然后再产生HTML代码返回给客户端。</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>Four</strong> components of cookie technology:</p>
+<ul>
+<li>1)cookie header line in the HTTP response message</li>
+<li>2)cookie header line in HTTP request message</li>
+<li>3)cookie file kept on user’s browser</li>
+<li>4)back-end database at Web site</li>
+</ul>
+<blockquote>
+<p><strong>Cookies: keeping “state”</strong></p>
+</blockquote>
+<p><img src="index_files/13544328.png" alt=""><br>网站根据用户的cookie file，去查数据库，知道用户之前浏览过哪些网页，从而对用户做个性化的推荐</p>
+<h3 id="Web-caches-proxy-server"><a href="#Web-caches-proxy-server" class="headerlink" title="Web caches(proxy server)"></a>Web caches(proxy server)</h3><blockquote>
+<p>Goal: satisfy client request without involving origin server</p>
+</blockquote>
+<p><img src="index_files/14047359.png" alt=""></p>
+<ul>
+<li>user sets browser: Web accesses via  cache</li>
+<li>browser sends all HTTP requests to  cache</li>
+<li><ul>
+<li>（object in cache)有备份直接从cache返回object</li>
+</ul>
+</li>
+<li><ul>
+<li>(else)request object from origin server,然后再返回给client</li>
+</ul>
+</li>
+</ul>
+<p><strong>Why Web caching</strong></p>
+<ul>
+<li><p>Reduce response time for client request.</p>
+</li>
+<li><p>Reduce traffic on an institution’s access link.</p>
+</li>
+<li><p>Internet dense with caches enables “poor” content providers to effectively deliver content (but so does P2P file sharing)<br>(把资料放到很多cache中，别人access cache就可以，减轻server负担)<br><img src="index_files/14625687.png" alt=""></p>
+<blockquote>
+<p>如果增加bandwidth</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="index_files/14710281.png" alt=""></p>
+<blockquote>
+<p>如果用cache<br><img src="index_files/14802625.png" alt=""><br>negligible(微不足道的)<br>link使用率下降，在link上的delay就大幅下降<br>用比较小的频宽，得到较小的delay</p>
+</blockquote>
+<h2 id="2-3-FTP"><a href="#2-3-FTP" class="headerlink" title="2.3 FTP"></a>2.3 FTP</h2><p>file transfer protocol<br><img src="index_files/15162906.png" alt=""></p>
+<ul>
+<li>transfer file to/from remote host</li>
+<li>client/server model</li>
+<li><ul>
+<li>Client side: the side that initiates transfer(either to/from remote)</li>
+</ul>
+</li>
+<li><ul>
+<li>Server side: remote host</li>
+</ul>
+</li>
+<li>ftp: RFC 959</li>
+<li>ftp sever : port 21<h3 id="FTP-seperate-control-data-connections"><a href="#FTP-seperate-control-data-connections" class="headerlink" title="FTP:seperate control, data connections"></a>FTP:seperate control, data connections</h3></li>
+<li>FTP client contacts FTP server at port 21, specifying TCP as transport protocol</li>
+<li>Client obtains authorization over control connection –- username, password</li>
+<li>Client browses remote directory by sending commands over control connection.</li>
+<li>When server receives a command for a file transfer, the server opens a TCP data connection to client</li>
+<li>After transferring one file server closes connection</li>
+</ul>
+<p><img src="index_files/16684234.png" alt=""></p>
+<ul>
+<li><p>Server opens a second TCP data connection to transfer another file.</p>
+</li>
+<li><p>Control connection: “out of band”</p>
+</li>
+<li><p>FTP server maintains “state”: current directory, earlier authentication</p>
+</li>
+</ul>
+<h3 id="FTP-commands-responses"><a href="#FTP-commands-responses" class="headerlink" title="FTP commands, responses"></a>FTP commands, responses</h3><p><img src="index_files/16842187.png" alt=""></p>
+<h2 id="2-4-Electronic-Mail"><a href="#2-4-Electronic-Mail" class="headerlink" title="2.4 Electronic Mail"></a>2.4 Electronic Mail</h2><ul>
+<li>SMTP, POP3, IMAP<br>Three maior components of a mail system:</li>
+<li>user agents</li>
+<li>mail servers</li>
+<li>simple mail transfer protocol: SMTP<h3 id="User-Agent"><a href="#User-Agent" class="headerlink" title="User Agent"></a>User Agent</h3></li>
+<li>Also known as “mail reader”</li>
+<li>composing, editing, reading mail messages</li>
+<li>e.g., Eudora, Outlook, elm, Netscape Messenger</li>
+<li>outgoing, incoming messages stored on server<h3 id="Maile-servers"><a href="#Maile-servers" class="headerlink" title="Maile servers"></a>Maile servers</h3>既是client(sending mail server),又是server(receiving mail server)<h4 id="mailbox"><a href="#mailbox" class="headerlink" title="mailbox"></a>mailbox</h4>mailbox contains incoming messages for user<h4 id="message-queue"><a href="#message-queue" class="headerlink" title="message queue"></a>message queue</h4>message  queue of outgoing (to be sent) mail messages<br><img src="index_files/17561593.png" alt=""><h3 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h3>Simple Mail Transfer Protocol<br><strong>port 25</strong></li>
+<li>uses TCP to reliably transfer email message from client to server, port 25</li>
+<li>direct transfer: sending server to receiving server</li>
+<li>three phases of transfer</li>
+<li><ul>
+<li>handshaking (greeting)</li>
+</ul>
+</li>
+<li><ul>
+<li>transfer of messages</li>
+</ul>
+</li>
+<li><ul>
+<li>closure</li>
+</ul>
+</li>
+<li>command/response interaction</li>
+<li><ul>
+<li>commands: ASCII text</li>
+</ul>
+</li>
+<li><ul>
+<li>response: status code and phrase</li>
+</ul>
+</li>
+<li>messages must be in 7-bit ASCII<br><img src="index_files/17931250.png" alt=""></li>
+</ul>
+<p>1) Alice uses user agent to compose message and “to” bob@someschool.edu</p>
+<p>2) Alice’s user agent sends message to her mail server; message placed in message queue</p>
+<p>3) Alice’s mail server (Client side) of SMTP opens TCP connection with Bob’s mail server (server side)</p>
+<p>4) SMTP client sends Alice’s message over the TCP connection</p>
+<p>5) Bob’s mail server places the message in Bob’s mailbox</p>
+<p>6) Bob invokes his user agent to read message</p>
+<h4 id="SMTP-final-words"><a href="#SMTP-final-words" class="headerlink" title="SMTP final words"></a>SMTP final words</h4><ul>
+<li>SMTP uses persistent connections</li>
+<li>SMTP requires message (header &amp; body) to be in 7-bit ASCII</li>
+<li>SMTP server uses CRLF.CRLF to determine end of message</li>
+</ul>
+<p><strong>Comparison with HTTP</strong></p>
+<ul>
+<li>HTTP: pull protocol (client’s point of view)</li>
+<li>SMTP: push protocol</li>
+<li>both have ASCII command/response interaction, status codes</li>
+<li>HTTP does not require message to be in 7-bit ASCII</li>
+<li>HTTP: one object in one response message</li>
+<li>SMTP: multiple objects can be sent in one message<h3 id="Mail-access-protocols"><a href="#Mail-access-protocols" class="headerlink" title="Mail access protocols"></a>Mail access protocols</h3><img src="index_files/6567812.png" alt=""></li>
+<li>SMTP: delivery/storage ti receiver’s server</li>
+<li>Maio acccess protocol: retrieval from server</li>
+<li><ul>
+<li><strong>POP3</strong>：Post Office Protocol, version 3</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>authorization(agent&lt;–&gt;server)and download</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><strong>IMAP</strong>: Internet Mail Access Protocol</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>more features(more complex)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>manipulation of stored messages on server</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><strong>HTTP</strong>: Hotmail, Yahoo!Mail,etc</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-5-DNS"><a href="#2-5-DNS" class="headerlink" title="2.5 DNS"></a>2.5 DNS</h2><p>Domain Name System (map between IP address and name)<br>Internet hosts, routers:</p>
+<ul>
+<li>IP address(32 bit)-used for addressing datagrams</li>
+<li>“name”, e.g., bbs.hupu.com<h3 id="Domain-Name-System"><a href="#Domain-Name-System" class="headerlink" title="Domain Name System"></a>Domain Name System</h3></li>
+<li>A distributed database implemented in hierarchy of many name servers</li>
+<li>An application-layer protocol that allows host, routers, name servers to communicate to resolve  names (address/name translation)</li>
+<li><ul>
+<li>DNS provides a core Internet function, implemented as application-layer protocol</li>
+</ul>
+</li>
+<li><ul>
+<li>DNS is an example of the Internet design philosophy of placing complexity at network’s “edge”<h3 id="DNS-services"><a href="#DNS-services" class="headerlink" title="DNS services"></a>DNS services</h3></li>
+</ul>
+</li>
+<li>Hostname to IP address translation</li>
+<li>Host aliasing</li>
+<li><ul>
+<li>Canonical and alias names</li>
+</ul>
+</li>
+<li><ul>
+<li>Relay1.west-coast.enterprise.com</li>
+</ul>
+</li>
+<li><ul>
+<li>enterprise.com and www.enterprise.com</li>
+</ul>
+</li>
+<li>Mail server aliasing</li>
+<li><ul>
+<li>bob@hotmail.com</li>
+</ul>
+</li>
+<li><ul>
+<li>Relay1.west-coast.hotmail.com</li>
+</ul>
+</li>
+<li>Load distribution</li>
+<li><ul>
+<li>Replicated Web servers: set of IP addresses for one canonical name</li>
+</ul>
+</li>
+</ul>
+<h3 id="Why-not-centralize-DNS"><a href="#Why-not-centralize-DNS" class="headerlink" title="Why not centralize DNS?"></a>Why not centralize DNS?</h3><p>doesn’t scale</p>
+<ul>
+<li><p>single point of failure</p>
+</li>
+<li><p>traffic volume</p>
+</li>
+<li><p>distant centralized database</p>
+</li>
+<li><p>maintenance</p>
+</li>
+</ul>
+<h3 id="Distributed-Hierarchical-Database"><a href="#Distributed-Hierarchical-Database" class="headerlink" title="Distributed,Hierarchical Database"></a>Distributed,Hierarchical Database</h3><p><img src="index_files/37778531.png" alt=""></p>
+<blockquote>
+<p>Client wants IP for www.amazon.com; 1st approx:</p>
+<ul>
+<li>Client queries a root server to find com DNS server</li>
+<li>Client queries com DNS server to get amazon.com DNS server</li>
+<li>Client queries amazon.com DNS server to get IP address for www.amazon.com</li>
+</ul>
+</blockquote>
+<h3 id="DNS-name-servers"><a href="#DNS-name-servers" class="headerlink" title="DNS name servers"></a>DNS name servers</h3><p>4 types of name servers</p>
+<ul>
+<li>1) root name servers</li>
+<li>2) top level name servers(to be explained next)</li>
+<li>3) authoritative name servers</li>
+<li>4) local name servers</li>
+</ul>
+<h2 id="2-6-P2P-file-sharing"><a href="#2-6-P2P-file-sharing" class="headerlink" title="2.6 P2P file sharing"></a>2.6 P2P file sharing</h2><h2 id="2-7-Socket-programming-with-TCP"><a href="#2-7-Socket-programming-with-TCP" class="headerlink" title="2.7 Socket programming with TCP"></a>2.7 Socket programming with TCP</h2><h2 id="2-8-Socket-programming-with-UDP"><a href="#2-8-Socket-programming-with-UDP" class="headerlink" title="2.8 Socket programming with UDP"></a>2.8 Socket programming with UDP</h2><h2 id="2-9-Building-a-Web-server"><a href="#2-9-Building-a-Web-server" class="headerlink" title="2.9 Building a Web server"></a>2.9 Building a Web server</h2>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算机网络/" rel="tag"># 计算机网络</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/07/java语言程序设计-基础篇-进阶篇-读书笔记3/" rel="next" title="java语言程序设计-基础篇-进阶篇-读书笔记3">
+                <i class="fa fa-chevron-left"></i> java语言程序设计-基础篇-进阶篇-读书笔记3
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ok6lt61wr.bkt.clouddn.com/R11happy.JPG"
+               alt="R11happy" />
+          <p class="site-author-name" itemprop="name">R11happy</p>
+          <p class="site-description motion-element" itemprop="description">华山派小虾米的修行场所</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/R11happy" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-2-Application-layer"><span class="nav-number">1.</span> <span class="nav-text">Chapter 2:Application layer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Principles-of-network-applications"><span class="nav-number">1.1.</span> <span class="nav-text">2.1 Principles of network applications</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Application-architecture"><span class="nav-number">1.1.1.</span> <span class="nav-text">Application architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Client-server"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">Client-server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pure-P2P-architecture"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">Pure P2P architecture</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hybrid-of-client-server-and-P2P"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">Hybrid of client-server and P2P</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Processes-communicating"><span class="nav-number">1.1.2.</span> <span class="nav-text">Processes communicating</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Processes-communicating-across-network"><span class="nav-number">1.1.3.</span> <span class="nav-text">Processes communicating across network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Addressing-processes"><span class="nav-number">1.1.4.</span> <span class="nav-text">Addressing processes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#App-layer-protocol-defines"><span class="nav-number">1.1.5.</span> <span class="nav-text">App-layer protocol defines</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-transport-service-does-an-app-need"><span class="nav-number">1.1.6.</span> <span class="nav-text">What transport service does an app need?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-loss"><span class="nav-number">1.1.6.1.</span> <span class="nav-text">Data loss</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Timing（时效性）"><span class="nav-number">1.1.6.2.</span> <span class="nav-text">Timing（时效性）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bandwidth"><span class="nav-number">1.1.6.3.</span> <span class="nav-text">Bandwidth</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transport-service-requirements-of-common-apps"><span class="nav-number">1.1.7.</span> <span class="nav-text">Transport service requirements of common apps</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-service"><span class="nav-number">1.1.7.1.</span> <span class="nav-text">TCP service</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UDP-service"><span class="nav-number">1.1.7.2.</span> <span class="nav-text">UDP service</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Web-and-HTTP"><span class="nav-number">1.2.</span> <span class="nav-text">2.2 Web and HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#First-some-jargon（专业术语）"><span class="nav-number">1.2.1.</span> <span class="nav-text">First some jargon（专业术语）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-overview"><span class="nav-number">1.2.2.</span> <span class="nav-text">HTTP overview</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-hypertext-transfer-protocol"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">HTTP: hypertext transfer protocol</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Uses-TCP"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">Uses TCP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-is-“stateless”-不记录之前的状态"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">HTTP is “stateless”(不记录之前的状态)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-connections"><span class="nav-number">1.2.3.</span> <span class="nav-text">HTTP connections</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Nonpersistent-HTTP"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">Nonpersistent HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Response-timie-modeling"><span class="nav-number">1.2.3.1.1.</span> <span class="nav-text">Response timie modeling</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Persistent-HTTP"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">Persistent HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Persistent-without-pipelining"><span class="nav-number">1.2.3.2.1.</span> <span class="nav-text">Persistent without pipelining</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Persistent-with-pipelining（并行）"><span class="nav-number">1.2.3.2.2.</span> <span class="nav-text">Persistent with pipelining（并行）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-message"><span class="nav-number">1.2.4.</span> <span class="nav-text">HTTP message</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-request-message-general-format"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">HTTP request message:general format</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Method-types"><span class="nav-number">1.2.4.1.1.</span> <span class="nav-text">Method types</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-response-message"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">HTTP response message</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP-response-status-codes"><span class="nav-number">1.2.4.3.</span> <span class="nav-text">HTTP response status codes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#User-server-interaction-authorization"><span class="nav-number">1.2.4.4.</span> <span class="nav-text">User-server interaction: authorization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#User-server-state-cookies"><span class="nav-number">1.2.4.5.</span> <span class="nav-text">User-server state : cookies</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web-caches-proxy-server"><span class="nav-number">1.2.5.</span> <span class="nav-text">Web caches(proxy server)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-FTP"><span class="nav-number">1.3.</span> <span class="nav-text">2.3 FTP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FTP-seperate-control-data-connections"><span class="nav-number">1.3.1.</span> <span class="nav-text">FTP:seperate control, data connections</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FTP-commands-responses"><span class="nav-number">1.3.2.</span> <span class="nav-text">FTP commands, responses</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Electronic-Mail"><span class="nav-number">1.4.</span> <span class="nav-text">2.4 Electronic Mail</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#User-Agent"><span class="nav-number">1.4.1.</span> <span class="nav-text">User Agent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maile-servers"><span class="nav-number">1.4.2.</span> <span class="nav-text">Maile servers</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mailbox"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">mailbox</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#message-queue"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">message queue</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SMTP"><span class="nav-number">1.4.3.</span> <span class="nav-text">SMTP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SMTP-final-words"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">SMTP final words</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mail-access-protocols"><span class="nav-number">1.4.4.</span> <span class="nav-text">Mail access protocols</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-DNS"><span class="nav-number">1.5.</span> <span class="nav-text">2.5 DNS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Domain-Name-System"><span class="nav-number">1.5.1.</span> <span class="nav-text">Domain Name System</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS-services"><span class="nav-number">1.5.2.</span> <span class="nav-text">DNS services</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-not-centralize-DNS"><span class="nav-number">1.5.3.</span> <span class="nav-text">Why not centralize DNS?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Distributed-Hierarchical-Database"><span class="nav-number">1.5.4.</span> <span class="nav-text">Distributed,Hierarchical Database</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS-name-servers"><span class="nav-number">1.5.5.</span> <span class="nav-text">DNS name servers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-P2P-file-sharing"><span class="nav-number">1.6.</span> <span class="nav-text">2.6 P2P file sharing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-Socket-programming-with-TCP"><span class="nav-number">1.7.</span> <span class="nav-text">2.7 Socket programming with TCP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-Socket-programming-with-UDP"><span class="nav-number">1.8.</span> <span class="nav-text">2.8 Socket programming with UDP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-9-Building-a-Web-server"><span class="nav-number">1.9.</span> <span class="nav-text">2.9 Building a Web server</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">R11happy</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid="></script>
+      <!-- UY END -->
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
