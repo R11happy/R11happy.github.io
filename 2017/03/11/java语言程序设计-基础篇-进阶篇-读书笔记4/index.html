@@ -1,0 +1,916 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="java," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="第11章读书小结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java语言程序设计-基础篇-进阶篇-读书笔记4">
+<meta property="og:url" content="http://yoursite.com/2017/03/11/java语言程序设计-基础篇-进阶篇-读书笔记4/index.html">
+<meta property="og:site_name" content="梅庄">
+<meta property="og:description" content="第11章读书小结">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/java/jnotes4/1.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/java/jnotes4/2.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/java/jnotes4/3.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/java/jnotes4/4.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/java/jnotes4/5.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/java/jnotes4/6.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/java/jnotes4/7.png?imageView2/2/w/600">
+<meta property="og:updated_time" content="2017-03-11T15:55:16.092Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java语言程序设计-基础篇-进阶篇-读书笔记4">
+<meta name="twitter:description" content="第11章读书小结">
+<meta name="twitter:image" content="http://ok6lt61wr.bkt.clouddn.com/images/java/jnotes4/1.png?imageView2/2/w/600">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/11/java语言程序设计-基础篇-进阶篇-读书笔记4/"/>
+
+
+
+
+
+  <title> java语言程序设计-基础篇-进阶篇-读书笔记4 | 梅庄 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">梅庄</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">华山派小虾米的修行场所</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/11/java语言程序设计-基础篇-进阶篇-读书笔记4/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="R11happy">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="http://ok6lt61wr.bkt.clouddn.com/R11happy.JPG">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="梅庄">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="梅庄" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                java语言程序设计-基础篇-进阶篇-读书笔记4
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-11T23:48:44+08:00">
+                2017-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2017寒假充电/" itemprop="url" rel="index">
+                    <span itemprop="name">2017寒假充电</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+              <div class="post-description">
+                  第11章读书小结
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="CH11继承和多态"><a href="#CH11继承和多态" class="headerlink" title="CH11继承和多态"></a>CH11继承和多态</h1><h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><h3 id="父类和子类"><a href="#父类和子类" class="headerlink" title="父类和子类"></a>父类和子类</h3><ul>
+<li>继承是一种（is-a)关系</li>
+<li>java中不允许多重继承，一个java类只可能直接继承自一个父类。（单一继承 single inheritance) </li>
+<li>多重继承可以通过接口来实现</li>
+</ul>
+<h3 id="使用super关键字"><a href="#使用super关键字" class="headerlink" title="使用super关键字"></a>使用super关键字</h3><h4 id="调用父类-的构造方法"><a href="#调用父类-的构造方法" class="headerlink" title="调用父类 的构造方法"></a>调用父类 的构造方法</h4><p>关键字<code>super</code>指代父类，可用于调用父类中的普通方法和构造方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">super</span>()</div><div class="line"><span class="keyword">super</span>(parameters)</div></pre></td></tr></table></figure></p>
+<p>要调用父类构造方法必须使用关键字super，而这个调用必须是构造方法的第一条语句</p>
+<h4 id="构造方法链"><a href="#构造方法链" class="headerlink" title="构造方法链"></a>构造方法链</h4><p>构造方法可以调用重载的构造方法或父类的构造方法。如果它们都没有被显式地调用，编译器就会自动地将super()作为构造方法的第一条语句<br><img src="http://ok6lt61wr.bkt.clouddn.com/images/java/jnotes4/1.png?imageView2/2/w/600"><br>Constructor chaining<br>当构造一个子类的对象时，子类构造方法会在完成自己的任务之前，首先调用它的父类的构造方法。如果父类继承自其他类，那么父类构造又会在完成自己的任务之前，调用它自己的父类的构造方法。这个过程持续到沿着这个继承体系结构的最后一个构造方法被调用为止<br>例如下面这段代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Faculty</span> <span class="keyword">extends</span> <span class="title">Employee</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">  <span class="keyword">new</span> Faculty();</div><div class="line">  &#125;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Faculty</span><span class="params">()</span></span></div><div class="line">  &#123;</div><div class="line">  System.out.println(<span class="string">"(4)Performs Faculty's tasks"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Employee</span><span class="params">()</span> </span>&#123;</div><div class="line">  <span class="keyword">this</span>(<span class="string">" (2)Invoke Employee's overloaded constructor"</span>);</div><div class="line">  System.out.println(<span class="string">"3)Performs Employee's tasks "</span>);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Employee</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">  System.out.println(s);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span></span></div><div class="line">  &#123;</div><div class="line">  System.out.println(<span class="string">"l)Performs Person's tasks"</span>);</div><div class="line">  &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<img src="http://ok6lt61wr.bkt.clouddn.com/images/java/jnotes4/2.png?imageView2/2/w/600">
+<p>正确输出顺序为1,2,3,4</p>
+<p><strong>注意</strong></p>
+<blockquote>
+<p>如果设计一个可以被继承的类，最好提供一个无参构造方法以避免程序设计错误<br>一般情况下，最好能为每个类提供一个无参构造方法，以便对该类进行扩展，同时避免错误</p>
+</blockquote>
+<p>比如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fruit</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Fruit</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">  System.out.println(<span class="string">"Fruit's constructor is invoked"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>由于在 Apple 中没有显式定义的构造方法，因此，Apple 的默认无参构造方法被隐式调用。<br>因为 Apple 是 Fruit 的子类，所以 Apple 的默认构造方法会自动调用 Fruit 的无参构造方 法。然而，Fruit 没有无参构造方法，因为 Fruit 显式地定义了构造方法。因此，程序不 能被成功编译。</p>
+<h4 id="调用父类的方法"><a href="#调用父类的方法" class="headerlink" title="调用父类的方法"></a>调用父类的方法</h4><p><code>super.方法名（参数）</code></p>
+<h3 id="方法重写"><a href="#方法重写" class="headerlink" title="方法重写"></a>方法重写</h3><p><code>method overriding</code><br><strong>注意</strong></p>
+<blockquote>
+<ul>
+<li>仅当实例方法是可访问时，它才能被覆盖。因为私有方法在它的类本身以外是不能 访问的，所以它不能被覆盖。如果子类中定义的方法在父类中是私有的，那么这个方法完全没有关系。 </li>
+<li>与实例方法一样，静态方法也能被继承。但是，静态方法不能被覆盖。如果父类中 定义的静态方法在子类中被重新定义，那么在父类中定义的静态方法将被隐藏。可 以使用语法：父类名 .静态方法名（SuperClassName.staticMethodName) 调用隐藏的 静态方法。 </li>
+</ul>
+</blockquote>
+<h3 id="方法重写与重载"><a href="#方法重写与重载" class="headerlink" title="方法重写与重载"></a>方法重写与重载</h3><p><strong>要点</strong></p>
+<blockquote>
+<ul>
+<li><code>重载</code>意味着使用同样的名字但是不同的签名来定义多个方法。</li>
+<li><code>重写</code>意味着在子 类中提供一个对方法的新的实现。</li>
+</ul>
+</blockquote>
+<p><strong>注意</strong><br>a)重写<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">  A a = <span class="keyword">new</span> A();</div><div class="line">  a.p(<span class="number">10</span>);</div><div class="line">  a.p(<span class="number">10.0</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">p</span><span class="params">(<span class="keyword">double</span> i)</span></span>&#123;</div><div class="line">  System.out.println(i*<span class="number">2</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">B</span></span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">p</span><span class="params">(<span class="keyword">double</span> i)</span></span>&#123;</div><div class="line">  System.out.println(i);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p><code>输出</code><br>10.0<br>10.0</p>
+</blockquote>
+<p>b)重载<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">  A a = <span class="keyword">new</span> A();</div><div class="line">  a.p(<span class="number">10</span>);</div><div class="line">  a.p(<span class="number">10.0</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">p</span><span class="params">(<span class="keyword">double</span> i)</span></span>&#123;</div><div class="line">  System.out.println(i*<span class="number">2</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> <span class="keyword">extends</span> <span class="title">B</span></span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">p</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</div><div class="line">  System.out.println(i);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p><code>输出</code><br>10<br>20.0</p>
+</blockquote>
+<p><strong>注意</strong></p>
+<blockquote>
+<p>-方法重写发生在通过继承而相关的不同类中；方法重载可以发生在同一个类中，也可以发生在由于继承而相关的不同类中</p>
+<ul>
+<li>方法重写具有同样的签名和返回值；方法重载具有同样的名字，但是不同参数列表</li>
+</ul>
+</blockquote>
+<p>为避免错误，用重写标注（override annotation)<br>即在子类的方法签名放一个@Override<br>该标注表示被标注的方法必须重写父类的一个方法，否则编译器报错</p>
+<h3 id="Object类及其toString方法"><a href="#Object类及其toString方法" class="headerlink" title="Object类及其toString方法"></a>Object类及其toString方法</h3><p><code>要点</code></p>
+<blockquote>
+<p>java中所有的类都继承自java.lang.Object类<br><img src="http://ok6lt61wr.bkt.clouddn.com/images/java/jnotes4/3.png?imageView2/2/w/600"></p>
+</blockquote>
+<p>调用一个对象的 toStringO 会返回一个描述该对象的字符串。默认情况下，它返回一 个由该对象所属的类名、at 符号（@)以及该对象十六进制形式的内存地址组成的字符串。<br>比如<code>Loan@15037e5</code>的字符串，不过这个信息不是很有用，需要<strong>重写</strong></p>
+<blockquote>
+<p>可 以 使 用 System.out.println(loan)来 替 换 System.out.println(loan.toString())</p>
+</blockquote>
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p><code>要点</code></p>
+<blockquote>
+<p>形成多态条件：</p>
+<ul>
+<li>有继承</li>
+<li>有重写</li>
+<li>有父类引用指向子类对象</li>
+</ul>
+</blockquote>
+<h3 id="动态绑定"><a href="#动态绑定" class="headerlink" title="动态绑定"></a>动态绑定</h3><p><code>要点</code></p>
+<blockquote>
+<p>方法可以在沿着继承链的多个类中实现。JVM 决定运行时调用哪个方法。<br>方法可以在父类中定义而在子类中重写</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object o = <span class="keyword">new</span> CeometricObject();</div></pre></td></tr></table></figure>
+<p>o的<code>declared type</code>是Object，<code>actual type</code>是实际类型，o调用那个方法由o的<code>actual tupe</code>决定，这就是动态绑定</p>
+<p><strong>动态绑定的工作机制</strong></p>
+<blockquote>
+<p>动态绑定工作机制如下：假设对象 o是类 Cl, C2,…，Cn-1, Cn 的实例，其中 C1是 C2的子类 ，C2 是 C3 的子类，…，Cn-1是 Cn 的子类，如图 11-2所示。也就是说，Cn 是最通用的类，C1是最特殊的类。在 Java 中，Cn 是 Object 类。如果对象 o 调用一个方法 p, 那么 JVM 会依次在类 Cl， C2,…，Cn-1，Cri 中查找方法 p 的实现，直到找到为止。一旦找到一个实现 ，就停止査找，然后调用这个首先找到的实现。</p>
+</blockquote>
+<img src="http://ok6lt61wr.bkt.clouddn.com/images/java/jnotes4/4.png?imageView2/2/w/600">
+<p>引用变量的<code>declare type</code>决定了编译时匹配时匹配哪个方法<br>Java虚拟机在运行时动态绑定方法的实现，是由变量的<code>actual type</code>决定的。</p>
+<p>以下代码的运行结果：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">  <span class="keyword">new</span> A();</div><div class="line">  <span class="keyword">new</span> B();</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">  <span class="keyword">int</span> i = <span class="number">7</span>;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">A</span><span class="params">()</span> </span>&#123;</div><div class="line">  setI(<span class="number">20</span>);</div><div class="line">  System.out.println(<span class="string">"i from A is "</span> + i);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setI</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">  <span class="keyword">this</span>.i = <span class="number">2</span> * i;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">B</span><span class="params">()</span> </span>&#123;</div><div class="line">  System.out.println(<span class="string">"i from B is "</span> + i);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setI</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">  <span class="keyword">this</span>.i = <span class="number">3</span> * i;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p><code>输出</code><br>i from A is 40<br>i from A is 60<br>i from B is 60</p>
+</blockquote>
+<h3 id="对象转换和instanceof运算符"><a href="#对象转换和instanceof运算符" class="headerlink" title="对象转换和instanceof运算符"></a>对象转换和instanceof运算符</h3><p><code>要点</code>：对象的引用可以转换为对另外一种对象的引用，这称为对象转换</p>
+<p><code>隐式转换</code>(implicit casting)<code>Object o = new Student();</code><br><code>显式转换</code>(Explicit casting)<code>Student b = (Student)o;</code></p>
+<p><code>声明类型</code>决定了在编译时匹配哪个方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object myObject = <span class="keyword">new</span> Circle()</div></pre></td></tr></table></figure></p>
+<p>这时候如果使用<code>myObject.getDiameter()</code>会引起一个编译错误，因为Object类没有getDiameter方法。编译器无法找到和<code>myObject.getDiameter()</code>匹配的方法。所以，有必要将<code>myObject</code>转换为<code>Circle</code>类型，来告诉编译器myObject也是Circle的一个实例。</p>
+<p><strong><code>instanceof</code></strong><br>只有源对象是目标类的实例时才能进行类型转换。在执行转换前，程序使用instanceof运算符来确保源对象是否是目标类的实例<br><strong>注意</strong></p>
+<blockquote>
+<p>对象成员访问运算符（.）优先于类型转换运算符。使用圆括号保证在点运算符（ •） 之前进行转换，例如：</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">((Circle)object).getAreaO;</div></pre></td></tr></table></figure>
+<p><strong><code>对基本类型值进行转换不同于对对象引用进行转换</code></strong></p>
+<ul>
+<li><p>转换基本类型值返回一个新的值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> age = <span class="number">45</span>;</div><div class="line"><span class="keyword">byte</span> newAge = (<span class="keyword">byte</span>)age;  <span class="comment">//A new value is assigned to newAge</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>转换一个对象引用不会创建一个新的对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Object o = <span class="keyword">new</span> Circle();</div><div class="line">Circle c = (Circle)o;  <span class="comment">// No new object is created</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>现在，引用变量o和c指向同一个对象</p>
+<h3 id="Object类的equals方法"><a href="#Object类的equals方法" class="headerlink" title="Object类的equals方法"></a>Object类的equals方法</h3><p>Object类中equals方法的默认实现是：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span></span>&#123;</div><div class="line">   <span class="keyword">return</span> (<span class="keyword">this</span> == obj);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这个实现使用==检测两个引用变量是否指向同一个对象</p>
+<p>equlas方法在很多类中被重写，如<code>String类</code>，<code>Date类</code>，用于比较两个对象的内容是否相等。</p>
+<p><strong>注意</strong><br>当覆盖<code>equals</code>方法时，常见的错误就是在子类中输错它的签名<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">  Object circle1 = <span class="keyword">new</span> Circle();</div><div class="line">  Object circle2 = <span class="keyword">new</span> Circle();</div><div class="line">  System.out.println(circle1.equals(circle2));</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<img src="http://ok6lt61wr.bkt.clouddn.com/images/java/jnotes4/5.png?imageView2/2/w/600">
+<blockquote>
+<p>a输出<br><code>false</code><br>b输出<br><code>true</code></p>
+</blockquote>
+<p>重写<code>equals</code>方法要使用<code>equals(Object obj)</code>而不是<code>equals(SomeClasss obj)</code></p>
+<h3 id="ArrayList类"><a href="#ArrayList类" class="headerlink" title="ArrayList类"></a>ArrayList类</h3><p><code>要点</code>ArrayList存储<strong>不限定个数</strong>的<strong><code>对象</code></strong><br>记住，是对象，Object！！！<br>所以，下面代码报错<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ArrayList&lt;Double&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">list.add(<span class="number">1</span>);</div></pre></td></tr></table></figure></p>
+<p>从JDK1.7开始，语句<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ArrayList&lt;AConcreteType&gt; list = <span class="keyword">new</span> ArrayList&lt;AConcreteType&gt;();</div></pre></td></tr></table></figure></p>
+<p>可以简化为<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ArrayList&lt;AConcreteType&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</div></pre></td></tr></table></figure></p>
+<p><strong>数组和ArrayList之间的异同</strong></p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>数组</th>
+<th>ArrayList</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>创建数组/数组列表</td>
+<td>String[] a = new String[10]</td>
+<td>ArrayList list<string> = new ArrayList()</string></td>
+</tr>
+<tr>
+<td>引用元素</td>
+<td>a[index]</td>
+<td>list.get(index)</td>
+</tr>
+<tr>
+<td>更新元素</td>
+<td>a[index] = “London”</td>
+<td>list.set(index, “London”)</td>
+</tr>
+<tr>
+<td>返回大小</td>
+<td>a.length</td>
+<td>list.size()</td>
+</tr>
+<tr>
+<td>添加一个新元素</td>
+<td></td>
+<td>list.add(“London”)</td>
+</tr>
+<tr>
+<td>插入一个新元素</td>
+<td></td>
+<td>list.add(index, “London”)</td>
+</tr>
+<tr>
+<td>删除一个元素</td>
+<td></td>
+<td>list.remove(index)</td>
+</tr>
+<tr>
+<td>删除一个元素</td>
+<td></td>
+<td>list.remove(Object)</td>
+</tr>
+<tr>
+<td>删除所有元素</td>
+<td></td>
+<td>list.clear()</td>
+</tr>
+</tbody>
+</table>
+<p>当创建ArrayList后，它的大小为0。如果元素不在ArrayList中，就不能使用get(index)和set(index, element)方法。<br><strong><code>排序</code></strong></p>
+<ul>
+<li>对数组进行排序</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java.util.Arrays.sort(arrays);</div></pre></td></tr></table></figure>
+<ul>
+<li>对数组列表进行排序</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java.util.Collections.sort(arrayList)</div></pre></td></tr></table></figure>
+<p><strong>题目</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">list.add(<span class="number">1</span>);</div><div class="line">list.add(<span class="number">2</span>);</div><div class="line">list.add(<span class="number">3</span>);</div></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">list.remove(<span class="number">1</span>);</div><div class="line">System.out.println(list);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>输出<br><code>[1,3]</code></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">list.remove(Integer.valueOf(<span class="number">1</span>));</div><div class="line">System.out.println(list);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>输出<br><code>[2,3]</code></p>
+</blockquote>
+<h3 id="list的一些API"><a href="#list的一些API" class="headerlink" title="list的一些API"></a>list的一些API</h3><p><strong><code>array</code>- &gt; <code>ArrayList</code></strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String[] array = &#123;<span class="string">"red"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>&#125;;</div><div class="line">ArrayList&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;(Arrays.asList(array));</div></pre></td></tr></table></figure></p>
+<p>Arrays类中的静态方法asList返回一个list</p>
+<p><strong><code>ArrayList</code> - &gt; <code>array</code></strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String[] array1 = <span class="keyword">new</span> String[list.size()];</div><div class="line">list.toArray(array1);</div></pre></td></tr></table></figure></p>
+<p>将list的内容复制到array1中</p>
+<p><strong><code>排序</code></strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java.util.Collections.sort(list);</div></pre></td></tr></table></figure></p>
+<p><strong><code>找最大元素和最小元素</code></strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">java.util.Collection.max(list);</div><div class="line">java.util.Collection.min(list);</div></pre></td></tr></table></figure></p>
+<p><strong><code>随机打乱list中元素</code></strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java.util.Collections.shuffle(list);</div></pre></td></tr></table></figure></p>
+<h3 id="protected数据和方法"><a href="#protected数据和方法" class="headerlink" title="protected数据和方法"></a>protected数据和方法</h3><p><strong><code>要点</code></strong>一个类中的<code>protected</code>(受保护成员)可以从子类中访问<br><strong><code>private</code></strong>只能在类内访问<br><strong><code>public</code></strong>被任意的其他类访问<br><img src="http://ok6lt61wr.bkt.clouddn.com/images/java/jnotes4/6.png?imageView2/2/w/600"><br><code>public</code>,<code>default</code>用于class<br><code>public</code>,<code>protected</code>, <code>private</code>用于class的成员<br><img src="http://ok6lt61wr.bkt.clouddn.com/images/java/jnotes4/7.png?imageView2/2/w/600"></p>
+<p><strong>注意</strong></p>
+<blockquote>
+<p>子类可以重写它的父类<code>protected</code>方法，并把它的可见性改为<code>public</code>。<strong>但是，子类不能削弱父类中定义方法的可见性</strong><br><code>例如</code>：如果一个方法在父类中定义为<code>public</code>,子类中也必须定义为<code>public</code></p>
+</blockquote>
+<h3 id="final防止扩展和重写"><a href="#final防止扩展和重写" class="headerlink" title="final防止扩展和重写"></a><code>final</code>防止扩展和重写</h3><p><code>要点</code>一个被<code>final</code>修饰的类和方法都不能被扩展，被<code>final</code>修饰的数据域是一个常数<br>有时候，希望防止类被扩展，可以用<code>final</code>修饰，表明是最终的类，不能作为父类<br>比如Math类，String类，StringBuilder类和StringBuffer类</p>
+<ul>
+<li><code>final</code>修饰的类不能被继承</li>
+<li><code>final</code>修饰的方法不能被重写</li>
+</ul>
+<h3 id="本章小结"><a href="#本章小结" class="headerlink" title="本章小结"></a>本章小结</h3><ul>
+<li>构造方法用来构造类的实例。不同于厲性和方法，子类不继承父类的构造方法。它们只能用关键字 super从子类的构造方法中调用。 </li>
+<li>构造方法可以调用重载的构造方法或它的父类的构造方法。这种调用必须是构造方法的第一条语句。 如果没有显式地调用它们中的任何一个，编译器就会把 <code>super()</code>作为构造方法的第一条语句，它调 用的是父类的无参构造方法。 </li>
+<li>为了重写一个方法，必须使用与它的父类中的方法相同的签名来定义子类中的方法。 </li>
+<li>实例方法只有在可访问时才能重写。这样，私有方法是不能重写的，因为它是不能在类本身之外访 问的。如果子类中定义的方法在父类中是私有的，那么这两个方法是完全没有关系的。 </li>
+<li>静态方法与实例方法一样可以继承。但是，<code>静态方法</code>不能重写，如果父类中定义的静态方法在子类 中重新定义，那么父类中定义的方法被隐藏。 </li>
+<li>Java中的每个类都继承自 java.lang.Object 类。如果一个类在定义时没有指定继承关系，那么它 的父类就是<code>Object</code>。 </li>
+<li>如果一个方法的参数类型是父类（例如：Object), 可以向该方法的参数传递任何子类（例如： Circle 类或String 类）的对象。这称为多态。 </li>
+<li>因为子类的实例总是它的父类的实例，所以，总是可以将一个子类的实例转换成一个父类的变量。 当把父类实例转换成它的子类变量时，必须使用转换记号（子类名）进行显式转换，向编译器表明 你的意图。 </li>
+<li>当从引用变置调用实例方法时，该变量的<code>实际类型</code>在运行时决定使用该方法的哪个实现。这称为动态绑定。 </li>
+<li>可以使用表达式 obj <code>instanceof</code> AClass(对象名 instanceof 类名）测试一个对象是否是一个类 的实例。 </li>
+<li>可以使用<code>ArrayList</code> 类来创建一个对象，用于存储一个对象列表。 </li>
+<li>可以使用 <code>protected</code> 修饰符来防止方法和数据被不同包的非子类访问。 </li>
+<li>可以用<code>final</code> 修饰符来表明一个类是最终类，是不能被继承的；也可以表明一个方法是最终的， 是不能重写的</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/21/计算机网络-自顶向下方法【二】/" rel="next" title="计算机网络-自顶向下方法【二】">
+                <i class="fa fa-chevron-left"></i> 计算机网络-自顶向下方法【二】
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ok6lt61wr.bkt.clouddn.com/R11happy.JPG"
+               alt="R11happy" />
+          <p class="site-author-name" itemprop="name">R11happy</p>
+          <p class="site-description motion-element" itemprop="description">华山派小虾米的修行场所</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/R11happy" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CH11继承和多态"><span class="nav-number">1.</span> <span class="nav-text">CH11继承和多态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">1.1.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#父类和子类"><span class="nav-number">1.1.1.</span> <span class="nav-text">父类和子类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用super关键字"><span class="nav-number">1.1.2.</span> <span class="nav-text">使用super关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#调用父类-的构造方法"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">调用父类 的构造方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造方法链"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">构造方法链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#调用父类的方法"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">调用父类的方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法重写"><span class="nav-number">1.1.3.</span> <span class="nav-text">方法重写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法重写与重载"><span class="nav-number">1.1.4.</span> <span class="nav-text">方法重写与重载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object类及其toString方法"><span class="nav-number">1.1.5.</span> <span class="nav-text">Object类及其toString方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多态"><span class="nav-number">1.1.6.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态绑定"><span class="nav-number">1.1.7.</span> <span class="nav-text">动态绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象转换和instanceof运算符"><span class="nav-number">1.1.8.</span> <span class="nav-text">对象转换和instanceof运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object类的equals方法"><span class="nav-number">1.1.9.</span> <span class="nav-text">Object类的equals方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList类"><span class="nav-number">1.1.10.</span> <span class="nav-text">ArrayList类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list的一些API"><span class="nav-number">1.1.11.</span> <span class="nav-text">list的一些API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#protected数据和方法"><span class="nav-number">1.1.12.</span> <span class="nav-text">protected数据和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#final防止扩展和重写"><span class="nav-number">1.1.13.</span> <span class="nav-text">final防止扩展和重写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本章小结"><span class="nav-number">1.1.14.</span> <span class="nav-text">本章小结</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">R11happy</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid="></script>
+      <!-- UY END -->
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
