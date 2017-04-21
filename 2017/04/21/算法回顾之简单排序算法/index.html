@@ -102,7 +102,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/21/算法回顾之简单排序算法/index.html">
 <meta property="og:site_name" content="梅庄">
 <meta property="og:description" content="选择排序&amp;插入排序&amp;冒泡排序&amp;希尔排序">
-<meta property="og:updated_time" content="2017-04-21T09:15:04.981Z">
+<meta property="og:updated_time" content="2017-04-21T09:20:01.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法回顾---简单排序算法">
 <meta name="twitter:description" content="选择排序&amp;插入排序&amp;冒泡排序&amp;希尔排序">
@@ -367,7 +367,7 @@
       
 
       
-        <h1 id="简单算法比较"><a href="#简单算法比较" class="headerlink" title="简单算法比较"></a>简单算法比较</h1><p>为什么要学习$O(n^2)$的排序算法</p>
+        <h1 id="简单算法比较"><a href="#简单算法比较" class="headerlink" title="简单算法比较"></a>简单算法比较</h1><p>为什么要学习$ O(n^2) $的排序算法</p>
 <ul>
 <li>基础</li>
 <li>编码简单，易于实现，是一些简单情境的首选</li>
@@ -399,7 +399,7 @@
 </li>
 </ol>
 <h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">shellSort</span><span class="params">(T arr[], <span class="keyword">int</span> n)</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">// 计算 increment sequence: 1, 4, 13, 40, 121, 364, 1093...</span></div><div class="line">    <span class="keyword">int</span> h = <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span>( h &lt; n/<span class="number">3</span> )</div><div class="line">        h = <span class="number">3</span> * h + <span class="number">1</span>;</div><div class="line"></div><div class="line">    <span class="keyword">while</span>( h &gt;= <span class="number">1</span> )&#123;</div><div class="line"></div><div class="line">        <span class="comment">// h-sort the array</span></div><div class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> i = h ; i &lt; n ; i ++ )&#123;</div><div class="line"></div><div class="line">            <span class="comment">// 对 arr[i], arr[i-h], arr[i-2*h], arr[i-3*h]... 使用插入排序</span></div><div class="line">            T e = arr[i];</div><div class="line">            <span class="keyword">int</span> j;</div><div class="line">            <span class="keyword">for</span>( j = i ; j &gt;= h &amp;&amp; e &lt; arr[j-h] ; j -= h )</div><div class="line">                arr[j] = arr[j-h];</div><div class="line">            arr[j] = e;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        h /= <span class="number">3</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>插入排序–&gt;希尔排序<br>(尝试和之前第h个元素进行比较)<br>将h逐渐从一个很大的数缩小到1，将一个无序的数组一步一步缩小到一个近乎有序的数组<br>复杂度可以达到$O(n^1.5)$<br>当n = 10 0000</p>
+<p>插入排序–&gt;希尔排序<br>(尝试和之前第h个元素进行比较)<br>将h逐渐从一个很大的数缩小到1，将一个无序的数组一步一步缩小到一个近乎有序的数组<br>复杂度可以达到$O(n^1.5)$<br>当n = <code>10 0000</code></p>
 <h4 id="随机数组的情况"><a href="#随机数组的情况" class="headerlink" title="随机数组的情况"></a>随机数组的情况</h4><table>
 <thead>
 <tr>
@@ -423,9 +423,6 @@
 <tr>
 <td>Shell Sort</td>
 <td>0.053 s</td>
-</tr>
-<tr>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -452,9 +449,6 @@
 <tr>
 <td>Shell Sort</td>
 <td>0.015 s</td>
-</tr>
-<tr>
-<td></td>
 </tr>
 </tbody>
 </table>
