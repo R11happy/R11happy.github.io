@@ -96,14 +96,14 @@
 
 
 
-<meta name="description" content="title: 算法回顾—nlogn排序算法 date: 2017-04-23 14:16:45 categories: 大三下 tags: Algorithm
- description: 归并排序&amp;amp;快速排序nlogn排序自顶向下的递归Merge Sort 分成一半，再逐渐归并 二分法达到不同的层级，每个层级用O(N)的算法来做事情 8 6 2 3 | 1 5 7 4 2 3 6 8 |">
+<meta name="description" content="title: 算法回顾—nlogn排序算法 date: 2017-04-23 14:16:45 categories: 大三下 tags: 算法
+ description: 归并排序&amp;amp;快速排序nlogn排序自顶向下的递归Merge Sort 分成一半，再逐渐归并 二分法达到不同的层级，每个层级用O(N)的算法来做事情 8 6 2 3 | 1 5 7 4 2 3 6 8 | 1 4 5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="梅庄">
 <meta property="og:url" content="http://yoursite.com/2017/04/23/算法回顾-nnlogn排序算法/index.html">
 <meta property="og:site_name" content="梅庄">
-<meta property="og:description" content="title: 算法回顾—nlogn排序算法 date: 2017-04-23 14:16:45 categories: 大三下 tags: Algorithm
- description: 归并排序&amp;amp;快速排序nlogn排序自顶向下的递归Merge Sort 分成一半，再逐渐归并 二分法达到不同的层级，每个层级用O(N)的算法来做事情 8 6 2 3 | 1 5 7 4 2 3 6 8 |">
+<meta property="og:description" content="title: 算法回顾—nlogn排序算法 date: 2017-04-23 14:16:45 categories: 大三下 tags: 算法
+ description: 归并排序&amp;amp;快速排序nlogn排序自顶向下的递归Merge Sort 分成一半，再逐渐归并 二分法达到不同的层级，每个层级用O(N)的算法来做事情 8 6 2 3 | 1 5 7 4 2 3 6 8 | 1 4 5">
 <meta property="og:image" content="http://yoursite.com/index_files/2270750.png">
 <meta property="og:image" content="http://yoursite.com/index_files/157674078.png">
 <meta property="og:image" content="http://yoursite.com/index_files/157877359.png">
@@ -122,11 +122,11 @@
 <meta property="og:image" content="http://yoursite.com/index_files/170895281.png">
 <meta property="og:image" content="http://yoursite.com/index_files/172906328.png">
 <meta property="og:image" content="http://yoursite.com/index_files/172977375.png">
-<meta property="og:updated_time" content="2017-04-24T07:19:02.223Z">
+<meta property="og:updated_time" content="2017-04-24T07:26:11.104Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="梅庄">
-<meta name="twitter:description" content="title: 算法回顾—nlogn排序算法 date: 2017-04-23 14:16:45 categories: 大三下 tags: Algorithm
- description: 归并排序&amp;amp;快速排序nlogn排序自顶向下的递归Merge Sort 分成一半，再逐渐归并 二分法达到不同的层级，每个层级用O(N)的算法来做事情 8 6 2 3 | 1 5 7 4 2 3 6 8 |">
+<meta name="twitter:description" content="title: 算法回顾—nlogn排序算法 date: 2017-04-23 14:16:45 categories: 大三下 tags: 算法
+ description: 归并排序&amp;amp;快速排序nlogn排序自顶向下的递归Merge Sort 分成一半，再逐渐归并 二分法达到不同的层级，每个层级用O(N)的算法来做事情 8 6 2 3 | 1 5 7 4 2 3 6 8 | 1 4 5">
 <meta name="twitter:image" content="http://yoursite.com/index_files/2270750.png">
 
 
@@ -364,7 +364,7 @@
 
       
         <hr>
-<p> title: 算法回顾—nlogn排序算法<br> date: 2017-04-23 14:16:45<br> categories: 大三下<br> tags: Algorithm</p>
+<p> title: 算法回顾—nlogn排序算法<br> date: 2017-04-23 14:16:45<br> categories: 大三下<br> tags: 算法</p>
 <h2 id="description-归并排序-amp-快速排序"><a href="#description-归并排序-amp-快速排序" class="headerlink" title=" description: 归并排序&amp;快速排序"></a> description: 归并排序&amp;快速排序</h2><h1 id="nlogn排序"><a href="#nlogn排序" class="headerlink" title="nlogn排序"></a>nlogn排序</h1><h2 id="自顶向下的递归Merge-Sort"><a href="#自顶向下的递归Merge-Sort" class="headerlink" title="自顶向下的递归Merge Sort"></a>自顶向下的递归Merge Sort</h2><p> 分成一半，再逐渐归并<br> 二分法达到不同的层级，每个层级用O(N)的算法来做事情<br> <code>8 6 2 3</code> | <code>1 5 7 4</code><br> <code>2 3 6 8</code> | <code>1 4 5 7</code><br> <code>1 2 3 4 5 6 7 8</code><br> 需要开辟同样大小的临时空间，来辅助完成归并过程<br> (即需要O(N)的额外空间来完成排序)<br> 3个索引位置<br> i,j指向的是当前正在考虑的元素<br> k 指向的是比较之后，最终应该放到的数组的位置(指下一个需要放的位置)<br> <img src="index_files/2270750.png" alt=""></p>
 <h3 id="基础版本"><a href="#基础版本" class="headerlink" title="基础版本"></a>基础版本</h3> <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">// 将arr[l……mid]和arr[mid+1……r]两部分进行归并 </span></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">void</span> __merge(T arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> mid, <span class="keyword">int</span> r)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i = l, j = mid+<span class="number">1</span>; <span class="comment">//i指向A[L1],j指向A[L2]</span></div><div class="line">    <span class="keyword">int</span> temp[maxn], index = <span class="number">0</span>;  <span class="comment">//temp临时存放合并后的数组，index为其下标</span></div><div class="line">    <span class="keyword">while</span> (i &lt;= mid &amp;&amp; j &lt;= r)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span> (arr[i] &lt;= arr[j])</div><div class="line">        &#123;</div><div class="line">            temp[index++] = arr[i++];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span></div><div class="line">        &#123;</div><div class="line">            temp[index++] = arr[j++];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">while</span> (i &lt;= mid)  temp[index++] = arr[i++];</div><div class="line">    <span class="keyword">while</span> (j &lt;= r)  temp[index++] = arr[j++];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k&lt;index; k++)</div><div class="line">    &#123;</div><div class="line">        arr[l + k] = temp[k];    <span class="comment">//将合并后的序列赋值回数组A</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p> <strong>Random</strong>情况下<br> n = <code>10 0000</code><br> |    排序算法    | 所用时间 |<br> |—————-|———-|<br> | Merge Sort     | 0.077s   |<br> | Insertion Sort | 37.266s  |<br> 但是在数值近乎有序的情况下，<code>Insertion Sort</code>效果要好于<code>Merger Sort</code><br> <strong>近乎有序</strong>情况下（10 0000中有100个数据调换位置）<br> n = <code>10 0000</code><br> |    排序算法    | 所用时间 |<br> |—————-|———-|<br> | Merge Sort     | 0.051s   |<br> | Insertion Sort | 0.027s   |</p>
