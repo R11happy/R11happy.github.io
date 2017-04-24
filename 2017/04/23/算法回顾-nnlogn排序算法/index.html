@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Algorithm," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -96,17 +96,37 @@
 
 
 
-<meta name="description" content="归并排序&amp;快速排序">
+<meta name="description" content="title: 算法回顾—nlogn排序算法 date: 2017-04-23 14:16:45 categories: 大三下 tags: Algorithm
+ description: 归并排序&amp;amp;快速排序nlogn排序自顶向下的递归Merge Sort 分成一半，再逐渐归并 二分法达到不同的层级，每个层级用O(N)的算法来做事情 8 6 2 3 | 1 5 7 4 2 3 6 8 |">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法回顾---nlogn排序算法">
+<meta property="og:title" content="梅庄">
 <meta property="og:url" content="http://yoursite.com/2017/04/23/算法回顾-nnlogn排序算法/index.html">
 <meta property="og:site_name" content="梅庄">
-<meta property="og:description" content="归并排序&amp;快速排序">
+<meta property="og:description" content="title: 算法回顾—nlogn排序算法 date: 2017-04-23 14:16:45 categories: 大三下 tags: Algorithm
+ description: 归并排序&amp;amp;快速排序nlogn排序自顶向下的递归Merge Sort 分成一半，再逐渐归并 二分法达到不同的层级，每个层级用O(N)的算法来做事情 8 6 2 3 | 1 5 7 4 2 3 6 8 |">
 <meta property="og:image" content="http://yoursite.com/index_files/2270750.png">
-<meta property="og:updated_time" content="2017-04-23T06:57:02.353Z">
+<meta property="og:image" content="http://yoursite.com/index_files/157674078.png">
+<meta property="og:image" content="http://yoursite.com/index_files/157877359.png">
+<meta property="og:image" content="http://yoursite.com/index_files/157953234.png">
+<meta property="og:image" content="http://yoursite.com/index_files/158079671.png">
+<meta property="og:image" content="http://yoursite.com/index_files/158137468.png">
+<meta property="og:image" content="http://yoursite.com/index_files/166653093.png">
+<meta property="og:image" content="http://yoursite.com/index_files/166696953.png">
+<meta property="og:image" content="http://yoursite.com/index_files/166773453.png">
+<meta property="og:image" content="http://yoursite.com/index_files/168279703.png">
+<meta property="og:image" content="http://yoursite.com/index_files/168605000.png">
+<meta property="og:image" content="http://yoursite.com/index_files/170647906.png">
+<meta property="og:image" content="http://yoursite.com/index_files/170726796.png">
+<meta property="og:image" content="http://yoursite.com/index_files/170749781.png">
+<meta property="og:image" content="http://yoursite.com/index_files/170832406.png">
+<meta property="og:image" content="http://yoursite.com/index_files/170895281.png">
+<meta property="og:image" content="http://yoursite.com/index_files/172906328.png">
+<meta property="og:image" content="http://yoursite.com/index_files/172977375.png">
+<meta property="og:updated_time" content="2017-04-24T07:19:02.223Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法回顾---nlogn排序算法">
-<meta name="twitter:description" content="归并排序&amp;快速排序">
+<meta name="twitter:title" content="梅庄">
+<meta name="twitter:description" content="title: 算法回顾—nlogn排序算法 date: 2017-04-23 14:16:45 categories: 大三下 tags: Algorithm
+ description: 归并排序&amp;amp;快速排序nlogn排序自顶向下的递归Merge Sort 分成一半，再逐渐归并 二分法达到不同的层级，每个层级用O(N)的算法来做事情 8 6 2 3 | 1 5 7 4 2 3 6 8 |">
 <meta name="twitter:image" content="http://yoursite.com/index_files/2270750.png">
 
 
@@ -141,7 +161,7 @@
 
 
 
-  <title> 算法回顾---nlogn排序算法 | 梅庄 </title>
+  <title>  | 梅庄 </title>
 </head>
 <!-- 页面点击小红心 -->
 <!-- <script type="text/javascript" src="/js/src/love.js"></script> -->
@@ -292,7 +312,7 @@
             
             
               
-                算法回顾---nlogn排序算法
+                
               
             
           </h1>
@@ -318,28 +338,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/大三下/" itemprop="url" rel="index">
-                    <span itemprop="name">大三下</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -352,10 +350,6 @@
 
           
 
-          
-              <div class="post-description">
-                  归并排序&快速排序
-              </div>
           
 
         </div>
@@ -369,48 +363,13 @@
       
 
       
-        <h1 id="nlogn排序"><a href="#nlogn排序" class="headerlink" title="nlogn排序"></a>nlogn排序</h1><h2 id="自顶向下的递归Merge-Sort"><a href="#自顶向下的递归Merge-Sort" class="headerlink" title="自顶向下的递归Merge Sort"></a>自顶向下的递归Merge Sort</h2><p>分成一半，再逐渐归并<br>二分法达到不同的层级，每个层级用O(N)的算法来做事情<br><code>8 6 2 3</code> | <code>1 5 7 4</code><br><code>2 3 6 8</code> | <code>1 4 5 7</code><br><code>1 2 3 4 5 6 7 8</code><br>需要开辟同样大小的临时空间，来辅助完成归并过程<br>(即需要O(N)的额外空间来完成排序)<br>3个索引位置<br>i,j指向的是当前正在考虑的元素<br>k 指向的是比较之后，最终应该放到的数组的位置(指下一个需要放的位置)<br><img src="index_files/2270750.png" alt=""></p>
-<h3 id="基础版本"><a href="#基础版本" class="headerlink" title="基础版本"></a>基础版本</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 将arr[l……mid]和arr[mid+1……r]两部分进行归并 </span></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">void</span> __merge(T arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> mid, <span class="keyword">int</span> r)</div><div class="line">&#123;</div><div class="line">	T aux[r-l+<span class="number">1</span>];	<span class="comment">//声明临时空间 </span></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = l; i&lt;=r; i++)</div><div class="line">	&#123;</div><div class="line">		aux[i-l]  = arr[i];	<span class="comment">//有l个位置的偏移 </span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> i = l, j = mid+<span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> k = l; k&lt;=r; k++)</div><div class="line">	&#123;</div><div class="line">		<span class="comment">//要先判断i和j是否还在数组中</span></div><div class="line">		<span class="keyword">if</span>(i &gt; mid) </div><div class="line">		&#123;</div><div class="line">			arr[k] = aux[j-l];</div><div class="line">			j++;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(j &gt; r)</div><div class="line">		&#123;</div><div class="line">			arr[k] = aux[i - l];</div><div class="line">			i++;</div><div class="line">		&#125;</div><div class="line">		<span class="comment">//确认索引合法的情况下 </span></div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(aux[i-l] &lt; aux[j-l]) </div><div class="line">		&#123;</div><div class="line">			arr[k] = aux[i-l];</div><div class="line">			i++; </div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span></div><div class="line">		&#123; </div><div class="line">			arr[k] = aux[j-l];</div><div class="line">			j++; </div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>Random</strong>情况下<br>n = <code>10 0000</code></p>
-<table>
-<thead>
-<tr>
-<th>排序算法</th>
-<th>所用时间</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Merge Sort</td>
-<td>0.077s</td>
-</tr>
-<tr>
-<td>Insertion Sort</td>
-<td>37.266s</td>
-</tr>
-</tbody>
-</table>
-<p>但是在数值近乎有序的情况下，<code>Insertion Sort</code>效果要好于<code>Merger Sort</code><br><strong>近乎有序</strong>情况下（10 0000中有100个数据调换位置）<br>n = <code>10 0000</code></p>
-<table>
-<thead>
-<tr>
-<th>排序算法</th>
-<th>所用时间</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Merge Sort</td>
-<td>0.051s</td>
-</tr>
-<tr>
-<td>Insertion Sort</td>
-<td>0.027s</td>
-</tr>
-</tbody>
-</table>
-<h3 id="改进版本1"><a href="#改进版本1" class="headerlink" title="改进版本1"></a>改进版本1</h3><p>只在arr[mid] &gt; arr[mid+1]的情况下才merge<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 递归使用归并排序，对arr[l……r]的范围内进行排序</span></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">void</span> __mergeSort(T arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> r) </div><div class="line">&#123;</div><div class="line">	<span class="keyword">if</span>(l &gt;= r)	<span class="keyword">return</span>;</div><div class="line">	<span class="keyword">int</span> mid = l + (r - l)/<span class="number">2</span>;</div><div class="line">	__mergeSort(arr, l, mid);<span class="comment">//[l……mid]是有序的</span></div><div class="line">	__mergeSort(arr, mid+<span class="number">1</span>, r);<span class="comment">//[mid+1……r]是有序的</span></div><div class="line">	**<span class="keyword">if</span>(arr[mid] &gt; arr[mid+<span class="number">1</span>])**</div><div class="line">	__merge(arr, l, mid, r);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>近乎有序</strong>情况下（10 0000中有100个数据调换位置）<br>n = <code>10 0000</code></p>
+        <hr>
+<p> title: 算法回顾—nlogn排序算法<br> date: 2017-04-23 14:16:45<br> categories: 大三下<br> tags: Algorithm</p>
+<h2 id="description-归并排序-amp-快速排序"><a href="#description-归并排序-amp-快速排序" class="headerlink" title=" description: 归并排序&amp;快速排序"></a> description: 归并排序&amp;快速排序</h2><h1 id="nlogn排序"><a href="#nlogn排序" class="headerlink" title="nlogn排序"></a>nlogn排序</h1><h2 id="自顶向下的递归Merge-Sort"><a href="#自顶向下的递归Merge-Sort" class="headerlink" title="自顶向下的递归Merge Sort"></a>自顶向下的递归Merge Sort</h2><p> 分成一半，再逐渐归并<br> 二分法达到不同的层级，每个层级用O(N)的算法来做事情<br> <code>8 6 2 3</code> | <code>1 5 7 4</code><br> <code>2 3 6 8</code> | <code>1 4 5 7</code><br> <code>1 2 3 4 5 6 7 8</code><br> 需要开辟同样大小的临时空间，来辅助完成归并过程<br> (即需要O(N)的额外空间来完成排序)<br> 3个索引位置<br> i,j指向的是当前正在考虑的元素<br> k 指向的是比较之后，最终应该放到的数组的位置(指下一个需要放的位置)<br> <img src="index_files/2270750.png" alt=""></p>
+<h3 id="基础版本"><a href="#基础版本" class="headerlink" title="基础版本"></a>基础版本</h3> <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">// 将arr[l……mid]和arr[mid+1……r]两部分进行归并 </span></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">void</span> __merge(T arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> mid, <span class="keyword">int</span> r)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i = l, j = mid+<span class="number">1</span>; <span class="comment">//i指向A[L1],j指向A[L2]</span></div><div class="line">    <span class="keyword">int</span> temp[maxn], index = <span class="number">0</span>;  <span class="comment">//temp临时存放合并后的数组，index为其下标</span></div><div class="line">    <span class="keyword">while</span> (i &lt;= mid &amp;&amp; j &lt;= r)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span> (arr[i] &lt;= arr[j])</div><div class="line">        &#123;</div><div class="line">            temp[index++] = arr[i++];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span></div><div class="line">        &#123;</div><div class="line">            temp[index++] = arr[j++];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">while</span> (i &lt;= mid)  temp[index++] = arr[i++];</div><div class="line">    <span class="keyword">while</span> (j &lt;= r)  temp[index++] = arr[j++];</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k&lt;index; k++)</div><div class="line">    &#123;</div><div class="line">        arr[l + k] = temp[k];    <span class="comment">//将合并后的序列赋值回数组A</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> <strong>Random</strong>情况下<br> n = <code>10 0000</code><br> |    排序算法    | 所用时间 |<br> |—————-|———-|<br> | Merge Sort     | 0.077s   |<br> | Insertion Sort | 37.266s  |<br> 但是在数值近乎有序的情况下，<code>Insertion Sort</code>效果要好于<code>Merger Sort</code><br> <strong>近乎有序</strong>情况下（10 0000中有100个数据调换位置）<br> n = <code>10 0000</code><br> |    排序算法    | 所用时间 |<br> |—————-|———-|<br> | Merge Sort     | 0.051s   |<br> | Insertion Sort | 0.027s   |</p>
+<h3 id="改进版本1"><a href="#改进版本1" class="headerlink" title="改进版本1"></a>改进版本1</h3><p> 只在arr[mid] &gt; arr[mid+1]的情况下才merge<br> <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 递归使用归并排序，对arr[l……r]的范围内进行排序</span></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">void</span> __mergeSort(T arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> r) </div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(l &gt;= r)    <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">int</span> mid = l + (r - l)/<span class="number">2</span>;</div><div class="line">    __mergeSort(arr, l, mid);<span class="comment">//[l……mid]是有序的</span></div><div class="line">    __mergeSort(arr, mid+<span class="number">1</span>, r);<span class="comment">//[mid+1……r]是有序的</span></div><div class="line">    **<span class="keyword">if</span>(arr[mid] &gt; arr[mid+<span class="number">1</span>])**</div><div class="line">    __merge(arr, l, mid, r);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p> <strong>近乎有序</strong>情况下（10 0000中有100个数据调换位置）<br> n = <code>10 0000</code></p>
 <table>
 <thead>
 <tr>
@@ -429,20 +388,83 @@
 </tr>
 </tbody>
 </table>
-<h3 id="改进版本2"><a href="#改进版本2" class="headerlink" title="改进版本2"></a>改进版本2</h3><p>当元素数量比较少的时候，用<code>插入排序</code></p>
+<h3 id="改进版本2"><a href="#改进版本2" class="headerlink" title="改进版本2"></a>改进版本2</h3><p> 当元素数量比较少的时候，用<code>插入排序</code></p>
 <ol>
 <li>因为当元素数量比较少的时候，元素近乎有序的可能性比较大</li>
-<li>数量级前面的系数，<code>插入排序</code>比<code>归并排序</code>要小<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 递归使用归并排序，对arr[l……r]的范围内进行排序</span></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">void</span> __mergeSort(T arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> r) </div><div class="line">&#123;</div><div class="line"><span class="comment">//	if(l &gt;= r)	return;</span></div><div class="line">**	<span class="keyword">if</span>(r - l &lt;= <span class="number">15</span>) </div><div class="line">	&#123;</div><div class="line">		insertionSort(arr, l, r);</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;**</div><div class="line">	<span class="keyword">int</span> mid = l + (r - l)/<span class="number">2</span>;</div><div class="line">	__mergeSort(arr, l, mid);</div><div class="line">	__mergeSort(arr, mid+<span class="number">1</span>, r);</div><div class="line">	<span class="keyword">if</span>(arr[mid] &gt; arr[mid+<span class="number">1</span>])	 </div><div class="line">	__merge(arr, l, mid, r);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>数量级前面的系数，<code>插入排序</code>比<code>归并排序</code>要小<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 递归使用归并排序，对arr[l……r]的范围内进行排序</span></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">void</span> __mergeSort(T arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> r) </div><div class="line">&#123;</div><div class="line"><span class="comment">//    if(l &gt;= r)    return;</span></div><div class="line">**    <span class="keyword">if</span>(r - l &lt;= <span class="number">15</span>) </div><div class="line">    &#123;</div><div class="line">        insertionSort(arr, l, r);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;**</div><div class="line">    <span class="keyword">int</span> mid = l + (r - l)/<span class="number">2</span>;</div><div class="line">    __mergeSort(arr, l, mid);</div><div class="line">    __mergeSort(arr, mid+<span class="number">1</span>, r);</div><div class="line">    <span class="keyword">if</span>(arr[mid] &gt; arr[mid+<span class="number">1</span>])     </div><div class="line">    __merge(arr, l, mid, r);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="自底向上的迭代Merge-Sort"><a href="#自底向上的迭代Merge-Sort" class="headerlink" title="自底向上的迭代Merge Sort"></a>自底向上的迭代Merge Sort</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeSortBU</span><span class="params">(T arr[], <span class="keyword">int</span> n)</span> </span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> sz = <span class="number">1</span>; sz &lt;= n; sz += sz)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i + sz &lt; n; i += sz + sz)</div><div class="line">		&#123;</div><div class="line">			<span class="comment">//对arr[i ……i+sz-1]和arr[i+sz……i+2*sz-1]进行归并 </span></div><div class="line">			__merge(arr, i, i+sz<span class="number">-1</span>, min(i+sz+sz<span class="number">-1</span>, n<span class="number">-1</span>));</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>注意两部分越界：</p>
+<h2 id="自底向上的迭代Merge-Sort"><a href="#自底向上的迭代Merge-Sort" class="headerlink" title="自底向上的迭代Merge Sort"></a>自底向上的迭代Merge Sort</h2> <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">mergeSortBU</span><span class="params">(T arr[], <span class="keyword">int</span> n)</span> </span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> sz = <span class="number">1</span>; sz &lt;= n; sz += sz)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i + sz &lt; n; i += sz + sz)</div><div class="line">        &#123;</div><div class="line">            <span class="comment">//对arr[i ……i+sz-1]和arr[i+sz……i+2*sz-1]进行归并 </span></div><div class="line">            __merge(arr, i, i+sz<span class="number">-1</span>, min(i+sz+sz<span class="number">-1</span>, n<span class="number">-1</span>));</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> <strong>近乎有序</strong>情况下（10 0000中有100个数据调换位置）<br> n = <code>10 0000</code></p>
+<table>
+<thead>
+<tr>
+<th>排序算法</th>
+<th>所用时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Merge Sort</td>
+<td>0.03s</td>
+</tr>
+<tr>
+<td>Insertion Sort</td>
+<td>0.065s</td>
+</tr>
+</tbody>
+</table>
+<p> 注意两部分越界：</p>
 <ol>
 <li>第二部分起始超过n</li>
 <li>第二部分结束部分超过n</li>
 </ol>
 <p>统计来说，递归的稍微快一点</p>
-<p>但迭代的方法可以对链表进行排序（没有要求用数组） </p>
+<p>但迭代的方法可以对链表进行排序（没有要求用数组）</p>
+<h2 id="Quick-Sort"><a href="#Quick-Sort" class="headerlink" title="Quick Sort"></a>Quick Sort</h2><p>每次选好一个元素，想办法把它移到（在已经排好序情况下）的位置<br><img src="index_files/157674078.png" alt=""><br>之后，分别对小于4的部分和大于4的部分分别递归地使用快速排序</p>
+<h3 id="Partition"><a href="#Partition" class="headerlink" title="Partition"></a>Partition</h3><p>将数组元素分成两个部分<br><img src="index_files/157877359.png" alt=""></p>
+<h4 id="e-gt-v"><a href="#e-gt-v" class="headerlink" title="e&gt;v"></a>e&gt;v</h4><p>直接放在<code>&gt;</code>v的后面，然后i++<br><img src="index_files/157953234.png" alt=""></p>
+<h4 id="e-lt-v"><a href="#e-lt-v" class="headerlink" title="e&lt;v"></a>e<code>&lt;</code>v</h4><p>先交换，然后j++,i++<br><img src="index_files/158079671.png" alt=""></p>
+<h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><p><img src="index_files/158137468.png" alt=""></p>
+<h4 id="基础版Quick-Sort"><a href="#基础版Quick-Sort" class="headerlink" title="基础版Quick Sort"></a>基础版Quick Sort</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//对arr[l……r]部分进行partition操作</span></div><div class="line"><span class="comment">//返回p,使得arr[l……p-1] &lt; arr[p]; arr[p+1……r] &gt; arr[p] </span></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">int</span> __partition(T arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> r)</div><div class="line">&#123;</div><div class="line">    T v = arr[l];</div><div class="line">    <span class="comment">//arr[l+1……j] &lt; v; arr[j+1……i) &gt; v </span></div><div class="line">    <span class="keyword">int</span> j = l;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = l+<span class="number">1</span>; i&lt;=r; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(arr[i] &lt; v)</div><div class="line">        swap(arr[++j], arr[i]);</div><div class="line">    &#125;</div><div class="line">    swap(arr[j], arr[l]);</div><div class="line">    <span class="keyword">return</span> j;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="comment">//对arr[l……r]部分进行快排 </span></div><div class="line"><span class="keyword">void</span> __quickSort(T arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> r)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>( l &gt;= r) <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">int</span> p = __partition(arr, l, r);</div><div class="line">    __quickSort(arr, l, p<span class="number">-1</span>);</div><div class="line">    __quickSort(arr, p+<span class="number">1</span>, r);  <span class="comment">//千万注意这里是p+1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(T arr[], <span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">    __quickSort(arr, <span class="number">0</span>, n<span class="number">-1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>排序算法</th>
+<th>所用时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Merge Sort</td>
+<td>0.029s</td>
+</tr>
+<tr>
+<td>Merge SortBU</td>
+<td>0.031s</td>
+</tr>
+<tr>
+<td>Quick Sory</td>
+<td>0.006s</td>
+</tr>
+</tbody>
+</table>
+<p> 但是在近乎于有序的情况下，这种快速排序很慢<br> <img src="index_files/166653093.png" alt=""><br> 基于logn层的，归并排序可以保证每次都是平均分<br> <img src="index_files/166696953.png" alt=""><br> 最坏的情况<br> <img src="index_files/166773453.png" alt=""></p>
+<h4 id="改进1—随机选择pivot"><a href="#改进1—随机选择pivot" class="headerlink" title="改进1—随机选择pivot"></a>改进1—随机选择pivot</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">int</span> __partition3(T arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> r)</div><div class="line">&#123;</div><div class="line">    **swap(arr[rand()%(r-l+<span class="number">1</span>)+l], arr[l]);**</div><div class="line">    T v = arr[l];</div><div class="line">    <span class="comment">//arr[l+1……j] &lt; v; arr[j+1……i) &gt; v </span></div><div class="line">    <span class="keyword">int</span> j = l;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = l + <span class="number">1</span>; i &lt;= r; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span> (arr[i] &lt; v)    swap(arr[++j], arr[i]);</div><div class="line">    &#125;</div><div class="line">    swap(arr[j], arr[l]);</div><div class="line">    <span class="keyword">return</span> j;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">int</span> __partition3(T arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> r)</div><div class="line">&#123;</div><div class="line">    swap(arr[rand()%(r-l+<span class="number">1</span>)+l], arr[l]);</div><div class="line">    T v = arr[l];</div><div class="line">    <span class="comment">//arr[l+1……j] &lt;= v; arr(j……r] &gt;= v </span></div><div class="line"><span class="comment">//    下面这个处理不了有相同元素的情况 </span></div><div class="line">    <span class="keyword">int</span> tmp = arr[l] ;</div><div class="line">    <span class="keyword">while</span>(l &lt; r)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">while</span>(l &lt; r &amp;&amp; arr[r] &gt; tmp)    r--;</div><div class="line">        arr[l] = arr[r];</div><div class="line">        <span class="keyword">while</span>(l &lt; r &amp;&amp; arr[l] &lt;= tmp)    l++;</div><div class="line">        arr[r] = arr[l];</div><div class="line">    &#125;</div><div class="line">    arr[l] = tmp;</div><div class="line">    <span class="keyword">return</span> l;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>随机选择pivot并与第一个元素交换<br>此时，最坏时间复杂度仍然为O(N^2)，但是退化到这种最坏情况的可能下近乎为0（需要保证每次选择的pivot均为最小值）<br><strong>在<code>元素近乎有序</code>的情况下明显好于partition1</strong></p>
+<h4 id="改进2—双指针-均衡分配相等元素"><a href="#改进2—双指针-均衡分配相等元素" class="headerlink" title="改进2—双指针+均衡分配相等元素"></a>改进2—双指针+均衡分配相等元素</h4><p>当近乎有序的情况下，快速排序仍然会很慢，退化成O（N^2）<br><img src="index_files/168279703.png" alt=""><br>可能会造成分成的两块极度不均衡<br><img src="index_files/168605000.png" alt=""><br>最大的区别：<br>把等于v的元素分散到两部分</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">int</span> __partition2(T arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> r)</div><div class="line">&#123;</div><div class="line">    swap(arr[rand()%(r-l+<span class="number">1</span>)+l], arr[l]);</div><div class="line">    T v = arr[l];</div><div class="line">    <span class="comment">//arr[l+1……j] &lt;= v; arr(j……r] &gt;= v </span></div><div class="line">    <span class="keyword">int</span> i = l+<span class="number">1</span>, j=r;</div><div class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">while</span>(i&lt;=r &amp;&amp; arr[i] &lt; v)    i++;</div><div class="line">        <span class="keyword">while</span>(j &gt;= l+<span class="number">1</span> &amp;&amp; arr[j] &gt; v)    j--;</div><div class="line">        <span class="keyword">if</span>(i &gt; j)    <span class="keyword">break</span>;</div><div class="line">        swap(arr[i], arr[j]);</div><div class="line">        i++;</div><div class="line">        j--;</div><div class="line">    &#125;</div><div class="line">    swap(arr[l], arr[j]);</div><div class="line">    <span class="keyword">return</span> j;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>在<code>存在大量重复元素</code>的情况下要明显好于partition3</strong></p>
+<h2 id="Quick-Sort-3-ways（三路快速排序）"><a href="#Quick-Sort-3-ways（三路快速排序）" class="headerlink" title="Quick Sort 3 ways（三路快速排序）"></a>Quick Sort 3 ways（三路快速排序）</h2><p><img src="index_files/170647906.png" alt=""><br>1） e ==v<br><img src="index_files/170726796.png" alt=""><br>2) e &lt; v<br>与==v的第一个元素交换<br><img src="index_files/170749781.png" alt=""><br>3) e &gt; v<br>与gt-1交换，成为大于v的第一个元素（接着gt–)<br><img src="index_files/170832406.png" alt=""></p>
+<p>结果<br><img src="index_files/170895281.png" alt=""><br>然后只需要将l和lt交换即可</p>
+<p>优点：不需要对大量==v的元素交换，在存在大量==v的元素的时候相当可以<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//三路快速排序处理arr[l……r]</span></div><div class="line"><span class="comment">//将arr[l……r]分为 &lt; v; ==v; &gt;v 三部分</span></div><div class="line"><span class="comment">//之后递归对&lt;v; &gt;v两部分继续进行三路快速排序</span></div><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="keyword">void</span> __quickSort3Ways(T arr[], <span class="keyword">int</span> l, <span class="keyword">int</span> r) </div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(r - l &lt;= <span class="number">12</span>)</div><div class="line">    &#123;</div><div class="line">        insertionSort(arr, l , r);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//partition</span></div><div class="line">    swap(arr[l], arr[rand()%(r-l+<span class="number">1</span>)+l]);</div><div class="line">    T v = arr[l];</div><div class="line">    <span class="keyword">int</span> lt = l;    <span class="comment">//arr[l+1……lt] &lt; v</span></div><div class="line">    <span class="keyword">int</span> gt = r + <span class="number">1</span>;    <span class="comment">//arr[gt……r] &gt; v </span></div><div class="line">    <span class="keyword">int</span> i = l+<span class="number">1</span>;    <span class="comment">//arr[lt+1……i) == v</span></div><div class="line">    <span class="keyword">while</span>( i &lt; gt ) </div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(arr[i] &lt; v)    </div><div class="line">        &#123;</div><div class="line">            swap(arr[i], arr[lt+<span class="number">1</span>]);</div><div class="line">            lt++;</div><div class="line">            i++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(arr[i] &gt; v)</div><div class="line">        &#123;</div><div class="line">            swap(arr[i], arr[gt<span class="number">-1</span>]);</div><div class="line">            gt--;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            i++;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    swap(arr[l], arr[lt]);</div><div class="line">    __quickSort3Ways(arr, l, lt<span class="number">-1</span>);</div><div class="line">    __quickSort3Ways(arr, gt, r);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在测试中，三路快排在存在大量重复元素的数组中性能要远远好于其他，（但其他case稍稍慢一点点）<br>虽然是nlogn的算法，但快速排序在性能上要好于归并排序<br>一般系统级程序中，多用quickSort3Ways<br>因为它在处理大量重复键值的情况下优势明显，在处理其他情况性能也可以保障</p>
+<h2 id="Merge-Sort-和-QuickSort的衍生问题"><a href="#Merge-Sort-和-QuickSort的衍生问题" class="headerlink" title="Merge Sort 和 QuickSort的衍生问题"></a>Merge Sort 和 QuickSort的衍生问题</h2><p>Merge Sort和 Quick Sort都使用了分治算法<br>思考：前人是如何想出来的</p>
+<h3 id="逆序对"><a href="#逆序对" class="headerlink" title="逆序对"></a>逆序对</h3><ol>
+<li>考察每一个数对O(n^2)</li>
+<li>归并排序求逆序对<h3 id="取出数组中第n大的元素"><a href="#取出数组中第n大的元素" class="headerlink" title="取出数组中第n大的元素"></a>取出数组中第n大的元素</h3>（退化）取数组中最大值和最小值（从头遍历O（N））<br>1.先排序，再索引O（nlog)<br>2.用快速排序的思路<br><img src="index_files/172906328.png" alt=""><br><img src="index_files/172977375.png" alt=""></li>
+</ol>
 
       
     </div>
@@ -463,12 +485,6 @@
 
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
-          
-        </div>
       
 
       
@@ -617,7 +633,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nlogn排序"><span class="nav-number">1.</span> <span class="nav-text">nlogn排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自顶向下的递归Merge-Sort"><span class="nav-number">1.1.</span> <span class="nav-text">自顶向下的递归Merge Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础版本"><span class="nav-number">1.1.1.</span> <span class="nav-text">基础版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改进版本1"><span class="nav-number">1.1.2.</span> <span class="nav-text">改进版本1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改进版本2"><span class="nav-number">1.1.3.</span> <span class="nav-text">改进版本2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自底向上的迭代Merge-Sort"><span class="nav-number">1.2.</span> <span class="nav-text">自底向上的迭代Merge Sort</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#description-归并排序-amp-快速排序"><span class="nav-number">1.</span> <span class="nav-text"> description: 归并排序&快速排序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nlogn排序"><span class="nav-number"></span> <span class="nav-text">nlogn排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自顶向下的递归Merge-Sort"><span class="nav-number">1.</span> <span class="nav-text">自顶向下的递归Merge Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础版本"><span class="nav-number">1.1.</span> <span class="nav-text">基础版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改进版本1"><span class="nav-number">1.2.</span> <span class="nav-text">改进版本1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改进版本2"><span class="nav-number">1.3.</span> <span class="nav-text">改进版本2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自底向上的迭代Merge-Sort"><span class="nav-number">2.</span> <span class="nav-text">自底向上的迭代Merge Sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Sort"><span class="nav-number">3.</span> <span class="nav-text">Quick Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Partition"><span class="nav-number">3.1.</span> <span class="nav-text">Partition</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#e-gt-v"><span class="nav-number">3.1.1.</span> <span class="nav-text">e>v</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-lt-v"><span class="nav-number">3.1.2.</span> <span class="nav-text">e<v</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结果"><span class="nav-number">3.1.3.</span> <span class="nav-text">结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基础版Quick-Sort"><span class="nav-number">3.1.4.</span> <span class="nav-text">基础版Quick Sort</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#改进1—随机选择pivot"><span class="nav-number">3.1.5.</span> <span class="nav-text">改进1—随机选择pivot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#改进2—双指针-均衡分配相等元素"><span class="nav-number">3.1.6.</span> <span class="nav-text">改进2—双指针+均衡分配相等元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Sort-3-ways（三路快速排序）"><span class="nav-number">4.</span> <span class="nav-text">Quick Sort 3 ways（三路快速排序）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Merge-Sort-和-QuickSort的衍生问题"><span class="nav-number">5.</span> <span class="nav-text">Merge Sort 和 QuickSort的衍生问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逆序对"><span class="nav-number">5.1.</span> <span class="nav-text">逆序对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取出数组中第n大的元素"><span class="nav-number">5.2.</span> <span class="nav-text">取出数组中第n大的元素</span></a></li></ol></li></ol></div>
             
 
           </div>
