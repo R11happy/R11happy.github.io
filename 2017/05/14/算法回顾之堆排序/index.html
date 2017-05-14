@@ -1,0 +1,747 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="算法," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="堆排序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法回顾---堆排序">
+<meta property="og:url" content="http://yoursite.com/2017/05/14/算法回顾之堆排序/index.html">
+<meta property="og:site_name" content="梅庄">
+<meta property="og:description" content="堆排序">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/Agorithm/heapSort/43986953.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/Agorithm/heapSort/44087531.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/Agorithm/heapSort/44216625.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/Agorithm/heapSort/48681984.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/Agorithm/heapSort/49561687.png?imageView2/2/w/600">
+<meta property="og:updated_time" content="2017-05-14T08:30:30.834Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法回顾---堆排序">
+<meta name="twitter:description" content="堆排序">
+<meta name="twitter:image" content="http://ok6lt61wr.bkt.clouddn.com/images/Agorithm/heapSort/43986953.png?imageView2/2/w/600">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/14/算法回顾之堆排序/"/>
+
+
+
+
+
+  <title> 算法回顾---堆排序 | 梅庄 </title>
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/src/love.js"></script> -->
+<!-- 背景动画 -->
+<!-- <script type="text/javascript" src="/js/src/particle.js"></script> -->
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">梅庄</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">华山派小虾米的修行场所</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/14/算法回顾之堆排序/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="R11happy">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="http://ok6lt61wr.bkt.clouddn.com/R11happy.JPG">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="梅庄">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="梅庄" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                算法回顾---堆排序
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-14T16:05:37+08:00">
+                2017-05-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大三下/" itemprop="url" rel="index">
+                    <span itemprop="name">大三下</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+              <div class="post-description">
+                  堆排序
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Heap-Sort"><a href="#Heap-Sort" class="headerlink" title="Heap Sort"></a>Heap Sort</h1><p>普通队列：先进先出；后进后出<br>优先队列：出队顺序和入队顺序无关；和优先级有关<br>如操作系统每次动态选择优先级最高的任务执行<br>人工智能中选择当前要攻击的对象<br>在1,000,000个元素中选出前100名（在N个元素中选出个元素）<br>1) 先排序（NlogN)<br>2) 使用优先队列（NlogM)<br>优先队列主要操作<br>1）入队<br>2）出队（取出优先级最高的元素）<br><img src="http://ok6lt61wr.bkt.clouddn.com/images/Agorithm/heapSort/43986953.png?imageView2/2/w/600"><br><img src="http://ok6lt61wr.bkt.clouddn.com/images/Agorithm/heapSort/44087531.png?imageView2/2/w/600"></p>
+<h2 id="堆的实现"><a href="#堆的实现" class="headerlink" title="堆的实现"></a>堆的实现</h2><img src="http://ok6lt61wr.bkt.clouddn.com/images/Agorithm/heapSort/44216625.png?imageView2/2/w/600">
+<p>不意味着<code>层数越高</code>，数值越大</p>
+<h3 id="用数组存储二叉堆"><a href="#用数组存储二叉堆" class="headerlink" title="用数组存储二叉堆"></a>用数组存储二叉堆</h3><p>父节点下标<code>i</code>（从1开始）<br>左子结点下标<code>2i</code>，右子结点下标<code>2i+1</code><br><code>parent(i)</code> = i / 2<br><code>left child(i)</code> = 2<em>i<br><code>right child(i)</code> = 2</em>i+1<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Item&gt;</div><div class="line"><span class="keyword">class</span> MaxHeap&#123;</div><div class="line">	</div><div class="line"><span class="keyword">private</span>:</div><div class="line">	Item* data;</div><div class="line">	<span class="keyword">int</span> count;</div><div class="line">	<span class="keyword">int</span> capacity;</div><div class="line"></div><div class="line"><span class="keyword">public</span>:</div><div class="line">	MaxHeap(<span class="keyword">int</span> capacity)&#123;</div><div class="line">		</div><div class="line">		data = <span class="keyword">new</span> Item[capacity+<span class="number">1</span>];</div><div class="line">		count = <span class="number">0</span>;</div><div class="line">		<span class="keyword">this</span>-&gt;capacity = capacity;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	~MaxHeap()&#123;</div><div class="line">		<span class="keyword">delete</span>[] data; </div><div class="line">	&#125; </div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> count;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">isEmpty</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> count == <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(Item item)</span></span>&#123;</div><div class="line">		</div><div class="line">		assert(count + <span class="number">1</span> &lt;= capacity);	<span class="comment">//可实现，当发现容量不足的时候开辟新空间 </span></div><div class="line">		data[count+<span class="number">1</span>] = item;</div><div class="line">		count++;</div><div class="line">		shiftUp(count);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Shift-Up"><a href="#Shift-Up" class="headerlink" title="Shift Up"></a>Shift Up</h2><p>新添加一个元素到最后<br>count++<br>将最后一个元素一步一步向上挪<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">shiftUp</span><span class="params">(<span class="keyword">int</span> k)</span></span>&#123;</div><div class="line">	</div><div class="line">	<span class="keyword">while</span>( k &gt; <span class="number">1</span> &amp;&amp; data[k/<span class="number">2</span>] &lt; data[k] )&#123;</div><div class="line">		swap(data[k/<span class="number">2</span>], data[k]);</div><div class="line">		k /= <span class="number">2</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(Item item)</span></span>&#123;</div><div class="line">	</div><div class="line">	assert(count + <span class="number">1</span> &lt;= capacity);	<span class="comment">//可实现，当发现容量不足的时候开辟新空间 </span></div><div class="line">	data[count+<span class="number">1</span>] = item;</div><div class="line">	count++;</div><div class="line">	shiftUp(count);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Shift-Down"><a href="#Shift-Down" class="headerlink" title="Shift Down"></a>Shift Down</h2><p>拿出根元素<br>把最后一个元素拿到根结点<br>将根结点一步一步向下挪<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">shiftDown</span><span class="params">( <span class="keyword">int</span> k )</span></span>&#123;</div><div class="line">	<span class="keyword">while</span>( <span class="number">2</span>*k &lt;= count )&#123;	<span class="comment">//确保有左孩子 </span></div><div class="line">		<span class="keyword">int</span> j = <span class="number">2</span>*k;	<span class="comment">//此轮循环中,data[k] 和data[j]交换位置</span></div><div class="line">		<span class="keyword">if</span>( j+<span class="number">1</span> &lt;= count &amp;&amp; data[j+<span class="number">1</span>] &gt; data[j] ) 	j++;	<span class="comment">//如果右孩子大，那交换右孩子，否则交换左孩子 </span></div><div class="line">		</div><div class="line">		<span class="keyword">if</span>(data[k] &gt;= data[j])	<span class="keyword">break</span>;</div><div class="line">		</div><div class="line">		swap( data[k], data[j] );	<span class="comment">//swap可以用赋值操作优化，不用每次swap </span></div><div class="line">		k = j;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function">Item <span class="title">extracrMax</span><span class="params">()</span></span>&#123;</div><div class="line">	</div><div class="line">	assert( count &gt; <span class="number">0</span> );</div><div class="line">	Item ret = data[<span class="number">1</span>];</div><div class="line">	swap( data[<span class="number">1</span>], data[count] );</div><div class="line">	count--;</div><div class="line">	shiftDown( <span class="number">1</span> );</div><div class="line">	<span class="keyword">return</span> ret;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="堆排序版本1"><a href="#堆排序版本1" class="headerlink" title="堆排序版本1"></a>堆排序版本1</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">heapSort1</span><span class="params">(T arr[], <span class="keyword">int</span> n)</span></span>&#123;</div><div class="line">	MaxHeap&lt;T&gt; maxheap = MaxHeap&lt;T&gt;(n);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)	maxheap.insert(arr[i]);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = n<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--)	arr[i] = maxheap.extracrMax();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<img src="http://ok6lt61wr.bkt.clouddn.com/images/Agorithm/heapSort/48681984.png?imageView2/2/w/600">
+<h2 id="堆排序版本2-Heapify"><a href="#堆排序版本2-Heapify" class="headerlink" title="堆排序版本2(Heapify)"></a>堆排序版本2(Heapify)</h2><p>给定一个数组，让这个数组组成堆的形状（heapify，快速建堆)<br>快速建堆<br>对于一个完全二叉树，第一个非叶子结点的索引下标（元素个数/2）<br>从后向前考察每一个非叶子结点<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">MaxHeap(Item arr[], <span class="keyword">int</span> n)&#123;</div><div class="line">	data = <span class="keyword">new</span> Item[n+<span class="number">1</span>];</div><div class="line">	capacity = n;</div><div class="line">	<span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>; i&lt;n; i++ )	data[i+<span class="number">1</span>] = arr[i];</div><div class="line">	count = n;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = count/<span class="number">2</span>; i&gt;=<span class="number">1</span>; i--)	shiftDown(i);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">heapSort2</span><span class="params">(T arr[], <span class="keyword">int</span> n)</span></span>&#123;</div><div class="line">	MaxHeap&lt;T&gt; maxheap = MaxHeap&lt;T&gt;(arr, n);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = n<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--)	arr[i] = maxheap.extracrMax();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<img src="http://ok6lt61wr.bkt.clouddn.com/images/Agorithm/heapSort/49561687.png?imageView2/2/w/600">
+<p>系统级别数据很少用堆排序<br>堆排序主要用于动态数据的维护<br>为什么建堆快？<br>因为：<br>将n各元素逐个插入到一个空堆中O(nlogn)<br>heapify的过程，复杂度O(n)</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/27/java语言程序设计-基础篇-进阶篇-读书笔记5/" rel="next" title="java语言程序设计-基础篇-进阶篇-读书笔记5">
+                <i class="fa fa-chevron-left"></i> java语言程序设计-基础篇-进阶篇-读书笔记5
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ok6lt61wr.bkt.clouddn.com/R11happy.JPG"
+               alt="R11happy" />
+          <p class="site-author-name" itemprop="name">R11happy</p>
+          <p class="site-description motion-element" itemprop="description">华山派小虾米的修行场所</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/R11happy" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Heap-Sort"><span class="nav-number">1.</span> <span class="nav-text">Heap Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#堆的实现"><span class="nav-number">1.1.</span> <span class="nav-text">堆的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用数组存储二叉堆"><span class="nav-number">1.1.1.</span> <span class="nav-text">用数组存储二叉堆</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shift-Up"><span class="nav-number">1.2.</span> <span class="nav-text">Shift Up</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shift-Down"><span class="nav-number">1.3.</span> <span class="nav-text">Shift Down</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆排序版本1"><span class="nav-number">1.4.</span> <span class="nav-text">堆排序版本1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆排序版本2-Heapify"><span class="nav-number">1.5.</span> <span class="nav-text">堆排序版本2(Heapify)</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">R11happy</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid="></script>
+      <!-- UY END -->
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
