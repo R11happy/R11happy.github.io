@@ -1,0 +1,784 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="編譯器," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="自製編譯器讀書筆記">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自製編譯器">
+<meta property="og:url" content="http://yoursite.com/2017/05/20/my-Compier/index.html">
+<meta property="og:site_name" content="梅庄">
+<meta property="og:description" content="自製編譯器讀書筆記">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/2543031.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/157674078.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/4093109.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/4115093.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/19391421.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/19412875.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/22340468.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/23010375.png?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/23022250.png?imageView2/2/w/600">
+<meta property="og:updated_time" content="2017-05-20T15:50:39.664Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自製編譯器">
+<meta name="twitter:description" content="自製編譯器讀書筆記">
+<meta name="twitter:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/2543031.png?imageView2/2/w/600">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/20/my-Compier/"/>
+
+
+
+
+
+  <title> 自製編譯器 | 梅庄 </title>
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/js/src/love.js"></script> -->
+<!-- 背景动画 -->
+<!-- <script type="text/javascript" src="/js/src/particle.js"></script> -->
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">梅庄</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">华山派小虾米的修行场所</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/20/my-Compier/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="R11happy">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="http://ok6lt61wr.bkt.clouddn.com/R11happy.JPG">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="梅庄">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="梅庄" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                自製編譯器
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-20T23:42:27+08:00">
+                2017-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/大三下/" itemprop="url" rel="index">
+                    <span itemprop="name">大三下</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+              <div class="post-description">
+                  自製編譯器讀書筆記
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="开始制作编译器"><a href="#开始制作编译器" class="headerlink" title="开始制作编译器"></a>开始制作编译器</h1><h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>执行一个<code>gcc</code>命令，实际上其内部经历了如下4个阶段的处理</p>
+<ol>
+<li>预处理</li>
+<li>（狭义的）编译</li>
+<li>汇编</li>
+<li>链接<h3 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h3>C语言的代码首先由<code>预处理器</code>(preprocessor)对<code>#include</code>和<code>#define</code>进行处理。具体来说，读入头文件，将所有的宏展开，这就是<code>预处理</code>(preprocess)。预处理的英文是<code>preprocess</code>,就是前处理的意思。这里的”前”是在什么之前呢？当然是编译之前了。<br>预处理的内容近似于<code>sed</code>命令和<code>awk</code>命令这样的纯文本操作，不考虑C语言语法的含义。<h3 id="狭义的编译"><a href="#狭义的编译" class="headerlink" title="狭义的编译"></a>狭义的编译</h3>接着，编译器对预处理的输出进行编译，生成<code>汇编语言</code>的代码。一般来说，汇编语言的代码的文件扩展名是”.s”<h3 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h3>然后，汇编语言的代码由<code>汇编器</code>转化为机器语言，这个处理过程称为<code>汇编</code><br>汇编器的输出称为<code>目标文件</code>。一般来说，目标文件的扩展名是”.o”<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3>目标文件本身还不能直接使用，无论是直接运行还是作为<code>library</code>文件调用都不可以。将目标文件转换为最终可以使用的处理称为<code>链接</code>(link)<br>例如链接hello.o即可生成可执行文件，生成默认的可执行文件名为a.out<img src="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/2543031.png?imageView2/2/w/600">
+</li>
+</ol>
+<p>在Java的运行环境中，为了提高运行速度，采用了<code>JIT</code>编译器（Just In Time complier).JIT编译器是在程序运行时进行处理，将程序转换为机器语言的编译器。也就是说<strong>Java语言是在运行时进行编译的</strong></p>
+<h2 id="编程语言的运行方式"><a href="#编程语言的运行方式" class="headerlink" title="编程语言的运行方式"></a>编程语言的运行方式</h2><p><code>编译器</code>会对程序进行编译，将其转换为可执行的形式。另外也有不进行编译，直接运行编程语言的方法。<br><code>解释器</code>就是这样，解释器不将程序转换为别的语言，而是直接运行。例如Ruby和Perl语言处理器就是用解释器来实现的。<br>一般来说，有<code>静态类型检查</code>(static type checking)、要求较高可靠性的情况下使用编译的方式<br>相反，没有静态类型检查，对灵活性的要求高于严密性的情况下，则使用解释的方式。<br><code>静态类型检查</code>是指在程序开始运行之前，对函数的返回值以及参数的类型进行检查的功能。<br><code>动态类型检查</code>在程序运行过程中随时进行类型检查的方式<br><code>静态</code>就是指不运行程序而进行某些处理<br><code>动态</code>就是指一遍运行程序一遍进行某些处理。</p>
+<h2 id="编译过程"><a href="#编译过程" class="headerlink" title="编译过程"></a>编译过程</h2><p>狭义的编译可以大致分为下面4个阶段</p>
+<ol>
+<li>语法分析(syntax analyzing)</li>
+<li>语义分析(semantic analysis)</li>
+<li>生成中间代码</li>
+<li>代码生成<h3 id="语法分析-syntax-analyzing"><a href="#语法分析-syntax-analyzing" class="headerlink" title="语法分析(syntax analyzing)"></a>语法分析(syntax analyzing)</h3><img src="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/157674078.png?imageView2/2/w/600">
+<h3 id="语义分析-semantic-analysis"><a href="#语义分析-semantic-analysis" class="headerlink" title="语义分析(semantic analysis)"></a>语义分析(semantic analysis)</h3>解析语法树，出去多余的内容，添加必要的信息，生成<code>抽象语法树</code>(Abstract Syntax Tree, AST)这样一种数据结构。<br>语义分析包括以下这些处理</li>
+</ol>
+<ul>
+<li>区分变量为局部变量还是全局变量</li>
+<li>解析变量的声明和引用</li>
+<li>变量和表达式的类型检查</li>
+<li>检查在引用变量之前是否进行了初始化</li>
+<li>检查函数是否按照定义返回了结果</li>
+</ul>
+<p><code>syntax analyzing</code>生成的语法树只是将代码的构造照搬了过来，而<code>semantic analysis</code>生成的抽象语法树中还包括了语义信息。<br>例如，在变量的引用和定义之间添加链接，适当地增加类型转换等命令，使表达式的类型一致。<br>另外，语法树中的表达式外侧的括号、行末的分号等，在抽象语法树中都被省略了。</p>
+<h3 id="生成中间代码"><a href="#生成中间代码" class="headerlink" title="生成中间代码"></a>生成中间代码</h3><p>将抽象语法树转化为只在编译器内部使用的<code>中间代码</code>(Intermediate Representation, IR)<br>之所以特地转化为中间代码，主要是为了支持多种编程语言或者机器语言。<br><img src="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/4093109.png?imageView2/2/w/600"><br><img src="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/4115093.png?imageView2/2/w/600"><br>例如GCC使用的是一种名为<code>RTL</code>(Register Transfer Language)的中间代码<br>当然，根据编译器的不同，也存在不经过中间代码，直接从抽象语法树生成机器语言的情况<br>解析代码转化为中间代码为止的这部分内容，称为编译器的<code>前端</code>(front-end)</p>
+<h3 id="代码生成"><a href="#代码生成" class="headerlink" title="代码生成"></a>代码生成</h3><p>将中间代码转换为汇编语言，这个阶段称为<code>代码生成</code>(code generation)。负责代码生成的程序模块称为<code>代码生成器</code>(code generator)<br>一般来说，比起编程语言，汇编语言在使用上的限制多一些。例如，C和java可以随心所欲地定义局部变量，而汇编语言中能够分配给局部变量的寄存器只有不到30个而已。处理流程控制方面也只有和goto语句功能类似的跳转指令。</p>
+<h1 id="语法分析的方法"><a href="#语法分析的方法" class="headerlink" title="语法分析的方法"></a>语法分析的方法</h1><h2 id="词法分析、语法分析、语义分析"><a href="#词法分析、语法分析、语义分析" class="headerlink" title="词法分析、语法分析、语义分析"></a>词法分析、语法分析、语义分析</h2><p>一般来说，语法分析可以细分为一下两个阶段</p>
+<ol>
+<li>词法分析</li>
+<li>语法分析<br><code>词法分析</code>(lexical analyze)就是将代码分割成一个个的单词，也可以成为<code>扫描</code>(scan)。举例来说，词法分析就是将x=1+2这样的程序分割为”x” “=” “1” “+” “2”这样5个单词。并且在该过程中，会将空白符和注释这种对程序没有实际意义的部分剔除。正因为预先有了词法分析，语法分析器才可以只处理由意义的单词，进而实现简化处理。<br>负责词法分析的模块称为<code>词法分析器(lexical analyze)</code>,又称为<code>扫描器（scanner)</code><br>本书制作的Cb编译器的词法分析为独立的模块，但语义分析的一部分将放在语法分析的模块中来实现。</li>
+</ol>
+<h2 id="token"><a href="#token" class="headerlink" title="token"></a>token</h2><p>在编程语言处理系统中，我们将“一个单词（的字面）”和“它的种类” “语义值”统称为token。通过使用token这个词，词法分析器的作用就可以说是解析代码(字符行)并生成token序列</p>
+<h2 id="抽象语法树和节点"><a href="#抽象语法树和节点" class="headerlink" title="抽象语法树和节点"></a>抽象语法树和节点</h2><p>编程语言的编译器中解析器的主要作用是解析由扫描器生成的<code>token</code>序列，并生成代码所对应的树形结构（即<code>语法树</code>)。确切的说，也有方法可以不需要生成语法树，但这样的方法仅限于极小型的编译器。<br>语法树和语法是完全对应的，所以例如C语言的终结符分号以及表达式两端的括号等都包含在真实的语法树中。但是，保存分号和括号基本没有实际的意义，因此实际上大部分情况下会生成一开始就省略分号、括号的抽象语法树。也就是说，解析器会跳过语法树，直接生成抽象语法树。<br>无论语法树还是抽象语法树，都是树形的数据结构，因此和普通的树结构相同，由称为<code>节点</code>(node)的数据结构组合而成。用java来写的话，一个节点可以用一个节点对象来表示。</p>
+<h1 id="解析器生成器"><a href="#解析器生成器" class="headerlink" title="解析器生成器"></a>解析器生成器</h1><p>只需指定需要解析的语法，扫描器生成器和解析器生成器都能生成解析相应语法的代码<br>cbc使用<code>javaCC</code>工具来生成扫描器和解析器。javaCC兼具扫描器生成器和解析器生成器的功能，因此能够在一个文件中同时记述扫描器和解析器<br><img src="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/19391421.png?imageView2/2/w/600"><br><img src="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/19412875.png?imageView2/2/w/600"><br>cbc选择javaCC作为解析器生成器的原因</p>
+<ul>
+<li>具备了所必须的最低限度的功能</li>
+<li>运行生成的解析器时不需要专门的库</li>
+<li>软件的实现比较成熟</li>
+<li>生成的代码还算是可读</li>
+</ul>
+<p>相比较LR解析器和LALR解析器生成器，它有着可处理语法的范围相对狭窄的缺点<br>但另一方面，javaCC生成的解析器有易于理解、易于使用的优势。<br>另外因为支持了”无限长的token超前扫描”,所以可处理语法范围狭窄的问题也得到了很好的改善。</p>
+<h1 id="JavaCC"><a href="#JavaCC" class="headerlink" title="JavaCC"></a>JavaCC</h1><h2 id="javaCC的正则表达式"><a href="#javaCC的正则表达式" class="headerlink" title="javaCC的正则表达式"></a>javaCC的正则表达式</h2><img src="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/22340468.png?imageView2/2/w/600">
+<h3 id="扫描标识符和保留字"><a href="#扫描标识符和保留字" class="headerlink" title="扫描标识符和保留字"></a>扫描标识符和保留字</h3><img src="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/23010375.png?imageView2/2/w/600">
+<img src="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/23022250.png?imageView2/2/w/600">
+<p>javaCC会同时尝试匹配所有的正则表达式，并选择匹配字符串最长的规则<br>如voidFunction会生成IDENTIFIER的token而不是VOID的token<br>如果和多个规则的正则表达式匹配的字符串长度相同，例如void f(),和VOID token以及IDENTIFIER token的正则表达式都匹配void这4个字符<br>像这样和多个规则的正则表达式匹配的字符串长度相同的情况下,javaCC优先选择在文件中先定义的token规则。<br>也就是说，如果VOID token规则卸载IDENTIFIER token规则之前，那么生成VOID token。而如果IDENTIFIER token的规则先定义的话免责生成IDENTIFIER token<br><strong>所以 ，所有保留字的规则必须写在IDENTIFIER的规则之前</strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/編譯器/" rel="tag"># 編譯器</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/18/网络是怎样连接的-3/" rel="next" title="网络是怎样连接的---3">
+                <i class="fa fa-chevron-left"></i> 网络是怎样连接的---3
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ok6lt61wr.bkt.clouddn.com/R11happy.JPG"
+               alt="R11happy" />
+          <p class="site-author-name" itemprop="name">R11happy</p>
+          <p class="site-description motion-element" itemprop="description">华山派小虾米的修行场所</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/R11happy" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#开始制作编译器"><span class="nav-number">1.</span> <span class="nav-text">开始制作编译器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译"><span class="nav-number">1.1.</span> <span class="nav-text">编译</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#预处理"><span class="nav-number">1.1.1.</span> <span class="nav-text">预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#狭义的编译"><span class="nav-number">1.1.2.</span> <span class="nav-text">狭义的编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#汇编"><span class="nav-number">1.1.3.</span> <span class="nav-text">汇编</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接"><span class="nav-number">1.1.4.</span> <span class="nav-text">链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编程语言的运行方式"><span class="nav-number">1.2.</span> <span class="nav-text">编程语言的运行方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译过程"><span class="nav-number">1.3.</span> <span class="nav-text">编译过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法分析-syntax-analyzing"><span class="nav-number">1.3.1.</span> <span class="nav-text">语法分析(syntax analyzing)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语义分析-semantic-analysis"><span class="nav-number">1.3.2.</span> <span class="nav-text">语义分析(semantic analysis)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成中间代码"><span class="nav-number">1.3.3.</span> <span class="nav-text">生成中间代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码生成"><span class="nav-number">1.3.4.</span> <span class="nav-text">代码生成</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语法分析的方法"><span class="nav-number">2.</span> <span class="nav-text">语法分析的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#词法分析、语法分析、语义分析"><span class="nav-number">2.1.</span> <span class="nav-text">词法分析、语法分析、语义分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#token"><span class="nav-number">2.2.</span> <span class="nav-text">token</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象语法树和节点"><span class="nav-number">2.3.</span> <span class="nav-text">抽象语法树和节点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解析器生成器"><span class="nav-number">3.</span> <span class="nav-text">解析器生成器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaCC"><span class="nav-number">4.</span> <span class="nav-text">JavaCC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#javaCC的正则表达式"><span class="nav-number">4.1.</span> <span class="nav-text">javaCC的正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#扫描标识符和保留字"><span class="nav-number">4.1.1.</span> <span class="nav-text">扫描标识符和保留字</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">R11happy</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid="></script>
+      <!-- UY END -->
+  
+
+
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
