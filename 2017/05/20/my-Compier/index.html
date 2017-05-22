@@ -113,7 +113,7 @@
 <meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/23022250.png?imageView2/2/w/600">
 <meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/15860734.png?imageView2/2/w/600">
 <meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/16695156.png?imageView2/2/w/600">
-<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/17610875.pngextend:?imageView2/2/w/600">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/17610875.png?imageView2/2/w/600">
 <meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/17748515.png?imageView2/2/w/600">
 <meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/18249859.png?imageView2/2/w/600">
 <meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/18373781.png?imageView2/2/w/600">
@@ -125,7 +125,7 @@
 <meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/20815671.png?imageView2/2/w/600">
 <meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/20994718.png?imageView2/2/w/600">
 <meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/38798500.png?imageView2/2/w/600">
-<meta property="og:updated_time" content="2017-05-22T00:07:01.718Z">
+<meta property="og:updated_time" content="2017-05-22T02:48:25.631Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自制编译器">
 <meta name="twitter:description" content="自制编译器读书笔记">
@@ -441,7 +441,7 @@
 <h2 id="javaCC的EBNF表示法"><a href="#javaCC的EBNF表示法" class="headerlink" title="javaCC的EBNF表示法"></a>javaCC的EBNF表示法</h2><p>javaCC使用名为<code>EBNF</code>（Extended Backus-Naur Form）的表示法来描述语法规则<br><img src="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/16695156.png?imageView2/2/w/600"></p>
 <h2 id="语法的二义性"><a href="#语法的二义性" class="headerlink" title="语法的二义性"></a>语法的二义性</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(cond1)</div><div class="line">    <span class="keyword">if</span>(cond2)    f();</div><div class="line">	<span class="keyword">else</span>    g();</div></pre></td></tr></table></figure>
 <p><code>EBNF</code>描述<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;if&quot; &quot;(&quot; expr() &quot;)&quot; stmt() [&quot;else&quot; stmt()]</div></pre></td></tr></table></figure></p>
-<img src="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/17610875.pngextend:?imageView2/2/w/600">
+<img src="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/17610875.png?imageView2/2/w/600">
 <h2 id="javaCC的局限性"><a href="#javaCC的局限性" class="headerlink" title="javaCC的局限性"></a>javaCC的局限性</h2><img src="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/17748515.png?imageView2/2/w/600">
 <p>事实上，javaCC在遇到用“|”分隔的选项时，在仅读取了1个token的时刻就会对选项进行判断，确切的动作如下所示</p>
 <ol>
