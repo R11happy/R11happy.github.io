@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="计算机网络," />
+  <meta name="keywords" content="java," />
 
 
 
@@ -96,16 +96,18 @@
 
 
 
-<meta name="description" content="集线器、交换机和路由器">
+<meta name="description" content="java细节">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网络是怎样连接的---3">
-<meta property="og:url" content="http://yoursite.com/2017/05/18/网络是怎样连接的-3/index.html">
+<meta property="og:title" content="细说java---读书笔记 ">
+<meta property="og:url" content="http://yoursite.com/2017/05/26/细说java-读书笔记/index.html">
 <meta property="og:site_name" content="梅庄">
-<meta property="og:description" content="集线器、交换机和路由器">
-<meta property="og:updated_time" content="2017-05-23T15:59:42.632Z">
+<meta property="og:description" content="java细节">
+<meta property="og:image" content="http://yoursite.com/index_files/196413734.png">
+<meta property="og:updated_time" content="2017-05-26T12:57:44.171Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="网络是怎样连接的---3">
-<meta name="twitter:description" content="集线器、交换机和路由器">
+<meta name="twitter:title" content="细说java---读书笔记 ">
+<meta name="twitter:description" content="java细节">
+<meta name="twitter:image" content="http://yoursite.com/index_files/196413734.png">
 
 
 
@@ -133,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/18/网络是怎样连接的-3/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/26/细说java-读书笔记/"/>
 
 
 
 
 
-  <title> 网络是怎样连接的---3 | 梅庄 </title>
+  <title> 细说java---读书笔记  | 梅庄 </title>
 <!-- 页面点击小红心 -->
 <!-- <script type="text/javascript" src="/js/src/love.js"></script> -->
 <!-- 背景动画 -->
@@ -265,7 +267,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/18/网络是怎样连接的-3/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/26/细说java-读书笔记/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="R11happy">
@@ -289,7 +291,7 @@
             
             
               
-                网络是怎样连接的---3
+                细说java---读书笔记 
               
             
           </h1>
@@ -304,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-18T23:42:19+08:00">
-                2017-05-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-26T20:55:38+08:00">
+                2017-05-26
               </time>
             
 
@@ -351,7 +353,7 @@
 
           
               <div class="post-description">
-                  集线器、交换机和路由器
+                  java细节
               </div>
           
 
@@ -366,19 +368,18 @@
       
 
       
-        <h1 id="探索集线器、交换机和路由器"><a href="#探索集线器、交换机和路由器" class="headerlink" title="探索集线器、交换机和路由器"></a>探索集线器、交换机和路由器</h1><h2 id="信号在网线和集线器中传输"><a href="#信号在网线和集线器中传输" class="headerlink" title="信号在网线和集线器中传输"></a>信号在网线和集线器中传输</h2><p>信号从计算机中流出之后，会在网线中经过集线器等设备前进。<br>那信号是如何在网线和集线器传输的？<br>信号在传输过程中会衰减，还会收到噪声干扰而失真，那如何才能一直这些影响？</p>
-<h3 id="每个包都是独立传输的"><a href="#每个包都是独立传输的" class="headerlink" title="每个包都是独立传输的"></a>每个包都是独立传输的</h3><h3 id="防止网线中的信号衰减"><a href="#防止网线中的信号衰减" class="headerlink" title="防止网线中的信号衰减"></a>防止网线中的信号衰减</h3><h3 id="“双绞”是为了抑制噪声"><a href="#“双绞”是为了抑制噪声" class="headerlink" title="“双绞”是为了抑制噪声"></a>“双绞”是为了抑制噪声</h3><h3 id="集线器将信号发往所有线路"><a href="#集线器将信号发往所有线路" class="headerlink" title="集线器将信号发往所有线路"></a>集线器将信号发往所有线路</h3><p>当信号到达集线器后，会被广播到整个网络中<br>连接在集线器上的设备在收到信号之后会通过MAC头部的接收方MAC地址判断是不是发给自己的，如果是发给自己的就接受，否则就忽略。<br>由于集线器只是原封不动地将信号广播出去，所以即便信号收到噪声的干扰发生了失真，也会原样发送到目的地。</p>
-<h2 id="交换机的包转发操作"><a href="#交换机的包转发操作" class="headerlink" title="交换机的包转发操作"></a>交换机的包转发操作</h2><p>交换机并不只是简单的让信号流过，而是先接受信号并将其还原为数字信息，然后再重新转换成信号并发送出去的过程。</p>
-<h3 id="交换机根据地址表进行转发"><a href="#交换机根据地址表进行转发" class="headerlink" title="交换机根据地址表进行转发"></a>交换机根据地址表进行转发</h3><p>交换机的一个端口就相当于计算机的一块网卡。但交换机的工作方式和网卡有一点不同。<br><code>网卡</code>本身具有MAC地址，并通过核对收到的包的接收方MAC地址判断是不是发给自己的，如果不是发给自己的则丢弃；<br><code>交换机</code>的端口不核对接收方MAC地址，而是直接接受所有的包并存放到<code>缓冲区</code>中。因此和网卡不同，交换机的端口不具有MAC地址<br><strong>交换机端口的MAC模块不具有MAC地址</strong><br><strong>交换机根据MAC地址表查找MAC地址，然后将信号发送到相应的端口</strong></p>
-<h3 id="MAC地址表的维护"><a href="#MAC地址表的维护" class="headerlink" title="MAC地址表的维护"></a>MAC地址表的维护</h3><p>两种操作</p>
-<h4 id="写入"><a href="#写入" class="headerlink" title="写入"></a>写入</h4><p>收到包时，将发送方<code>MAC</code>地址及其输入端口的号码写入<code>MAC地址表</code>中。<br>由于收到包的那个端口就连接着发送这个包的设备，所以只要将这个包的发送方MAC地址写入地址表，以后当收到发往这个地址的包时，交换机就可以将它转发到正确的端口。<br>交换机每次收到包时都会执行这个操作，因此只要某个设备发送过网络包，它的MAC地址就会被记录到地址表中。</p>
-<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><p>删除地址表中某条记录的操作，这是为了防止设备移动时产生问题。（比如把笔记本从办公室拿到会议室）<br>因此地址表中的记录不能永久有效，而是要在一段时间不使用后就自动删除。</p>
-<p>总之，交换机会自行更新或删除地址表中的记录，不需要手动维护。</p>
-<h3 id="特殊操作"><a href="#特殊操作" class="headerlink" title="特殊操作"></a>特殊操作</h3><p>当交换机发现一个包要发挥到原端口时，就会直接丢弃这个包<br>当地址表中找不到指定的MAC地址。这可能是因为具有该地址的设备还没有向交换机发送过包，或者这个设备一段时间没有工作导致地址被从地址表中删除了。这种情况下，交换机无法判断应该把包转发到那个端口，只能将包转发到除了源端口之外的所有端口上，无论该设备连接在哪个端口上都能收到这个包。<br>如果接收方MAC地址是一个广播地址（255.255.255.255），那么交换机会将包发送到除源端口之外的所有端口。</p>
-<h3 id="全双工模式可以同时进行发送和接收"><a href="#全双工模式可以同时进行发送和接收" class="headerlink" title="全双工模式可以同时进行发送和接收"></a>全双工模式可以同时进行发送和接收</h3><p>全双工模式是交换机特有的工作模式，它可以同时进行发送和接收操作，集线器不具备这样的特性。<br>使用集线器时，如果多态计算机同时发送信号，信号就会在集线器内部混杂在一起，进而无法使用，这种现象称为<code>碰撞</code><br>不过，只要不用<code>集线器</code>，就不会发生碰撞<br>使用双绞线时，发送和接收的信号线是各自独立的，因此在双绞线中信号不会发生碰撞。<br>如果不存在碰撞，也就不需要<code>半双工模式中的碰撞处理机制</code></p>
-<h3 id="交换机可同时执行多个转发操作"><a href="#交换机可同时执行多个转发操作" class="headerlink" title="交换机可同时执行多个转发操作"></a>交换机可同时执行多个转发操作</h3><p><code>交换机</code>只将包转发到具有特定MAC地址的设备连接的端口，其他端口都是空闲的。这些端口可以传输其他的包，因此交换机可以同时转发多个包<br><code>集线器</code>会将输入的信号广播到所有的端口，如果同时输入多个信号就会发生碰撞，无法同时传输多路信号，因此从设备整体的转发能力来看，交换机要高于集线器</p>
-<h2 id="路由器的包转发操作"><a href="#路由器的包转发操作" class="headerlink" title="路由器的包转发操作"></a>路由器的包转发操作</h2><p>路由器和叫交换机一样也负责对包进行转发，但它们的工作方式有一些差异。<br><code>交换机</code>是基于以太网规格工作的设备<br><code>路由器</code>是基于IP工作的<br>路由器在转发包时，首先会通过端口将发过来的包接收进来，接下来，转发模块会根据接收到的包的IP头部中记录的接收方IP地址，在路由表中进行查询，以此判断转发目标。<br>然后，转发模块将包转移到转发目标对应的端口，端口再按照硬件的规则将包发送出去，也就是转发模块委托端口将包发送出去的意思<br><strong>路由器的各个端口都具有MAC地址和IP地址</strong><br>而交换机只是将进来的包转发出去而已，它自己并不会成为发送方或接收方。</p>
-<h2 id="路由器的附加功能"><a href="#路由器的附加功能" class="headerlink" title="路由器的附加功能"></a>路由器的附加功能</h2><p>位于互联网接入端的路由器通常还会提供一些附加功能，例如将私有地址转换为公有地址，以及组织危险网络包的包过滤功能。</p>
+        <h1 id="细说java"><a href="#细说java" class="headerlink" title="细说java"></a>细说java</h1><h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><h3 id="基本数据类型的关系"><a href="#基本数据类型的关系" class="headerlink" title="基本数据类型的关系"></a>基本数据类型的关系</h3><p><img src="index_files/196413734.png" alt=""><br><code>低类型数据</code>可以不作任何处理，直接赋值给<code>高类型数据</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">byte</span> b = <span class="number">100</span>;</div><div class="line"><span class="keyword">int</span> x = b;    <span class="comment">//隐式地将byte类型转化为int类型</span></div></pre></td></tr></table></figure></p>
+<p>好比将一个杯子（<code>低类型数据</code>）中的水倒入一个水桶中（<code>高类型数据</code>）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">short</span> s = <span class="number">178</span>;</div><div class="line"><span class="keyword">byte</span> b = (<span class="keyword">byte</span>)s;    <span class="comment">//必须使用强制类型转换</span></div></pre></td></tr></table></figure>
+<p>在上面的福之中，byte类型数据占1个字节，而short类型数据占2字节，系统在赋值时直接将short类型的高8位截断，而只将低8位赋值给byte类型变量。</p>
+<h3 id="char-short-byte之间的转换"><a href="#char-short-byte之间的转换" class="headerlink" title="char short byte之间的转换"></a>char short byte之间的转换</h3><p>char是无符号类型(0~65535),无论是与short还是byte，相互转换都不安全<br><strong>在<code>char</code>类型与<code>short</code>类型，<code>char</code>类型与<code>byte</code>类型之间转换必须使用类型转换运算符</strong><br><code>boolean</code>类型不能转换成其他类型，其他类型也不能转换成其他类型</p>
+<h3 id="表达式运算结果类型"><a href="#表达式运算结果类型" class="headerlink" title="表达式运算结果类型"></a>表达式运算结果类型</h3><p>如果两个（或多个）操作数的类型不同，则运行结果的类型与较高类型的操作数相同<br>格外注意，负号<code>-</code>也是一个运算符，假设存在一操作数x，x可以使byte、char或short类型，那么-x就不再是以前x的类型了，而是int类型<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">byte</span> b = <span class="number">0</span>;</div><div class="line">b = b + <span class="number">1</span>;  <span class="comment">//错误</span></div><div class="line">b += <span class="number">1</span>; <span class="comment">//可以</span></div></pre></td></tr></table></figure></p>
+<h2 id="整数运算"><a href="#整数运算" class="headerlink" title="整数运算"></a>整数运算</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">long</span> lifeTimes = <span class="number">70</span>*<span class="number">60</span>*<span class="number">24</span>*<span class="number">365</span>*<span class="number">70</span>;    <span class="comment">//错误，会输出负数</span></div><div class="line"><span class="keyword">long</span> lifeTimes = <span class="number">1L</span>*<span class="number">70</span>*<span class="number">60</span>*<span class="number">24</span>*<span class="number">365</span>*<span class="number">70</span>;    <span class="comment">//正确</span></div></pre></td></tr></table></figure>
+<h2 id="BigInteger与BigDecimal"><a href="#BigInteger与BigDecimal" class="headerlink" title="BigInteger与BigDecimal"></a>BigInteger与BigDecimal</h2><p>BigInteger可以对任意精度整数进行运算<br>BigDecimal可以对任意精度小数进行运算<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//BigInteger</span></div><div class="line">BigInteger big1 = <span class="keyword">new</span> BigInteger(<span class="string">"12345678901234567890"</span>);</div><div class="line">BigInteger big2 = <span class="keyword">new</span> BigInteger(<span class="string">"98765432109876543210"</span>);</div><div class="line">big1.add(big2);</div><div class="line">big1.substract(big2);</div><div class="line">big1.multiply(big2);</div><div class="line">big1.divide(big2);</div><div class="line">big1.remainder(big2);</div><div class="line"><span class="comment">//BigDecimal</span></div><div class="line">BigDecimal big1 = <span class="keyword">new</span> BigDecimal(<span class="string">"1.2345678901234567890"</span>);</div><div class="line">BigDecimal big2 = <span class="keyword">new</span> BigDecimal(<span class="string">"9.8765432109876543210"</span>);</div><div class="line">big1.add(big2);</div><div class="line">big1.substract(big2);</div><div class="line">big1.multiply(big2);</div><div class="line">big1.divide(big2);</div><div class="line">big1.divide(big2,MathContext.DECIMAL128);</div><div class="line">big1.remainder(big2);</div></pre></td></tr></table></figure></p>
+<h2 id="注释中的编译错误"><a href="#注释中的编译错误" class="headerlink" title="注释中的编译错误"></a>注释中的编译错误</h2><p>要小心Unicode中的转义字符，如果不是必须使用，尽量不要使用。同时，要当心程序中的”\u”，就算出现在注释中也不例外</p>
+<h2 id="移位运算"><a href="#移位运算" class="headerlink" title="移位运算"></a>移位运算</h2><h3 id="三种移位运算符"><a href="#三种移位运算符" class="headerlink" title="三种移位运算符"></a>三种移位运算符</h3><p>右移运算符：<code>&gt;&gt;</code><br>左移运算符: <code>&lt;&lt;</code><br>无符号右移运算符：<code>&gt;&gt;&gt;</code> ：左边移出的空位一律以0填充<br>移位运算的操作数可以使byte,char,short,int,long类型变量，当左侧操作数为byte,short或char类型时候，会被自动转换成int类型，运算结果也为int类型。</p>
+<h2 id="early-binding-amp-amp-late-binding"><a href="#early-binding-amp-amp-late-binding" class="headerlink" title="early binding &amp;&amp; late binding"></a>early binding &amp;&amp; late binding</h2><p><code>early binding</code>: static method, final method, private method这些事early binding<br><code>late binding</code>: 其他都是late binding</p>
+<h2 id="interface"><a href="#interface" class="headerlink" title="interface"></a>interface</h2><p>要显示地声明为<code>public</code>和<code>abstract</code></p>
 
       
     </div>
@@ -402,7 +403,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/计算机网络/" rel="tag"># 计算机网络</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -411,8 +412,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/14/算法回顾之堆排序/" rel="next" title="算法回顾---堆排序">
-                <i class="fa fa-chevron-left"></i> 算法回顾---堆排序
+              <a href="/2017/05/20/my-Compier/" rel="next" title="自制编译器">
+                <i class="fa fa-chevron-left"></i> 自制编译器
               </a>
             
           </div>
@@ -420,10 +421,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/20/my-Compier/" rel="prev" title="自制编译器">
-                自制编译器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -557,7 +554,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#探索集线器、交换机和路由器"><span class="nav-number">1.</span> <span class="nav-text">探索集线器、交换机和路由器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#信号在网线和集线器中传输"><span class="nav-number">1.1.</span> <span class="nav-text">信号在网线和集线器中传输</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#每个包都是独立传输的"><span class="nav-number">1.1.1.</span> <span class="nav-text">每个包都是独立传输的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防止网线中的信号衰减"><span class="nav-number">1.1.2.</span> <span class="nav-text">防止网线中的信号衰减</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“双绞”是为了抑制噪声"><span class="nav-number">1.1.3.</span> <span class="nav-text">“双绞”是为了抑制噪声</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集线器将信号发往所有线路"><span class="nav-number">1.1.4.</span> <span class="nav-text">集线器将信号发往所有线路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交换机的包转发操作"><span class="nav-number">1.2.</span> <span class="nav-text">交换机的包转发操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#交换机根据地址表进行转发"><span class="nav-number">1.2.1.</span> <span class="nav-text">交换机根据地址表进行转发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MAC地址表的维护"><span class="nav-number">1.2.2.</span> <span class="nav-text">MAC地址表的维护</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#写入"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">写入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">删除</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊操作"><span class="nav-number">1.2.3.</span> <span class="nav-text">特殊操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全双工模式可以同时进行发送和接收"><span class="nav-number">1.2.4.</span> <span class="nav-text">全双工模式可以同时进行发送和接收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交换机可同时执行多个转发操作"><span class="nav-number">1.2.5.</span> <span class="nav-text">交换机可同时执行多个转发操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由器的包转发操作"><span class="nav-number">1.3.</span> <span class="nav-text">路由器的包转发操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由器的附加功能"><span class="nav-number">1.4.</span> <span class="nav-text">路由器的附加功能</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#细说java"><span class="nav-number">1.</span> <span class="nav-text">细说java</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类型转换"><span class="nav-number">1.1.</span> <span class="nav-text">类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本数据类型的关系"><span class="nav-number">1.1.1.</span> <span class="nav-text">基本数据类型的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#char-short-byte之间的转换"><span class="nav-number">1.1.2.</span> <span class="nav-text">char short byte之间的转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表达式运算结果类型"><span class="nav-number">1.1.3.</span> <span class="nav-text">表达式运算结果类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整数运算"><span class="nav-number">1.2.</span> <span class="nav-text">整数运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BigInteger与BigDecimal"><span class="nav-number">1.3.</span> <span class="nav-text">BigInteger与BigDecimal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释中的编译错误"><span class="nav-number">1.4.</span> <span class="nav-text">注释中的编译错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移位运算"><span class="nav-number">1.5.</span> <span class="nav-text">移位运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三种移位运算符"><span class="nav-number">1.5.1.</span> <span class="nav-text">三种移位运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#early-binding-amp-amp-late-binding"><span class="nav-number">1.6.</span> <span class="nav-text">early binding && late binding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#interface"><span class="nav-number">1.7.</span> <span class="nav-text">interface</span></a></li></ol></li></ol></div>
             
 
           </div>
