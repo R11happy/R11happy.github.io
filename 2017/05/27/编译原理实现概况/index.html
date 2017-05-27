@@ -102,10 +102,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/27/编译原理实现概况/index.html">
 <meta property="og:site_name" content="梅庄">
 <meta property="og:description" content="项目实施规划">
-<meta property="og:updated_time" content="2017-05-27T08:07:31.405Z">
+<meta property="og:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/compilerProject/207077593.png?imageView2/2/w/600">
+<meta property="og:updated_time" content="2017-05-27T14:32:37.047Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content=" 编译原理实现概况 ">
 <meta name="twitter:description" content="项目实施规划">
+<meta name="twitter:image" content="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/compilerProject/207077593.png?imageView2/2/w/600">
 
 
 
@@ -366,7 +368,8 @@
       
 
       
-        <h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><h3 id="AST"><a href="#AST" class="headerlink" title="AST"></a>AST</h3><p>抽象语法树的根</p>
+        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>总体：<br>不支持宏定义<br>如#define<br>将书中import换成#include，作用不变<br>去除goto语句<br>不支持float和double</p>
+<h1 id="ast文件夹下面"><a href="#ast文件夹下面" class="headerlink" title="ast文件夹下面"></a>ast文件夹下面</h1><h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><h3 id="AST"><a href="#AST" class="headerlink" title="AST"></a>AST</h3><p>抽象语法树的根</p>
 <h3 id="ExprNode"><a href="#ExprNode" class="headerlink" title="ExprNode"></a>ExprNode</h3><p>表示表达式的节点</p>
 <h4 id="AbstractAssignNode"><a href="#AbstractAssignNode" class="headerlink" title="AbstractAssignNode"></a>AbstractAssignNode</h4><p>赋值</p>
 <h5 id="AssignNode"><a href="#AssignNode" class="headerlink" title="AssignNode"></a>AssignNode</h5><p>赋值表达式(=)</p>
@@ -400,9 +403,7 @@
 <h4 id="DoWhileNode"><a href="#DoWhileNode" class="headerlink" title="DoWhileNode"></a>DoWhileNode</h4><p>do……while语句</p>
 <h4 id="ExprStmtNode"><a href="#ExprStmtNode" class="headerlink" title="ExprStmtNode"></a>ExprStmtNode</h4><p>单独构成语句的表达式</p>
 <h4 id="ForNode"><a href="#ForNode" class="headerlink" title="ForNode"></a>ForNode</h4><p>for语句</p>
-<h4 id="GotoNode"><a href="#GotoNode" class="headerlink" title="GotoNode"></a>GotoNode</h4><p>goto语句</p>
 <h4 id="IfNode"><a href="#IfNode" class="headerlink" title="IfNode"></a>IfNode</h4><p>if语句</p>
-<h4 id="LabelNode"><a href="#LabelNode" class="headerlink" title="LabelNode"></a>LabelNode</h4><p>goto标签</p>
 <h4 id="ReturnNode"><a href="#ReturnNode" class="headerlink" title="ReturnNode"></a>ReturnNode</h4><p>return语句</p>
 <h4 id="SwithchNode"><a href="#SwithchNode" class="headerlink" title="SwithchNode"></a>SwithchNode</h4><p>switch语句</p>
 <h4 id="WhileNode"><a href="#WhileNode" class="headerlink" title="WhileNode"></a>WhileNode</h4><p>while语句</p>
@@ -411,11 +412,198 @@
 <h5 id="StructNode"><a href="#StructNode" class="headerlink" title="StructNode"></a>StructNode</h5><p>结构体的定义</p>
 <h5 id="UnionNode"><a href="#UnionNode" class="headerlink" title="UnionNode"></a>UnionNode</h5><p>联合体的定义</p>
 <h4 id="TypedefNode"><a href="#TypedefNode" class="headerlink" title="TypedefNode"></a>TypedefNode</h4><p>typedef声明</p>
-<h3 id="存储类型的节点"><a href="#存储类型的节点" class="headerlink" title="存储类型的节点"></a>存储类型的节点</h3><h2 id="变量声明列表devar-list"><a href="#变量声明列表devar-list" class="headerlink" title="变量声明列表devar_list"></a>变量声明列表devar_list</h2><p>用于支持<br>在一个声明中同时声明多个变量<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> x, y, z;</div></pre></td></tr></table></figure></p>
+<h3 id="TypeNode"><a href="#TypeNode" class="headerlink" title="TypeNode"></a>TypeNode</h3><p>存储类型的节点</p>
+<h1 id="parser文件夹下面-jj文件"><a href="#parser文件夹下面-jj文件" class="headerlink" title="parser文件夹下面(.jj文件)"></a>parser文件夹下面(.jj文件)</h1><h2 id="变量声明列表devar-list"><a href="#变量声明列表devar-list" class="headerlink" title="变量声明列表devar_list"></a>变量声明列表devar_list</h2><p>用于支持<br>在一个声明中同时声明多个变量<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> x, y, z;</div></pre></td></tr></table></figure></p>
 <h2 id="变量声明devars"><a href="#变量声明devars" class="headerlink" title="变量声明devars"></a>变量声明devars</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">boolean</span> priv; <span class="comment">//是否为static</span></div><div class="line">TypeNode type;  <span class="comment">//类型</span></div><div class="line">String name;   <span class="comment">//变量名</span></div><div class="line">ExprNode init = <span class="keyword">null</span>;  <span class="comment">//可省略的初始化表达式</span></div></pre></td></tr></table></figure>
 <h2 id="函数定义defun"><a href="#函数定义defun" class="headerlink" title="函数定义defun"></a>函数定义defun</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">boolean</span> priv;  <span class="comment">//是否是static</span></div><div class="line">TypeRef ret;    <span class="comment">//typeref()在语法层面上和type()是相同的</span></div><div class="line">String n;   <span class="comment">//函数名</span></div><div class="line">Params ps;  <span class="comment">//形参声明</span></div><div class="line">BlockNode body; <span class="comment">//函数本体</span></div></pre></td></tr></table></figure>
 <p>包括<br><code>DefinedFunction</code>:函数定义<br><code>DefinedVariable</code>:变量定义<br><code>Constant</code>常量定义、<br><code>StructNode</code>结构体定义<br><code>UnionNode</code>联合体定义<br><code>TypedefNode</code>用户类型定义。</p>
 <h2 id="外部符号import"><a href="#外部符号import" class="headerlink" title="外部符号import"></a>外部符号import</h2><p>表示声明的类<br><code>UndefinedFunction</code>:函数<br><code>UndefinedVariable</code>:变量<br><code>StructNode</code>:结构体<br><code>UnionNode</code>:联合体<br><code>TypedeNode</code>:typedef</p>
+<h3 id="整数字面量"><a href="#整数字面量" class="headerlink" title="整数字面量"></a>整数字面量</h3><p>支持L和U结尾（也支持既有L又U）<br>支持8进制和16进制类型（0开头和0x开头）</p>
+<h3 id="char类型"><a href="#char类型" class="headerlink" title="char类型"></a>char类型</h3><p>保留<br><code>\a</code>,<code>\0``\&quot;</code>,<code>\\</code>,<code>\b</code>,<code>\e</code>,<code>\f</code>,<code>\n</code>,<code>\t</code>,<code>\r</code>,<code>\v</code><br>空白符{“ “, “\t”, “\n”, “\r”, “\f”}</p>
+<h3 id="String类型"><a href="#String类型" class="headerlink" title="String类型"></a>String类型</h3><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p><code>//</code>和<code>/**/</code></p>
+<h3 id="保留字"><a href="#保留字" class="headerlink" title="保留字"></a>保留字</h3><table>
+<thead>
+<tr>
+<th>保留字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void</td>
+</tr>
+<tr>
+<td>char</td>
+</tr>
+<tr>
+<td>short</td>
+</tr>
+<tr>
+<td>int</td>
+</tr>
+<tr>
+<td>long</td>
+</tr>
+<tr>
+<td>struct</td>
+</tr>
+<tr>
+<td>union</td>
+</tr>
+<tr>
+<td>enum</td>
+</tr>
+<tr>
+<td>static</td>
+</tr>
+<tr>
+<td>extern</td>
+</tr>
+<tr>
+<td>const</td>
+</tr>
+<tr>
+<td>signed</td>
+</tr>
+<tr>
+<td>unsigned</td>
+</tr>
+<tr>
+<td>if</td>
+</tr>
+<tr>
+<td>else</td>
+</tr>
+<tr>
+<td>switch</td>
+</tr>
+<tr>
+<td>case</td>
+</tr>
+<tr>
+<td>default</td>
+</tr>
+<tr>
+<td>while</td>
+</tr>
+<tr>
+<td>do</td>
+</tr>
+<tr>
+<td>for</td>
+</tr>
+<tr>
+<td>return</td>
+</tr>
+<tr>
+<td>break</td>
+</tr>
+<tr>
+<td>continue</td>
+</tr>
+<tr>
+<td>typedef</td>
+</tr>
+<tr>
+<td>#include</td>
+</tr>
+<tr>
+<td>sizeof</td>
+</tr>
+</tbody>
+</table>
+<h3 id="声明declaration-file"><a href="#声明declaration-file" class="headerlink" title="声明declaration_file"></a>声明declaration_file</h3><p>函数声明<br>变量声明<br>常量声明<br>结构体声明struct<br>如 struct point p;<br>联合体声明union<br>typedef声明</p>
+<h3 id="定义top-defs"><a href="#定义top-defs" class="headerlink" title="定义top_defs"></a>定义top_defs</h3><h4 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h4><p>（static) 类型（如int) 名字(如x) (表达式，如=2，可省略）;<br>static int x = 2;<br>不支持 var = {1,2,3};</p>
+<h4 id="常量定义"><a href="#常量定义" class="headerlink" title="常量定义"></a>常量定义</h4><p>前加const<br>类型（如int）名字（如x）表达式（如=2） ；</p>
+<h4 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h4><p>priv=storage() ret=typeref() n=name() “(“ ps=params() “)” body=block()<br>如(static) int maxNum(int x, int y, int z){}</p>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>// 形参声明<br>// 三种形式：<br>// 1.无参数(形参声明为void。如getc等)<br>// 2.定长参数(参数的个数是相同的。如puts或fgets等)<br>// 3.可变长参数(参数的个数不确定。如printf等)<br>注意：<br>//定长参数或可变长参数<br>//C语言必须有1个或1个以上的形参后才支持可变长参数<br>//f(…)是不允许的，至少要f(int x, …)<br>//原因在于C语言是通过可变长参数的前一个参数的地址来取得剩余参数的</p>
+<h4 id="结构体定义"><a href="#结构体定义" class="headerlink" title="结构体定义"></a>结构体定义</h4><p>如<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> point &#123;</div><div class="line">      <span class="keyword">int</span> x;</div><div class="line">     <span class="keyword">int</span> y;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<p>不支持<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> point &#123;</div><div class="line">      <span class="keyword">int</span> x;</div><div class="line">     <span class="keyword">int</span> y;</div><div class="line"> &#125;m,n;</div></pre></td></tr></table></figure></p>
+<p>// 用于表示结构体或联合体成员<br>// 不支持对于一个类型可以用逗号分隔定义多个成员<br>// eg. int x,y;<br>// 只能 int x;//      int y;<br>定义结构体和定义该结构体类型变量必须分开</p>
+<h4 id="联合体定义"><a href="#联合体定义" class="headerlink" title="联合体定义"></a>联合体定义</h4><h4 id="typedef定义"><a href="#typedef定义" class="headerlink" title="typedef定义"></a>typedef定义</h4><h3 id="其他类型"><a href="#其他类型" class="headerlink" title="其他类型"></a>其他类型</h3><h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>这一块和java一样<br>支持不定长数组<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] a;</div></pre></td></tr></table></figure></p>
+<p>支持定长数组<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[<span class="number">5</span>] a;</div></pre></td></tr></table></figure></p>
+<h4 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h4><p>注意<br>先确定类型，如<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>* x,y;</div></pre></td></tr></table></figure></p>
+<p>意思是x,y都是int *类型</p>
+<h4 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h4><h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><table>
+<thead>
+<tr>
+<th>复合赋值运算符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+=</td>
+</tr>
+<tr>
+<td>-=</td>
+</tr>
+<tr>
+<td>*=</td>
+</tr>
+<tr>
+<td>/=</td>
+</tr>
+<tr>
+<td>%=</td>
+</tr>
+<tr>
+<td>&amp;=</td>
+</tr>
+<tr>
+<td></td>
+<td>=</td>
+</tr>
+<tr>
+<td>^=</td>
+</tr>
+<tr>
+<td>&lt;&lt;=</td>
+</tr>
+<tr>
+<td>&gt;&gt;=</td>
+</tr>
+</tbody>
+</table>
+<p>上面没显示的是<code>|=</code></p>
+<h3 id="其他运算符和运算符优先级"><a href="#其他运算符和运算符优先级" class="headerlink" title="其他运算符和运算符优先级"></a>其他运算符和运算符优先级</h3><img src="http://ok6lt61wr.bkt.clouddn.com/images/myCompiler/compilerProject/207077593.png?imageView2/2/w/600">
+<h3 id="include语句"><a href="#include语句" class="headerlink" title="#include语句"></a>#include语句</h3><p>将书中的import改为include，功能一样<br>如#include stdio.h</p>
+<h1 id="compiler和type文件夹下面"><a href="#compiler和type文件夹下面" class="headerlink" title="compiler和type文件夹下面"></a>compiler和type文件夹下面</h1><h2 id="和语义分析相关的类"><a href="#和语义分析相关的类" class="headerlink" title="和语义分析相关的类"></a>和语义分析相关的类</h2><p>对抽象语法树进行分析，并实施变量引用的消解和类型检查</p>
+<ol>
+<li>变量引用的消解 </li>
+<li>类型名称的消解 </li>
+<li>类型定义检查 </li>
+<li>表达式的有效性检查 </li>
+<li>静态类型检查</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>类</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LocalResolver</td>
+<td>变量引用的消解</td>
+</tr>
+<tr>
+<td>DereferenceChecker</td>
+<td>表达式的有效性检查</td>
+</tr>
+<tr>
+<td>TypeResolver</td>
+<td>类型名称的消解</td>
+</tr>
+<tr>
+<td>TypeChecker</td>
+<td>静态类型检查</td>
+</tr>
+<tr>
+<td>TyepeTable</td>
+<td>类型定义检查</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -590,7 +778,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node"><span class="nav-number">1.</span> <span class="nav-text">Node</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AST"><span class="nav-number">1.1.</span> <span class="nav-text">AST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ExprNode"><span class="nav-number">1.2.</span> <span class="nav-text">ExprNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AbstractAssignNode"><span class="nav-number">1.2.1.</span> <span class="nav-text">AbstractAssignNode</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AssignNode"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">AssignNode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#OpAssignNode"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">OpAssignNode</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AddressNode"><span class="nav-number">1.2.2.</span> <span class="nav-text">AddressNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BinaryOpNode"><span class="nav-number">1.2.3.</span> <span class="nav-text">BinaryOpNode</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#LogicalAndNode"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">LogicalAndNode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#LogicalOrNode"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">LogicalOrNode</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CastNode"><span class="nav-number">1.2.4.</span> <span class="nav-text">CastNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CondExprNode"><span class="nav-number">1.2.5.</span> <span class="nav-text">CondExprNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FuncallNode"><span class="nav-number">1.2.6.</span> <span class="nav-text">FuncallNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LHSNode"><span class="nav-number">1.2.7.</span> <span class="nav-text">LHSNode</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ArefNode"><span class="nav-number">1.2.7.1.</span> <span class="nav-text">ArefNode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DereferenceNode"><span class="nav-number">1.2.7.2.</span> <span class="nav-text">DereferenceNode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MemberNode"><span class="nav-number">1.2.7.3.</span> <span class="nav-text">MemberNode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PtrMemberNode"><span class="nav-number">1.2.7.4.</span> <span class="nav-text">PtrMemberNode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#VariableNode"><span class="nav-number">1.2.7.5.</span> <span class="nav-text">VariableNode</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LiteralNode"><span class="nav-number">1.2.8.</span> <span class="nav-text">LiteralNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SizeofExprNode"><span class="nav-number">1.2.9.</span> <span class="nav-text">SizeofExprNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SizeofTypeNode"><span class="nav-number">1.2.10.</span> <span class="nav-text">SizeofTypeNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UnaryOpNode"><span class="nav-number">1.2.11.</span> <span class="nav-text">UnaryOpNode</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#UnaryArithmeticOpNode"><span class="nav-number">1.2.11.1.</span> <span class="nav-text">UnaryArithmeticOpNode</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#PrefixOpNode"><span class="nav-number">1.2.11.1.1.</span> <span class="nav-text">PrefixOpNode</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#SuffixOpNode"><span class="nav-number">1.2.11.1.2.</span> <span class="nav-text">SuffixOpNode</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Slot"><span class="nav-number">1.3.</span> <span class="nav-text">Slot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StmtNode"><span class="nav-number">1.4.</span> <span class="nav-text">StmtNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#BlockNode"><span class="nav-number">1.4.1.</span> <span class="nav-text">BlockNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BreakNode"><span class="nav-number">1.4.2.</span> <span class="nav-text">BreakNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CaseNode"><span class="nav-number">1.4.3.</span> <span class="nav-text">CaseNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ContinueNode"><span class="nav-number">1.4.4.</span> <span class="nav-text">ContinueNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DoWhileNode"><span class="nav-number">1.4.5.</span> <span class="nav-text">DoWhileNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ExprStmtNode"><span class="nav-number">1.4.6.</span> <span class="nav-text">ExprStmtNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ForNode"><span class="nav-number">1.4.7.</span> <span class="nav-text">ForNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GotoNode"><span class="nav-number">1.4.8.</span> <span class="nav-text">GotoNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IfNode"><span class="nav-number">1.4.9.</span> <span class="nav-text">IfNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LabelNode"><span class="nav-number">1.4.10.</span> <span class="nav-text">LabelNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ReturnNode"><span class="nav-number">1.4.11.</span> <span class="nav-text">ReturnNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SwithchNode"><span class="nav-number">1.4.12.</span> <span class="nav-text">SwithchNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WhileNode"><span class="nav-number">1.4.13.</span> <span class="nav-text">WhileNode</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TypeDefinition"><span class="nav-number">1.5.</span> <span class="nav-text">TypeDefinition</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CompositeTypedefinition"><span class="nav-number">1.5.1.</span> <span class="nav-text">CompositeTypedefinition</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#StructNode"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">StructNode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#UnionNode"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">UnionNode</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TypedefNode"><span class="nav-number">1.5.2.</span> <span class="nav-text">TypedefNode</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储类型的节点"><span class="nav-number">1.6.</span> <span class="nav-text">存储类型的节点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量声明列表devar-list"><span class="nav-number">2.</span> <span class="nav-text">变量声明列表devar_list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量声明devars"><span class="nav-number">3.</span> <span class="nav-text">变量声明devars</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数定义defun"><span class="nav-number">4.</span> <span class="nav-text">函数定义defun</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外部符号import"><span class="nav-number">5.</span> <span class="nav-text">外部符号import</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ast文件夹下面"><span class="nav-number">2.</span> <span class="nav-text">ast文件夹下面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node"><span class="nav-number">2.1.</span> <span class="nav-text">Node</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AST"><span class="nav-number">2.1.1.</span> <span class="nav-text">AST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ExprNode"><span class="nav-number">2.1.2.</span> <span class="nav-text">ExprNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AbstractAssignNode"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">AbstractAssignNode</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AssignNode"><span class="nav-number">2.1.2.1.1.</span> <span class="nav-text">AssignNode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#OpAssignNode"><span class="nav-number">2.1.2.1.2.</span> <span class="nav-text">OpAssignNode</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AddressNode"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">AddressNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BinaryOpNode"><span class="nav-number">2.1.2.3.</span> <span class="nav-text">BinaryOpNode</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#LogicalAndNode"><span class="nav-number">2.1.2.3.1.</span> <span class="nav-text">LogicalAndNode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#LogicalOrNode"><span class="nav-number">2.1.2.3.2.</span> <span class="nav-text">LogicalOrNode</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CastNode"><span class="nav-number">2.1.2.4.</span> <span class="nav-text">CastNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CondExprNode"><span class="nav-number">2.1.2.5.</span> <span class="nav-text">CondExprNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FuncallNode"><span class="nav-number">2.1.2.6.</span> <span class="nav-text">FuncallNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LHSNode"><span class="nav-number">2.1.2.7.</span> <span class="nav-text">LHSNode</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ArefNode"><span class="nav-number">2.1.2.7.1.</span> <span class="nav-text">ArefNode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DereferenceNode"><span class="nav-number">2.1.2.7.2.</span> <span class="nav-text">DereferenceNode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MemberNode"><span class="nav-number">2.1.2.7.3.</span> <span class="nav-text">MemberNode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PtrMemberNode"><span class="nav-number">2.1.2.7.4.</span> <span class="nav-text">PtrMemberNode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#VariableNode"><span class="nav-number">2.1.2.7.5.</span> <span class="nav-text">VariableNode</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LiteralNode"><span class="nav-number">2.1.2.8.</span> <span class="nav-text">LiteralNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SizeofExprNode"><span class="nav-number">2.1.2.9.</span> <span class="nav-text">SizeofExprNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SizeofTypeNode"><span class="nav-number">2.1.2.10.</span> <span class="nav-text">SizeofTypeNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UnaryOpNode"><span class="nav-number">2.1.2.11.</span> <span class="nav-text">UnaryOpNode</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#UnaryArithmeticOpNode"><span class="nav-number">2.1.2.11.1.</span> <span class="nav-text">UnaryArithmeticOpNode</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#PrefixOpNode"><span class="nav-number">2.1.2.11.1.1.</span> <span class="nav-text">PrefixOpNode</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#SuffixOpNode"><span class="nav-number">2.1.2.11.1.2.</span> <span class="nav-text">SuffixOpNode</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Slot"><span class="nav-number">2.1.3.</span> <span class="nav-text">Slot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StmtNode"><span class="nav-number">2.1.4.</span> <span class="nav-text">StmtNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#BlockNode"><span class="nav-number">2.1.4.1.</span> <span class="nav-text">BlockNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BreakNode"><span class="nav-number">2.1.4.2.</span> <span class="nav-text">BreakNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CaseNode"><span class="nav-number">2.1.4.3.</span> <span class="nav-text">CaseNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ContinueNode"><span class="nav-number">2.1.4.4.</span> <span class="nav-text">ContinueNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DoWhileNode"><span class="nav-number">2.1.4.5.</span> <span class="nav-text">DoWhileNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ExprStmtNode"><span class="nav-number">2.1.4.6.</span> <span class="nav-text">ExprStmtNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ForNode"><span class="nav-number">2.1.4.7.</span> <span class="nav-text">ForNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IfNode"><span class="nav-number">2.1.4.8.</span> <span class="nav-text">IfNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ReturnNode"><span class="nav-number">2.1.4.9.</span> <span class="nav-text">ReturnNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SwithchNode"><span class="nav-number">2.1.4.10.</span> <span class="nav-text">SwithchNode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WhileNode"><span class="nav-number">2.1.4.11.</span> <span class="nav-text">WhileNode</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TypeDefinition"><span class="nav-number">2.1.5.</span> <span class="nav-text">TypeDefinition</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CompositeTypedefinition"><span class="nav-number">2.1.5.1.</span> <span class="nav-text">CompositeTypedefinition</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#StructNode"><span class="nav-number">2.1.5.1.1.</span> <span class="nav-text">StructNode</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#UnionNode"><span class="nav-number">2.1.5.1.2.</span> <span class="nav-text">UnionNode</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TypedefNode"><span class="nav-number">2.1.5.2.</span> <span class="nav-text">TypedefNode</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TypeNode"><span class="nav-number">2.1.6.</span> <span class="nav-text">TypeNode</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#parser文件夹下面-jj文件"><span class="nav-number">3.</span> <span class="nav-text">parser文件夹下面(.jj文件)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量声明列表devar-list"><span class="nav-number">3.1.</span> <span class="nav-text">变量声明列表devar_list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量声明devars"><span class="nav-number">3.2.</span> <span class="nav-text">变量声明devars</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数定义defun"><span class="nav-number">3.3.</span> <span class="nav-text">函数定义defun</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外部符号import"><span class="nav-number">3.4.</span> <span class="nav-text">外部符号import</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数字面量"><span class="nav-number">3.4.1.</span> <span class="nav-text">整数字面量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#char类型"><span class="nav-number">3.4.2.</span> <span class="nav-text">char类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String类型"><span class="nav-number">3.4.3.</span> <span class="nav-text">String类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">3.4.4.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保留字"><span class="nav-number">3.4.5.</span> <span class="nav-text">保留字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声明declaration-file"><span class="nav-number">3.4.6.</span> <span class="nav-text">声明declaration_file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义top-defs"><span class="nav-number">3.4.7.</span> <span class="nav-text">定义top_defs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量定义"><span class="nav-number">3.4.7.1.</span> <span class="nav-text">变量定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常量定义"><span class="nav-number">3.4.7.2.</span> <span class="nav-text">常量定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数定义"><span class="nav-number">3.4.7.3.</span> <span class="nav-text">函数定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数"><span class="nav-number">3.4.7.4.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结构体定义"><span class="nav-number">3.4.7.5.</span> <span class="nav-text">结构体定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#联合体定义"><span class="nav-number">3.4.7.6.</span> <span class="nav-text">联合体定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#typedef定义"><span class="nav-number">3.4.7.7.</span> <span class="nav-text">typedef定义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他类型"><span class="nav-number">3.4.8.</span> <span class="nav-text">其他类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">3.4.8.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指针"><span class="nav-number">3.4.8.2.</span> <span class="nav-text">指针</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数指针"><span class="nav-number">3.4.8.3.</span> <span class="nav-text">函数指针</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">3.4.9.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他运算符和运算符优先级"><span class="nav-number">3.4.10.</span> <span class="nav-text">其他运算符和运算符优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#include语句"><span class="nav-number">3.4.11.</span> <span class="nav-text">#include语句</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#compiler和type文件夹下面"><span class="nav-number">4.</span> <span class="nav-text">compiler和type文件夹下面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#和语义分析相关的类"><span class="nav-number">4.1.</span> <span class="nav-text">和语义分析相关的类</span></a></li></ol></li></ol></div>
             
 
           </div>
